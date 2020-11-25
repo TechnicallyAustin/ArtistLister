@@ -1,3 +1,4 @@
 node_modules
 master.key
 tmp
+package.json
