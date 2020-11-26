@@ -1,1 +1,20 @@
-<h1>Use this as the user sign up page</h1>
+<h1>Sign Up For Artist Lister</h1>
+
+<%= form_for(@user) do |t| %>
+
+<%=t.label :first_name %>
+<%= t.text_field :first_name %>
+
+
+<%=t.label :last_name %>
+<%= t.text_field :last_name %><br /><br>
+
+<%=t.label :email %>
+<%= t.text_field :email %><br /><br>
+
+<%= t.label :password%>
+<%= t.password_field :password %>
+
+<%= t.submit%>
+
+<%end%>

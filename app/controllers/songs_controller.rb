@@ -24,9 +24,11 @@ class SongsController < ApplicationController
     private
 
     def songs_params
+        params.require(:song).permit(:name, :artist)
     end
 
     def song_selector
+        @song = Song.find(params[:id])
     end
     
 
