@@ -1,6 +1,7 @@
-class PlaylistsController < ApplicationController
+class User::PlaylistsController < ApplicationController
     def index
-    end
+        @user - User.find(params[:id]
+        end
 
     def show
     end
@@ -22,10 +23,13 @@ class PlaylistsController < ApplicationController
 
     private
     
-    def playlist_params
+    def user_params
+        params.require(:user).permit(:name,)
+
     end
 
-    def playlist_selector
+    def user_selector
+        @user = User.find(params[:id]
     end
     
 
