@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @user = User.find(email: params[:email])
+    @user = User.find(params[:id])
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
       redirect_to '/'
@@ -15,13 +15,15 @@ class SessionsController < ApplicationController
   end
 
   def login
-    
+    @user = User.find(params[:id])
+    session[:user_id] = @user.id
   end
 
   def welcome
   end
   
   def destroy
+    session[:user_id]= []
   end
 
 end

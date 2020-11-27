@@ -23,13 +23,12 @@ class User::PlaylistsController < ApplicationController
 
     private
     
-    def user_params
-        params.require(:user).permit(:name,)
-
+    def playlsit_params
+        params.require(:playlist).permit(:name)
     end
 
-    def user_selector
-        @user = User.find(params[:id]
+    def playlist_selector
+        @playlist = Playlist.find(params[:id]
     end
     
 
