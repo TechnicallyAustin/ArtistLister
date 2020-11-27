@@ -1,12 +1,15 @@
 class User::PlaylistsController < ApplicationController
     def index
         @user - User.find(params[:id]
-        end
+        @playlists = @user.playlists.all
+    end
 
     def show
+        playlist_selector
     end
 
     def new
+        @playlist = Playlist.new
     end
 
     def create 
