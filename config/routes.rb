@@ -10,8 +10,13 @@ Rails.application.routes.draw do
   end
   resources :songs
   resources :playlists
-  resources :users, only: [:new, :create, :edit, :update] 
-  get 'login', to: 'session#new'
-  post 'login', to: 'sessions#create'
-  get 'welcome', to: 'sessions#welcome'
+  resources :users 
+
+
+  get 'login', to: 'sessions#new'
+  post 'login', to: 'sessions#login'
+  get '/', to: 'sessions#welcome'
+  get 'signup', to: 'users#new'
+  post 'signup', to: 'users#create'
+
 end

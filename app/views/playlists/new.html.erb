@@ -1,0 +1,18 @@
+<h1> Create a new Playlist </h1>
+
+<%= form_for @playlist do |t| %>
+<%= t.label :title %>
+<%= t.text_field :title %><br />
+
+<%= t.fields_for :songs do |song| %>
+
+<%=song.label :song_name %>
+<%=song.text_field :name %>
+
+<%=song.label :artist_name %>
+<%=song.text_field :artist %><br />
+
+
+<%end%>
+<%= t.submit %>
+<%end%>

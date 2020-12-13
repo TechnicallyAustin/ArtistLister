@@ -18,6 +18,8 @@ class ArtistsController < ApplicationController
             redirect_to :show
         else
             redirect_to :new
+        end
+        
     end
     
     def edit

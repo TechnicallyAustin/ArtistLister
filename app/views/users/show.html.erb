@@ -1,2 +1,9 @@
 <h1>Displays a user's basic information</h1>
 <h2>Links to the Edit user View</h2>
+
+<h1><%= @user.full_name%></h1>
+<ul>
+<%= @user.playlists.each do |t|%>
+<li><%=link_to t.title playlist_path(t)%></li>
+<%end%>
+</ul>

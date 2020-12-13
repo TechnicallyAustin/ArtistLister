@@ -1,7 +1,7 @@
-class User::PlaylistsController < ApplicationController
+class PlaylistsController < ApplicationController
     def index
-        @user - User.find(params[:id]
-        @playlists = @user.playlists.all
+        @user = User.find(session[:user_id])
+        @playlists = @user.playlists
     end
 
     def show
@@ -12,7 +12,15 @@ class User::PlaylistsController < ApplicationController
         @playlist = Playlist.new
     end
 
-    def create 
+    def create
+        @playlist = Playlist.new(playlist_params)
+        if @playlist.save 
+            redirect_to @playlist
+        else
+            render :new
+            #add auto popoluation and errors to new
+        end
+
     end
 
     def edit
@@ -26,12 +34,12 @@ class User::PlaylistsController < ApplicationController
 
     private
     
-    def playlsit_params
+    def playlist_params
         params.require(:playlist).permit(:name)
     end
 
     def playlist_selector
-        @playlist = Playlist.find(params[:id]
+        @playlist = Playlist.find(params[:id])
     end
     
 

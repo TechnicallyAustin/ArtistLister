@@ -1,7 +1,8 @@
 class Artist < ApplicationRecord
     # Associations
     has_many :songs
-    belongs_to :playlist
+    belongs_to_many :playlists
+    
     
     # Validations
 

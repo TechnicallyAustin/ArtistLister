@@ -1,1 +1,4 @@
-<h1>Jada is cool </h1>
+<%= @artists.each do |t| %> 
+<%= t.name %>
+<%= link_to 'Songs', artists_path(t) %>
+<%end%>

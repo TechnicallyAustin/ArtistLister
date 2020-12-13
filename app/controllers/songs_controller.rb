@@ -12,7 +12,14 @@ class SongsController < ApplicationController
         @song = Song.new
     end
 
-    def create 
+    def create
+        @song = Song.new(songs_params)
+        if @song.save 
+            redirect_to :show
+        else
+            render :new 
+        end
+        
     end
 
     def edit

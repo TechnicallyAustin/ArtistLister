@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   def new
-    session = Session.new 
+    @user = User.new
   end
 
   def create
@@ -22,8 +22,8 @@ class SessionsController < ApplicationController
   def welcome
   end
   
-  def destroy
-    session[:user_id]= []
+  def logout
+    session.delete :email
   end
 
 end

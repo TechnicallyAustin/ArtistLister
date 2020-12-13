@@ -1,2 +1,0 @@
-class PlaylistSong < ApplicationRecord
-end

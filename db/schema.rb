@@ -14,12 +14,18 @@ ActiveRecord::Schema.define(version: 2020_11_24_050734) do
 
   create_table "artists", force: :cascade do |t|
     t.string "name"
+    t.string "song"
+    t.integer "playlists_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["playlists_id"], name: "index_artists_on_playlists_id"
   end
 
   create_table "playlists", force: :cascade do |t|
     t.string "title"
+    t.string "description"
+    t.string "song"
+    t.string "artist"
     t.integer "user_id_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -29,12 +35,13 @@ ActiveRecord::Schema.define(version: 2020_11_24_050734) do
   create_table "songs", force: :cascade do |t|
     t.string "name"
     t.string "artist"
-    t.integer "artist_id_id"
-    t.integer "playlist_id_id"
+    t.integer "rating"
+    t.integer "artist_id"
+    t.integer "playlists_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["artist_id_id"], name: "index_songs_on_artist_id_id"
-    t.index ["playlist_id_id"], name: "index_songs_on_playlist_id_id"
+    t.index ["artist_id"], name: "index_songs_on_artist_id"
+    t.index ["playlists_id"], name: "index_songs_on_playlists_id"
   end
 
   create_table "users", force: :cascade do |t|
