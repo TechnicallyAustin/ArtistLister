@@ -3,8 +3,14 @@ class User < ApplicationRecord
     has_many :playlists
     has_many :songs, through: :playlists
     has_secure_password
-    
     # Validations
+    validates :first_name, pressence: true
+    validates :last_name, pressence: true
+    validates :email, pressence: true
+    validates :email, uniqueness: true
+    validates_format_of :email,:with => /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/
+    validates :password, pressence: true
+
 
 
     #methods
