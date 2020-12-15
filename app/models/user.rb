@@ -1,15 +1,17 @@
 class User < ApplicationRecord
     # Associations
-    has_many :playlists
-    has_many :songs, through: :playlists
+    has_many :playlist_songs
+    has_many :songs, through: :playlist_songs
+    # will need to create a playlist_songs join table
+
     has_secure_password
     # Validations
-    validates :first_name, pressence: true
-    validates :last_name, pressence: true
-    validates :email, pressence: true
+    validates :first_name, presence: true
+    validates :last_name, presence: true
+    validates :email, presence: true
     validates :email, uniqueness: true
     validates_format_of :email,:with => /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/
-    validates :password, pressence: true
+    validates :password, presence: true
 
 
 

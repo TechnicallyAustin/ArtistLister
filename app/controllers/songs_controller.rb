@@ -13,7 +13,7 @@ class SongsController < ApplicationController
     end
 
     def create
-        @song = Song.new(songs_params)
+        @song = Song.new(song_params)
         if @song.save 
             redirect_to :show
         else
@@ -33,8 +33,8 @@ class SongsController < ApplicationController
 
     private
 
-    def songs_params
-        params.require(:song).permit(:name, :artist)
+    def song_params
+        params.require(:song).permit(:name, :artist, :rating)
     end
 
     def song_selector

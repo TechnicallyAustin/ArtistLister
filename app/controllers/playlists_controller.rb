@@ -35,7 +35,12 @@ class PlaylistsController < ApplicationController
     private
     
     def playlist_params
-        params.require(:playlist).permit(:title, :description,)
+        params.require(:playlist).permit(:description, song: [
+            title: [],
+            artist: [],
+            rating: []
+        ]
+        )
     end
 
     def playlist_selector
