@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     @user = User.find(params[:id])
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
-      redirect_to '/'
+      redirect_to '/playlists'
     else
       redirect_to '/login'
     end

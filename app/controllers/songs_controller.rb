@@ -23,12 +23,12 @@ class SongsController < ApplicationController
     end
 
     def edit
-    end
+        @song = Song.Find(params[:id])
+        @song.update(song_params(:rating))
+        redirect_to_song_path(@song)
+     end
 
-    def update
-    end
-
-    def delete 
+    def delete
     end
 
     private

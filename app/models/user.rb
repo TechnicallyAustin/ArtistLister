@@ -2,8 +2,6 @@ class User < ApplicationRecord
     # Associations
     has_many :playlist_songs
     has_many :songs, through: :playlist_songs
-    # will need to create a playlist_songs join table
-
     has_secure_password
     # Validations
     validates :first_name, presence: true
