@@ -1,5 +1,5 @@
 class SongsController < ApplicationController
-
+    layout 'layouts/songs'
     def index
         @songs = Song.all
     end
@@ -19,7 +19,6 @@ class SongsController < ApplicationController
         else
             render :new 
         end
-        
     end
 
     def edit
@@ -40,7 +39,4 @@ class SongsController < ApplicationController
     def song_selector
         @song = Song.find(params[:id])
     end
-    
-
-
 end

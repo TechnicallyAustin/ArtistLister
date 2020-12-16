@@ -30269,3 +30269,335 @@ Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 8
 ActiveRecord::AssociationTypeMismatch (Artist(#70248487332160) expected, got "Bas" which is an instance of String(#70248376417760)):
   
 app/controllers/songs_controller.rb:16:in `create'
+Started GET "/" for ::1 at 2020-12-15 13:20:46 -0700
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#welcome as HTML
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 2.2ms | Allocations: 712)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 59ms (Views: 49.8ms | ActiveRecord: 0.0ms | Allocations: 11786)
+
+
+Started GET "/login" for ::1 at 2020-12-15 14:30:44 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 179.6ms | Allocations: 206599)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 231ms (Views: 193.6ms | ActiveRecord: 1.6ms | Allocations: 221640)
+
+
+Started GET "/signup" for ::1 at 2020-12-15 14:30:49 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1482)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 10.5ms | ActiveRecord: 0.0ms | Allocations: 6277)
+
+
+Started GET "/login" for ::1 at 2020-12-15 14:31:28 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 587)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.0ms | Allocations: 4761)
+
+
+Started POST "/users" for ::1 at 2020-12-15 14:31:34 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"Ch9MzpxcE9nfeLCKoVGjgxysG9ztfNZDiZ26YlOhVmV6yphFbjnM8Diqq97VAIQ+Ght5JrgVvJHK7nZK2KquKA==", "user"=>{"email"=>"technicallyaustin@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Login"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Exists? (1.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "technicallyaustin@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Redirected to http://localhost:3000/signup
+Completed 302 Found in 228ms (ActiveRecord: 1.3ms | Allocations: 5210)
+
+
+Started GET "/signup" for ::1 at 2020-12-15 14:31:34 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1105)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.8ms | ActiveRecord: 0.0ms | Allocations: 5278)
+
+
+Started POST "/users" for ::1 at 2020-12-15 14:31:47 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"EhgAk+JEiYr4mCEmWIx5f24UDTClSypdnHGAnIU4MmhizdQYECFWox9KOnIs3V7CaKNvyvAiQI/fAky0DjPKJQ==", "user"=>{"first_name"=>"Austin", "last_name"=>"Johnson", "email"=>"technicallyaustin@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "technicallyaustin@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+Redirected to http://localhost:3000/signup
+Completed 302 Found in 213ms (ActiveRecord: 0.2ms | Allocations: 3811)
+
+
+Started GET "/signup" for ::1 at 2020-12-15 14:31:47 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1104)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 6.9ms | ActiveRecord: 0.0ms | Allocations: 5270)
+
+
+Started POST "/users" for ::1 at 2020-12-15 14:32:08 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"oTmNbPAcHAh0TuufxQMMqQ3zuOHwCIkf7GCb0TqkDqrR7FnnAnnDIZOc8MuxUisUC0TaG6Vh482vE1f5sa/25w==", "user"=>{"first_name"=>"Austin", "last_name"=>"Johnson", "email"=>"shantel.johnson@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "shantel.johnson@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[36mUser Create (2.3ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["first_name", "Austin"], ["last_name", "Johnson"], ["email", "shantel.johnson@gmail.com"], ["password_digest", "$2a$12$cc8lC/Jw0rr4gznYtuFke.ovbj3RlglccmkuCEk0McyIHhhReyGdy"], ["created_at", "2020-12-15 21:32:08.485104"], ["updated_at", "2020-12-15 21:32:08.485104"]]
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:8:in `create'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.6ms | Allocations: 116)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 219ms (Views: 6.4ms | ActiveRecord: 3.1ms | Allocations: 8208)
+
+
+Started GET "/users/2" for ::1 at 2020-12-15 14:32:18 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:28:in `user_selector'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 12)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 5.8ms | ActiveRecord: 0.2ms | Allocations: 4876)
+
+
+Started GET "/users/3" for ::1 at 2020-12-15 14:32:24 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:28:in `user_selector'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.1ms | Allocations: 1115)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=3):
+  
+app/controllers/users_controller.rb:28:in `user_selector'
+app/controllers/users_controller.rb:17:in `show'
+Started GET "/users/2" for ::1 at 2020-12-15 14:32:28 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:28:in `user_selector'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 12)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 0.1ms | Allocations: 4769)
+
+
+Started GET "/users/1" for ::1 at 2020-12-15 14:32:32 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:28:in `user_selector'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 12)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.1ms | Allocations: 4719)
+
+
+Started GET "/users/1/playlists/new" for ::1 at 2020-12-15 14:32:37 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/users/1/playlists/new"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/users/1/playlists/new" for ::1 at 2020-12-15 14:33:50 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+ActionController::RoutingError (No route matches [GET] "/users/1/playlists/new"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/playlists" for ::1 at 2020-12-15 14:34:03 -0700
+Processing by PlaylistsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:3:in `index'
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 1.2ms | Allocations: 10889)
+
+
+  
+NoMethodError (undefined method `playlists' for #<User:0x00007fa4fea8d310>
+Did you mean?  playlist_songs):
+  
+app/controllers/playlists_controller.rb:4:in `index'
+Started GET "/playlists/new" for ::1 at 2020-12-15 14:34:07 -0700
+Processing by PlaylistsController#new as HTML
+  Rendering playlists/new.html.erb within layouts/application
+  Rendered playlists/new.html.erb within layouts/application (Duration: 4.1ms | Allocations: 3966)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 13.0ms | ActiveRecord: 0.5ms | Allocations: 16023)
+
+
+Started POST "/playlists" for ::1 at 2020-12-15 14:34:26 -0700
+Processing by PlaylistsController#create as HTML
+  Parameters: {"authenticity_token"=>"DIBA5AKD7whnXNuId3b+wRfOyG2rK+mrGEBvBt8XWyJ8VZRv8OYwIYCOwNwDJ9l8EXmql/5Cg3lbM6MuVByjbw==", "playlist"=>{"title"=>"test 3", "song"=>{"name"=>"Mid-day City", "artist"=>"M99", "rating"=>"8"}}, "commit"=>"Create Playlist"}
+[31mUnpermitted parameters: :name, :artist, :rating[0m
+[31mUnpermitted parameter: :title[0m
+  Rendering playlists/new.html.erb within layouts/application
+  Rendered playlists/new.html.erb within layouts/application (Duration: 16.9ms | Allocations: 3293)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 27ms (Views: 23.5ms | ActiveRecord: 0.0ms | Allocations: 9285)
+
+
+Started GET "/" for ::1 at 2020-12-16 11:10:39 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#welcome as HTML
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 1.3ms | Allocations: 221)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 17.3ms | ActiveRecord: 0.0ms | Allocations: 5370)
+
+
+Started GET "/playlists" for ::1 at 2020-12-16 11:10:47 -0700
+Processing by PlaylistsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:3:in `index'
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.2ms | Allocations: 10369)
+
+
+  
+NoMethodError (undefined method `playlists' for #<User:0x00007fa4f7410480>
+Did you mean?  playlist_songs):
+  
+app/controllers/playlists_controller.rb:4:in `index'
+Started GET "/playlists" for ::1 at 2020-12-16 11:11:16 -0700
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PlaylistsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:3:in `index'
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.6ms | Allocations: 10455)
+
+
+  
+NameError (uninitialized constant PlaylistsController::Playlists):
+  
+app/controllers/playlists_controller.rb:4:in `index'
+Started GET "/playlists" for ::1 at 2020-12-16 11:11:26 -0700
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PlaylistsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:3:in `index'
+  Rendering playlists/index.html.erb within layouts/application
+  Rendered playlists/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 82)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 6.4ms | ActiveRecord: 0.7ms | Allocations: 14645)
+
+
+Started GET "/playlists" for ::1 at 2020-12-16 11:13:44 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+ActionView::MissingTemplate (Missing template playlists/playlist, application/playlist with {:locale=>[:en], :formats=>[:html, :text, :js, :css, :ics, :csv, :vcf, :vtt, :png, :jpeg, :gif, :bmp, :tiff, :svg, :mpeg, :mp3, :ogg, :m4a, :webm, :mp4, :otf, :ttf, :woff, :woff2, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip, :gzip], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/Users/austinjohnson/ArtistLister/app/views"
+  * "/Users/austinjohnson/.rvm/gems/ruby-2.6.1/gems/devise-4.7.3/app/views"
+  * "/Users/austinjohnson/.rvm/gems/ruby-2.6.1/gems/actiontext-6.0.3.4/app/views"
+  * "/Users/austinjohnson/.rvm/gems/ruby-2.6.1/gems/actionmailbox-6.0.3.4/app/views"
+):
+  
+app/controllers/playlists_controller.rb:2:in `<class:PlaylistsController>'
+app/controllers/playlists_controller.rb:1:in `<main>'
+Started GET "/playlists" for ::1 at 2020-12-16 11:13:55 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+ActionView::MissingTemplate (Missing template layout/playlist with {:locale=>[:en], :formats=>[:html, :text, :js, :css, :ics, :csv, :vcf, :vtt, :png, :jpeg, :gif, :bmp, :tiff, :svg, :mpeg, :mp3, :ogg, :m4a, :webm, :mp4, :otf, :ttf, :woff, :woff2, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip, :gzip], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/Users/austinjohnson/ArtistLister/app/views"
+  * "/Users/austinjohnson/.rvm/gems/ruby-2.6.1/gems/devise-4.7.3/app/views"
+  * "/Users/austinjohnson/.rvm/gems/ruby-2.6.1/gems/actiontext-6.0.3.4/app/views"
+  * "/Users/austinjohnson/.rvm/gems/ruby-2.6.1/gems/actionmailbox-6.0.3.4/app/views"
+):
+  
+app/controllers/playlists_controller.rb:2:in `<class:PlaylistsController>'
+app/controllers/playlists_controller.rb:1:in `<main>'
+Started GET "/playlists" for ::1 at 2020-12-16 11:14:21 -0700
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  Rendering layouts/playlist.html.erb within layouts/application
+  Rendered layouts/playlist.html.erb within layouts/application (Duration: 0.2ms | Allocations: 130)
+[Webpacker] Everything's up-to-date. Nothing to do
+Processing by PlaylistsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:4:in `index'
+  Rendering playlists/index.html.erb within layouts/application
+  Rendered playlists/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 4.7ms | ActiveRecord: 0.5ms | Allocations: 13843)
+
+
+Started GET "/playlists" for ::1 at 2020-12-16 11:15:28 -0700
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PlaylistsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:4:in `index'
+  Rendering playlists/index.html.erb within layouts/playlist
+  Rendered playlists/index.html.erb within layouts/playlist (Duration: 0.3ms | Allocations: 79)
+Completed 200 OK in 14ms (Views: 1.3ms | ActiveRecord: 0.6ms | Allocations: 10765)
+
+

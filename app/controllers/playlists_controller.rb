@@ -1,7 +1,8 @@
 class PlaylistsController < ApplicationController
+    layout "layouts/playlist"
     def index
         @user = User.find(session[:user_id])
-        @playlists = @user.playlists
+        @playlists = Playlist.all
     end
 
     def show
@@ -15,7 +16,7 @@ class PlaylistsController < ApplicationController
     def create
         @playlist = Playlist.new(playlist_params)
         if @playlist.save 
-            redirect_to @playlist
+            redirect_to :show
         else
             render :new
             #add auto popoluation and errors to new
