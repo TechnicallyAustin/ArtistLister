@@ -1,5 +1,5 @@
 class SongsController < ApplicationController
-    layout 'layouts/songs'
+    #layout 'layouts/songs'
     def index
         @songs = Song.all
     end
@@ -13,12 +13,11 @@ class SongsController < ApplicationController
     end
 
     def create
-        @song = Song.new(song_params)
-        if @song.save 
-            redirect_to :show
-        else
-            render :new 
-        end
+        @song = Song.new
+        @song.artist = Artist.find_or_create_by(name: params[:song][:artist])
+        @song.rating = params[:song][:rating]
+        @song.save
+        byebug
     end
 
     def edit

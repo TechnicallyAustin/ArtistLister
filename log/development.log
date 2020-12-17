@@ -30626,3 +30626,865 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.0ms | Allocations: 1035)
 
 
+Started GET "/songs" for ::1 at 2020-12-16 14:34:29 -0700
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SongsController#index as HTML
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.0ms | Allocations: 4381)
+
+
+  
+ActionView::MissingTemplate (Missing template layouts/songs with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/Users/austinjohnson/ArtistLister/app/views"
+  * "/Users/austinjohnson/.rvm/gems/ruby-2.6.1/gems/actiontext-6.0.3.4/app/views"
+  * "/Users/austinjohnson/.rvm/gems/ruby-2.6.1/gems/actionmailbox-6.0.3.4/app/views"
+):
+  
+actionview (6.0.3.4) lib/action_view/path_set.rb:48:in `find'
+actionview (6.0.3.4) lib/action_view/lookup_context.rb:131:in `find'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:94:in `resolve_layout'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:101:in `resolve_layout'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:80:in `find_layout'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:64:in `render_with_layout'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:56:in `render_template'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:13:in `render'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:61:in `render_template_to_object'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:29:in `render_to_object'
+actionview (6.0.3.4) lib/action_view/rendering.rb:117:in `block in _render_template'
+actionview (6.0.3.4) lib/action_view/base.rb:304:in `in_rendering_context'
+actionview (6.0.3.4) lib/action_view/rendering.rb:116:in `_render_template'
+actionpack (6.0.3.4) lib/action_controller/metal/streaming.rb:218:in `_render_template'
+actionview (6.0.3.4) lib/action_view/rendering.rb:103:in `render_to_body'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:52:in `render_to_body'
+actionpack (6.0.3.4) lib/action_controller/metal/renderers.rb:142:in `render_to_body'
+actionpack (6.0.3.4) lib/abstract_controller/rendering.rb:25:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:36:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+activesupport (6.0.3.4) lib/active_support/core_ext/benchmark.rb:14:in `block in ms'
+/Users/austinjohnson/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/benchmark.rb:308:in `realtime'
+activesupport (6.0.3.4) lib/active_support/core_ext/benchmark.rb:14:in `ms'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+activerecord (6.0.3.4) lib/active_record/railties/controller_runtime.rb:34:in `cleanup_view_runtime'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:43:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/implicit_render.rb:35:in `default_render'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:195:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.4) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/songs/new" for ::1 at 2020-12-16 14:34:33 -0700
+Processing by SongsController#new as HTML
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.7ms | Allocations: 6769)
+
+
+  
+ActionView::MissingTemplate (Missing template layouts/songs with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/Users/austinjohnson/ArtistLister/app/views"
+  * "/Users/austinjohnson/.rvm/gems/ruby-2.6.1/gems/actiontext-6.0.3.4/app/views"
+  * "/Users/austinjohnson/.rvm/gems/ruby-2.6.1/gems/actionmailbox-6.0.3.4/app/views"
+):
+  
+actionview (6.0.3.4) lib/action_view/path_set.rb:48:in `find'
+actionview (6.0.3.4) lib/action_view/lookup_context.rb:131:in `find'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:94:in `resolve_layout'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:101:in `resolve_layout'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:80:in `find_layout'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:64:in `render_with_layout'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:56:in `render_template'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:13:in `render'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:61:in `render_template_to_object'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:29:in `render_to_object'
+actionview (6.0.3.4) lib/action_view/rendering.rb:117:in `block in _render_template'
+actionview (6.0.3.4) lib/action_view/base.rb:304:in `in_rendering_context'
+actionview (6.0.3.4) lib/action_view/rendering.rb:116:in `_render_template'
+actionpack (6.0.3.4) lib/action_controller/metal/streaming.rb:218:in `_render_template'
+actionview (6.0.3.4) lib/action_view/rendering.rb:103:in `render_to_body'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:52:in `render_to_body'
+actionpack (6.0.3.4) lib/action_controller/metal/renderers.rb:142:in `render_to_body'
+actionpack (6.0.3.4) lib/abstract_controller/rendering.rb:25:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:36:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+activesupport (6.0.3.4) lib/active_support/core_ext/benchmark.rb:14:in `block in ms'
+/Users/austinjohnson/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/benchmark.rb:308:in `realtime'
+activesupport (6.0.3.4) lib/active_support/core_ext/benchmark.rb:14:in `ms'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+activerecord (6.0.3.4) lib/active_record/railties/controller_runtime.rb:34:in `cleanup_view_runtime'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:43:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/implicit_render.rb:35:in `default_render'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:195:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.4) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/songs/new" for ::1 at 2020-12-16 14:34:49 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SongsController#new as HTML
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (Duration: 221.8ms | Allocations: 209130)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 254ms (Views: 243.5ms | ActiveRecord: 0.7ms | Allocations: 223944)
+
+
+Started POST "/songs" for ::1 at 2020-12-16 14:35:04 -0700
+Processing by SongsController#create as HTML
+  Parameters: {"authenticity_token"=>"+VWTD3+hnhwDX8fDkdYeFuioN8uimcJHCjwx3qBZzZmJgEeEjcRBNeSN3Jflhzmr7h9VMffwqJVJT/32K1I11A==", "song"=>{"name"=>"Too high to riot", "artist"=>"Bas", "rating"=>"6"}, "commit"=>"Create Song"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 785)
+
+
+  
+ActiveRecord::AssociationTypeMismatch (Artist(#70231821716380) expected, got "Bas" which is an instance of String(#70231729225160)):
+  
+app/controllers/songs_controller.rb:16:in `create'
+Started POST "/songs" for ::1 at 2020-12-16 14:36:51 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SongsController#create as HTML
+  Parameters: {"authenticity_token"=>"+VWTD3+hnhwDX8fDkdYeFuioN8uimcJHCjwx3qBZzZmJgEeEjcRBNeSN3Jflhzmr7h9VMffwqJVJT/32K1I11A==", "song"=>{"name"=>"Too high to riot", "artist"=>"Bas", "rating"=>"6"}, "commit"=>"Create Song"}
+[31mUnpermitted parameter: :artist[0m
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 929)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 27ms (Views: 8.4ms | ActiveRecord: 0.6ms | Allocations: 17085)
+
+
+Started POST "/songs" for ::1 at 2020-12-16 14:39:05 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SongsController#create as HTML
+  Parameters: {"authenticity_token"=>"pptSNeEtF8k5LNs4cJHAC5DPBGEJZmforJAnMUmnDsXWToa+E0jI4N7+wGwEwOe2lnhmm1wPDTrv4+sZwqz2iA==", "song"=>{"name"=>"Too high to riot", "artist"=>"Bas ", "rating"=>"6"}, "commit"=>"Create Song"}
+[31mUnpermitted parameter: :artist[0m
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.8ms | Allocations: 7865)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/controllers/songs_controller.rb:17:in `create'
+Started POST "/songs" for ::1 at 2020-12-16 14:39:39 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SongsController#create as HTML
+  Parameters: {"authenticity_token"=>"pptSNeEtF8k5LNs4cJHAC5DPBGEJZmforJAnMUmnDsXWToa+E0jI4N7+wGwEwOe2lnhmm1wPDTrv4+sZwqz2iA==", "song"=>{"name"=>"Too high to riot", "artist"=>"Bas ", "rating"=>"6"}, "commit"=>"Create Song"}
+[31mUnpermitted parameter: :artist[0m
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:17:in `create'
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 923)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 31ms (Views: 7.8ms | ActiveRecord: 1.2ms | Allocations: 17940)
+
+
+Started POST "/songs" for ::1 at 2020-12-16 14:39:41 -0700
+Processing by SongsController#create as HTML
+  Parameters: {"authenticity_token"=>"/PWpD1vsbTxeD+4UXM8i0zqdRqp6QCFA2S+DPwcgHUeMIH2EqYmyFbnd9UAongVuPCokUC8pS5KaXE8XjCvlCg==", "song"=>{"name"=>"Too high to riot", "artist"=>"Bas", "rating"=>"6"}, "commit"=>"Create Song"}
+[31mUnpermitted parameter: :artist[0m
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:17:in `create'
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 907)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 6.9ms | ActiveRecord: 0.1ms | Allocations: 7185)
+
+
+Started POST "/songs" for ::1 at 2020-12-16 14:40:39 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SongsController#create as HTML
+  Parameters: {"authenticity_token"=>"XLmgCzpv0vvmJs8D/jeXfpKSDYv16X2EBIU4bdjeoEcsbHSAyAoN0gH01FeKZrDDlCVvcaCAF1ZH9vRFU9VYCg==", "song"=>{"name"=>"Too high to riot", "artist"=>"Bas", "rating"=>"6"}, "commit"=>"Create Song"}
+[31mUnpermitted parameter: :artist[0m
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:17:in `create'
+Completed 500 Internal Server Error in 149749ms (ActiveRecord: 1.2ms | Allocations: 150618)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/songs_controller.rb:19:in `create'
+Started POST "/songs" for ::1 at 2020-12-16 14:43:16 -0700
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SongsController#create as HTML
+  Parameters: {"authenticity_token"=>"XLmgCzpv0vvmJs8D/jeXfpKSDYv16X2EBIU4bdjeoEcsbHSAyAoN0gH01FeKZrDDlCVvcaCAF1ZH9vRFU9VYCg==", "song"=>{"name"=>"Too high to riot", "artist"=>"Bas", "rating"=>"6"}, "commit"=>"Create Song"}
+[31mUnpermitted parameter: :artist[0m
+  [1m[36mArtist Load (1.0ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."name" = ? LIMIT ?[0m  [["name", "Bas"], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:17:in `create'
+Completed 500 Internal Server Error in 27700ms (ActiveRecord: 17.6ms | Allocations: 1826305)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/songs_controller.rb:19:in `create'
+Started GET "/songs/new" for ::1 at 2020-12-16 14:43:56 -0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SongsController#new as HTML
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (Duration: 158.5ms | Allocations: 209284)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 209ms (Views: 183.2ms | ActiveRecord: 1.8ms | Allocations: 227827)
+
+
+Started POST "/songs" for ::1 at 2020-12-16 14:44:05 -0700
+Processing by SongsController#create as HTML
+  Parameters: {"authenticity_token"=>"UaJDCDvVeWyczxn9WHtalVKqoEQo6MpAsLDn2MvXwt4hd5eDybCmRXsdAqksKn0oVB3Cvn2BoJLzwyvwQNw6kw==", "song"=>{"name"=>"Night Job", "artist"=>"Bas", "rating"=>"8"}, "commit"=>"Create Song"}
+[31mUnpermitted parameter: :artist[0m
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."name" = ? LIMIT ?[0m  [["name", "Bas"], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:17:in `create'
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 924)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 9.0ms | ActiveRecord: 0.7ms | Allocations: 10612)
+
+
+Started POST "/songs" for ::1 at 2020-12-16 14:46:21 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SongsController#create as HTML
+  Parameters: {"authenticity_token"=>"+MUZwGaWoT3Kzq+sfCWFClrYXl7o+xcRqTrIcNtFY0GIEM1LlPN+FC0ctPgIdKK3XG88pL2SfcPqSQRYUE6bDA==", "song"=>{"name"=>"Night Job", "artist"=>"Bas", "rating"=>"8"}, "commit"=>"Create Song"}
+[31mUnpermitted parameter: :artist[0m
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:17:in `create'
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1148)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 34ms (Views: 11.6ms | ActiveRecord: 1.1ms | Allocations: 18622)
+
+
+Started GET "/artiast/1" for ::1 at 2020-12-16 14:46:49 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/artiast/1"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/artist/1" for ::1 at 2020-12-16 14:46:53 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/artist/1"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/artists/1" for ::1 at 2020-12-16 14:47:00 -0700
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artists_controller.rb:40:in `artist_selector'
+Completed 404 Not Found in 4ms (ActiveRecord: 0.5ms | Allocations: 1422)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Artist with 'id'=1):
+  
+app/controllers/artists_controller.rb:40:in `artist_selector'
+app/controllers/artists_controller.rb:13:in `show'
+Started GET "/artists/1" for ::1 at 2020-12-16 14:47:24 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/artists_controller.rb:40:in `artist_selector'
+Completed 404 Not Found in 5ms (ActiveRecord: 0.6ms | Allocations: 2992)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Artist with 'id'=1):
+  
+app/controllers/artists_controller.rb:40:in `artist_selector'
+app/controllers/artists_controller.rb:13:in `show'
+Started GET "/songs/new" for ::1 at 2020-12-16 14:47:32 -0700
+Processing by SongsController#new as HTML
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1563)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 11.2ms | ActiveRecord: 0.5ms | Allocations: 11793)
+
+
+Started POST "/songs" for ::1 at 2020-12-16 14:47:38 -0700
+Processing by SongsController#create as HTML
+  Parameters: {"authenticity_token"=>"7WlTfwFeZCJ8VMXaghOnCCo7W1fsfuBVVgJ1O15Q2cadvIf08zu7C5uG3o72QoC1LIw5rbkXiocVcbkT1Vshiw==", "song"=>{"name"=>"Night Job", "artist"=>"Bas", "rating"=>"8"}, "commit"=>"Create Song"}
+[31mUnpermitted parameter: :artist[0m
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:17:in `create'
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 916)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 7.4ms | ActiveRecord: 0.2ms | Allocations: 14837)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT "artists".* FROM "artists" ORDER BY "artists"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT "artists".* FROM "artists" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" ORDER BY "songs"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/songs/new" for ::1 at 2020-12-16 14:50:00 -0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/Users/austinjohnson/ArtistLister/app/controllers/songs_controller.rb:18: syntax error, unexpected if, expecting ')'
+        if @song.save 
+        ^~):
+  
+app/controllers/songs_controller.rb:18: syntax error, unexpected if, expecting ')'
+app/controllers/songs_controller.rb:18: syntax error, unexpected if, expecting ')'
+app/controllers/songs_controller.rb:18: syntax error, unexpected if, expecting ')'
+Started GET "/songs/new" for ::1 at 2020-12-16 14:50:19 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SongsController#new as HTML
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (Duration: 99.8ms | Allocations: 209135)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 130ms (Views: 117.9ms | ActiveRecord: 0.6ms | Allocations: 225156)
+
+
+Started POST "/songs" for ::1 at 2020-12-16 14:50:25 -0700
+Processing by SongsController#create as HTML
+  Parameters: {"authenticity_token"=>"7UlpWKUjt8qPWGFW+a5WTvhhShmBgU6QwvRX8aiZig6dnL3TV0Zo42iKegKN/3Hz/tYo49ToJEKBh5vZI5JyQw==", "song"=>{"name"=>"Too high to riot", "artist"=>"bas", "rating"=>"8"}, "commit"=>"Create Song"}
+[31mUnpermitted parameter: :artist[0m
+[31mUnpermitted parameters: :authenticity_token, :song, :commit[0m
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.3ms | Allocations: 2112)
+
+
+  
+TypeError (can't cast ActionController::Parameters):
+  
+app/controllers/songs_controller.rb:17:in `create'
+Started GET "/songs/new" for ::1 at 2020-12-16 15:00:09 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SongsController#new as HTML
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 906)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.0ms | Allocations: 5059)
+
+
+Started POST "/songs" for ::1 at 2020-12-16 15:01:10 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SongsController#create as HTML
+  Parameters: {"authenticity_token"=>"YzzhTcFBs7SqHW9Ypmsg3jcK715jAR7fpNuMP9i9ItcT6TXGMyRsnU3PdAzSOgdjMb2NpDZodA3nqEAXU7bamg==", "song"=>{"name"=>"Night Job", "artist"=>"Bas", "rating"=>"9"}, "commit"=>"Create Song"}
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.5ms | Allocations: 8296)
+
+
+  
+ActiveRecord::AssociationTypeMismatch (Artist(#70296848159040) expected, got "Bas" which is an instance of String(#70296845794760)):
+  
+app/controllers/songs_controller.rb:16:in `create'
+Started POST "/songs" for ::1 at 2020-12-16 15:01:20 -0700
+Processing by SongsController#create as HTML
+  Parameters: {"authenticity_token"=>"YzzhTcFBs7SqHW9Ypmsg3jcK715jAR7fpNuMP9i9ItcT6TXGMyRsnU3PdAzSOgdjMb2NpDZodA3nqEAXU7bamg==", "song"=>{"name"=>"Night Job", "artist"=>"1", "rating"=>"9"}, "commit"=>"Create Song"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 788)
+
+
+  
+ActiveRecord::AssociationTypeMismatch (Artist(#70296848159040) expected, got "1" which is an instance of String(#70296845794760)):
+  
+app/controllers/songs_controller.rb:16:in `create'
+Started POST "/songs" for ::1 at 2020-12-16 15:02:27 -0700
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SongsController#create as HTML
+  Parameters: {"authenticity_token"=>"YzzhTcFBs7SqHW9Ypmsg3jcK715jAR7fpNuMP9i9ItcT6TXGMyRsnU3PdAzSOgdjMb2NpDZodA3nqEAXU7bamg==", "song"=>{"name"=>"Night Job", "artist"=>"1", "rating"=>"9"}, "commit"=>"Create Song"}
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.6ms | Allocations: 8279)
+
+
+  
+ActiveRecord::AssociationTypeMismatch (Artist(#70296868419020) expected, got "1" which is an instance of String(#70296845794760)):
+  
+app/controllers/songs_controller.rb:16:in `create'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" ORDER BY "songs"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists" ORDER BY "artists"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/songs/new" for ::1 at 2020-12-16 15:20:56 -0700
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SongsController#new as HTML
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (Duration: 141.2ms | Allocations: 209522)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 191ms (Views: 162.4ms | ActiveRecord: 0.7ms | Allocations: 227718)
+
+
+Started POST "/songs" for ::1 at 2020-12-16 15:21:03 -0700
+Processing by SongsController#create as HTML
+  Parameters: {"authenticity_token"=>"t4/mkhLViKpFJGg9mLiVsepLzNNtN5AtLS93WV8k9X3HWjIZ4LBXg6L2c2ns6bIM7PyuKThe+v9uXLtx1C8NMA==", "song"=>{"name"=>"Night Job", "artist"=>"Bas", "rating"=>"8"}, "commit"=>"Create Song"}
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 923)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 7.6ms | ActiveRecord: 0.5ms | Allocations: 13252)
+
+
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" ORDER BY "songs"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started GET "/songs/new" for ::1 at 2020-12-16 15:24:19 -0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SongsController#new as HTML
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (Duration: 139.0ms | Allocations: 209338)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 183ms (Views: 160.3ms | ActiveRecord: 0.5ms | Allocations: 227824)
+
+
+Started POST "/songs" for ::1 at 2020-12-16 15:24:26 -0700
+Processing by SongsController#create as HTML
+  Parameters: {"authenticity_token"=>"EdBBBRM05QBBX8bndJHiWWok58jWH8hLAh+ePG8q/lthBZWO4VE6KaaN3bMAwMXkbJOFMoN2oplBbFIU5CEGFg==", "song"=>{"name"=>"Night Job", "artist"=>"Bas", "rating"=>"9"}, "commit"=>"Create Song"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:17:in `create'
+Completed 500 Internal Server Error in 124ms (ActiveRecord: 0.8ms | Allocations: 63484)
+
+
+  
+NoMethodError (undefined method `redirect_to_song_path' for #<SongsController:0x00007fa133015d20>
+Did you mean?  redirect_to):
+  
+app/controllers/songs_controller.rb:20:in `create'
+Started POST "/songs" for ::1 at 2020-12-16 15:24:37 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SongsController#create as HTML
+  Parameters: {"authenticity_token"=>"EdBBBRM05QBBX8bndJHiWWok58jWH8hLAh+ePG8q/lthBZWO4VE6KaaN3bMAwMXkbJOFMoN2oplBbFIU5CEGFg==", "song"=>{"name"=>"Night Job", "artist"=>"Bas", "rating"=>"9"}, "commit"=>"Create Song"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:17:in `create'
+Completed 500 Internal Server Error in 98ms (ActiveRecord: 1.3ms | Allocations: 70220)
+
+
+  
+NoMethodError (undefined method `redirect_to_songs_path' for #<SongsController:0x00007fa1348ecce0>
+Did you mean?  redirect_back):
+  
+app/controllers/songs_controller.rb:20:in `create'
+Started POST "/songs" for ::1 at 2020-12-16 15:24:52 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SongsController#create as HTML
+  Parameters: {"authenticity_token"=>"EdBBBRM05QBBX8bndJHiWWok58jWH8hLAh+ePG8q/lthBZWO4VE6KaaN3bMAwMXkbJOFMoN2oplBbFIU5CEGFg==", "song"=>{"name"=>"Night Job", "artist"=>"Bas", "rating"=>"9"}, "commit"=>"Create Song"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:17:in `create'
+Redirected to 
+Completed 500 Internal Server Error in 243ms (ActiveRecord: 1.3ms | Allocations: 118212)
+
+
+  
+NoMethodError (undefined method `show_url' for #<SongsController:0x00007fa12f3ef710>
+Did you mean?  song_url):
+  
+app/controllers/songs_controller.rb:20:in `create'
+Started POST "/songs" for ::1 at 2020-12-16 15:26:23 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SongsController#create as HTML
+  Parameters: {"authenticity_token"=>"EdBBBRM05QBBX8bndJHiWWok58jWH8hLAh+ePG8q/lthBZWO4VE6KaaN3bMAwMXkbJOFMoN2oplBbFIU5CEGFg==", "song"=>{"name"=>"Night Job", "artist"=>"Bas", "rating"=>"9"}, "commit"=>"Create Song"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:17:in `create'
+  Rendering songs/show.html.erb within layouts/application
+  Rendered songs/show.html.erb within layouts/application (Duration: 7.3ms | Allocations: 3310)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 1.2ms | Allocations: 22170)
+
+
+  
+ActionView::Template::Error (undefined method `artist_name' for #<Song:0x00007fa12be5e858>
+Did you mean?  artist_was):
+    1: <h1><%=@song.name%> </h1>
+    2: <h2>By: <%=@song.artist_name%></h2>
+  
+app/views/songs/show.html.erb:2
+app/controllers/songs_controller.rb:20:in `create'
+Started POST "/songs" for ::1 at 2020-12-16 15:28:38 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SongsController#create as HTML
+  Parameters: {"authenticity_token"=>"EdBBBRM05QBBX8bndJHiWWok58jWH8hLAh+ePG8q/lthBZWO4VE6KaaN3bMAwMXkbJOFMoN2oplBbFIU5CEGFg==", "song"=>{"name"=>"Night Job", "artist"=>"Bas", "rating"=>"9"}, "commit"=>"Create Song"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:17:in `create'
+  Rendering songs/show.html.erb within layouts/application
+  Rendered songs/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 9)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 33ms (Views: 6.9ms | ActiveRecord: 1.4ms | Allocations: 22437)
+
+
+Started GET "/songs" for ::1 at 2020-12-16 15:28:59 -0700
+Processing by SongsController#index as HTML
+  Rendering songs/index.html.erb within layouts/application
+  Rendered songs/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 81)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.0ms | Allocations: 5181)
+
+
+Started GET "/songs/1" for ::1 at 2020-12-16 15:29:06 -0700
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:39:in `song_selector'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms | Allocations: 1228)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Song with 'id'=1):
+  
+app/controllers/songs_controller.rb:39:in `song_selector'
+app/controllers/songs_controller.rb:8:in `show'
+Started GET "/songs/new" for ::1 at 2020-12-16 15:29:10 -0700
+Processing by SongsController#new as HTML
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1142)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 9.7ms | ActiveRecord: 0.0ms | Allocations: 5427)
+
+
+Started POST "/songs" for ::1 at 2020-12-16 15:29:21 -0700
+Processing by SongsController#create as HTML
+  Parameters: {"authenticity_token"=>"cJ6NnTTrJ2wmjqTT7PrNroi9vINyZYSLYeQZhRsBGWIAS1kWxo74RcFcv4eYq+oTjgreeScM7lkil9WtkArhLw==", "song"=>{"name"=>"Midnight City", "artist"=>"M83", "rating"=>"9"}, "commit"=>"Create Song"}
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:17:in `create'
+  Rendering songs/show.html.erb within layouts/application
+  Rendered songs/show.html.erb within layouts/application (Duration: 4.3ms | Allocations: 2967)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.2ms | Allocations: 6453)
+
+
+  
+ActionView::Template::Error (undefined method `title' for #<Song:0x00007fa129d8e6c8>):
+    1: <h1><%=@song.title%> </h1>
+    2: <h2>By: <%=@song.artist_name%></h2>
+  
+app/views/songs/show.html.erb:1
+app/controllers/songs_controller.rb:20:in `create'
+Started GET "/songs/new" for ::1 at 2020-12-16 15:29:38 -0700
+Processing by SongsController#new as HTML
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1133)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 12.2ms | ActiveRecord: 0.0ms | Allocations: 6220)
+
+
+Started POST "/songs" for ::1 at 2020-12-16 15:29:44 -0700
+Processing by SongsController#create as HTML
+  Parameters: {"authenticity_token"=>"sEj+MQ3lviznVeWhNAAuNHieJK3K9+JahhEryM4pGJvAnSq6/4BhBQCH/vVAUQmJfilGV5+eiIjFYufgRSLg1g==", "song"=>{"name"=>"Night Job", "artist"=>"Bas", "rating"=>"4"}, "commit"=>"Create Song"}
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:17:in `create'
+  Rendering songs/show.html.erb within layouts/application
+  Rendered songs/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 118)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 6.6ms | ActiveRecord: 0.2ms | Allocations: 7232)
+
+
+Started GET "/songs/new" for ::1 at 2020-12-16 15:36:32 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+SyntaxError (/Users/austinjohnson/ArtistLister/app/controllers/songs_controller.rb:46: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/songs_controller.rb:46: syntax error, unexpected end-of-input, expecting end
+app/controllers/songs_controller.rb:46: syntax error, unexpected end-of-input, expecting end
+app/controllers/songs_controller.rb:46: syntax error, unexpected end-of-input, expecting end
+Started GET "/songs/new" for ::1 at 2020-12-16 15:37:17 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SongsController#new as HTML
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 2385)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 8.6ms | ActiveRecord: 0.5ms | Allocations: 12921)
+
+
+Started POST "/songs" for ::1 at 2020-12-16 15:37:24 -0700
+Processing by SongsController#create as HTML
+  Parameters: {"authenticity_token"=>"yvaE0DInqdZjDcWCijZRvfRgslAspSSvyrwK+uyc6bK6I1BbwEJ2/4Tf3tb+Z3YA8tfQqnnMTn2Jz8bSZ5cR/w==", "song"=>{"name"=>"Night Job", "artist"=>"Bas", "rating"=>"5"}, "commit"=>"Create Song"}
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:17:in `create'
+  Rendering songs/show.html.erb within layouts/application
+  Rendered songs/show.html.erb within layouts/application (Duration: 0.0ms | Allocations: 5)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 34ms (Views: 5.8ms | ActiveRecord: 0.8ms | Allocations: 14272)
+
+
+Started GET "/songs/new" for ::1 at 2020-12-16 15:37:57 -0700
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SongsController#new as HTML
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (Duration: 137.5ms | Allocations: 209497)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 181ms (Views: 158.4ms | ActiveRecord: 0.7ms | Allocations: 227704)
+
+
+Started POST "/songs" for ::1 at 2020-12-16 15:38:05 -0700
+Processing by SongsController#create as HTML
+  Parameters: {"authenticity_token"=>"0At0sg9KNET+8ipNMnfYIonKUnEb8F8ASSFKfBFjPZOg3qA5/S/rbRkgMRlGJv+fj30wi06ZNdIKUoZUmmjF3g==", "song"=>{"name"=>"Night Job", "artist"=>"Bas", "rating"=>"6"}, "commit"=>"Create Song"}
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:17:in `create'
+Completed 500 Internal Server Error in 181824ms (ActiveRecord: 0.9ms | Allocations: 53875)
+
+
+Started GET "/songs/new" for ::1 at 2020-12-16 15:41:07 -0700
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SongsController#new as HTML
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (Duration: 38.5ms | Allocations: 375941)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 287ms (Views: 274.5ms | ActiveRecord: 0.0ms | Allocations: 3053047)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/songs_controller.rb:20:in `create'
+Started GET "/songs/new" for ::1 at 2020-12-16 15:41:23 -0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SongsController#new as HTML
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (Duration: 137.7ms | Allocations: 209503)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 180ms (Views: 157.3ms | ActiveRecord: 1.3ms | Allocations: 227784)
+
+
+Started POST "/songs" for ::1 at 2020-12-16 15:41:34 -0700
+Processing by SongsController#create as HTML
+  Parameters: {"authenticity_token"=>"KbQlFhMgKAwE2OA/a+6WWs4wHoO28r4C0kEO+cc8HPhZYfGd4UX3JeMK+2sfv7HnyId8eeOb1NCRMsLRTDfktQ==", "song"=>{"name"=>"Night Job", "artist"=>"Bas", "rating"=>"1"}, "commit"=>"Create Song"}
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:17:in `create'
+Completed 500 Internal Server Error in 148697ms (ActiveRecord: 0.9ms | Allocations: 533051)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/songs_controller.rb:20:in `create'
+Started GET "/songs/new" for ::1 at 2020-12-16 15:44:13 -0700
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SongsController#new as HTML
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (Duration: 46.3ms | Allocations: 581383)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 221ms (Views: 122.6ms | ActiveRecord: 7.9ms | Allocations: 2294869)
+
+
+Started POST "/songs" for ::1 at 2020-12-16 15:44:20 -0700
+Processing by SongsController#create as HTML
+  Parameters: {"authenticity_token"=>"kUtFdTdZmr98xGg/qgjymHByw3C1WVdAcgr1VdImFRPhnpH+xTxFlpsWc2veWdUldsWhiuAwPZIxeTl9WS3tXg==", "song"=>{"name"=>"Night Job", "artist"=>"Bas", "rating"=>"5"}, "commit"=>"Create Song"}
+  [1m[36mArtist Load (0.9ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."name" = ? LIMIT ?[0m  [["name", "Bas"], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:17:in `create'
+Completed 500 Internal Server Error in 55452ms (ActiveRecord: 9.4ms | Allocations: 1414268)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/songs_controller.rb:20:in `create'
+Started GET "/songs/new" for ::1 at 2020-12-16 15:45:28 -0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SongsController#new as HTML
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (Duration: 125.2ms | Allocations: 209287)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 157ms (Views: 144.0ms | ActiveRecord: 0.5ms | Allocations: 227885)
+
+
+Started POST "/songs" for ::1 at 2020-12-16 15:45:39 -0700
+Processing by SongsController#create as HTML
+  Parameters: {"authenticity_token"=>"3S6MFcmE+DFnPAH4EhNtWa1FcLVBcsRcxStFxe/Q0vat+1ieO+EnGIDuGqxmQkrkq/ISTxQbro6GWIntZNsquw==", "song"=>{"name"=>"Night Job", "artist"=>"Bas", "rating"=>"9"}, "commit"=>"Create Song"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."name" = ? LIMIT ?[0m  [["name", "Bas"], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:17:in `create'
+  [1m[36mCACHE Artist Load (0.0ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."name" = ? LIMIT ?[0m  [["name", "Bas"], ["LIMIT", 1]]
+  ↳ (byebug):1:in `create'
+  [1m[36mCACHE Artist Load (0.0ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."name" = ? LIMIT ?[0m  [["name", "Bas"], ["LIMIT", 1]]
+  ↳ (byebug):1:in `create'
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists" LIMIT ?[0m  [["LIMIT", 11]]
+  ↳ app/controllers/songs_controller.rb:21:in `create'
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists" ORDER BY "artists"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ (byebug):1:in `create'
+Completed 500 Internal Server Error in 20685984ms (ActiveRecord: 1.3ms | Allocations: 175225)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/songs_controller.rb:21:in `create'

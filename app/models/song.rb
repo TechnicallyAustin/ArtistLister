@@ -8,4 +8,9 @@ class Song < ApplicationRecord
     validates :rating, presence: true
     # Write a validation that will Limit the rating value from 1-10
 
+    def artist_name
+        self.artist.name
+    end
+    
+
 end
