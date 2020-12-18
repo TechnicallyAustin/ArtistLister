@@ -10,6 +10,53 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2020_12_15_030646) do
+
+  create_table "artists", force: :cascade do |t|
+    t.string "name"
+    t.string "song"
+    t.integer "playlists_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["playlists_id"], name: "index_artists_on_playlists_id"
+  end
+
+  create_table "playlist_songs", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "playlist_id"
+    t.index ["playlist_id"], name: "index_playlist_songs_on_playlist_id"
+    t.index ["user_id"], name: "index_playlist_songs_on_user_id"
+  end
+
+  create_table "playlists", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.string "song"
+    t.string "artist"
+    t.integer "user_id_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id_id"], name: "index_playlists_on_user_id_id"
+  end
+
+  create_table "songs", force: :cascade do |t|
+    t.string "name"
+    t.string "artist"
+    t.integer "rating"
+    t.integer "artist_id"
+    t.integer "playlist_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.string "email"
+    t.string "password"
+    t.string "password_digest"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
 end
