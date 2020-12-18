@@ -19,4 +19,6 @@ Rails.application.routes.draw do
   get 'signup', to: 'users#new'
   post 'signup', to: 'users#create'
 
+  get '/auth/facebook/callback', to: 'sessions#create'
+
 end

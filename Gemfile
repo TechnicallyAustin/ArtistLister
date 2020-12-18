@@ -28,7 +28,7 @@ gem 'faker', '~> 2.15', '>= 2.15.1'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 # allows for facebook login
-#gem 'omniauth-facebook', '~> 8.0'
+gem 'omniauth-facebook', '~> 8.0'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false

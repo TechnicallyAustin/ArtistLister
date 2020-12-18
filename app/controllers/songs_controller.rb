@@ -13,17 +13,20 @@ class SongsController < ApplicationController
     end
 
     def create
-        @song = Song.new
-        @song.artist = Artist.find_or_create_by(name: params[:song][:artist])
-        @song.rating = params[:song][:rating]
-        @song.save
+        @song = Song.new(song_params)
+        #@song = Song.new(name: params[:song][:name])
+        #@song.artist = Artist.find_or_create_by(name: params[:song][:artist])
+        #@song.rating = params[:song][:rating]
         byebug
+        @song.save
+        #byebug
+        redirect_to song_path(@song)
     end
 
     def edit
         @song = Song.Find(params[:id])
         @song.update(song_params(:rating))
-        redirect_to_song_path(@song)
+        redirect_to song_path(@song)
      end
 
     def delete
