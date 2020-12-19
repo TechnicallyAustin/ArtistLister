@@ -1,1 +1,4 @@
-<h1> Testing the NEst</h1>
+<h1><%=@playlist.title%></h1>
+<h2><%=@playlist.description%></h2>
+
+<%= link_to "Add Songs", new_playlist_song_path(@playlist) %>

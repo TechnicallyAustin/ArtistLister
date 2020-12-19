@@ -14,9 +14,9 @@ class PlaylistsController < ApplicationController
     end
 
     def create
-        @playlist = Playlist.new(playlist_params)
+        @playlist = Playlist.create(playlist_params)
         if @playlist.save 
-            redirect_to :show
+        redirect_to @playlist 
         else
             render :new
             #add auto popoluation and errors to new
@@ -37,12 +37,7 @@ class PlaylistsController < ApplicationController
     private
     
     def playlist_params
-        params.require(:playlist).permit(:description, song: [
-            title: [],
-            artist: [],
-            rating: []
-        ]
-        )
+        params.require(:playlist).permit(:title, :description)
     end
 
     def playlist_selector

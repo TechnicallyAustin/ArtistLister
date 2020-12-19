@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :playlist_songs
+  #resources :playlist_songs
   get 'sessions/new'
   get 'sessions/create'
   get 'sessions/login'
@@ -8,6 +8,11 @@ Rails.application.routes.draw do
   resources :artists do
     resources :songs, only: [:index, :show, :new, :create, :edit ]
   end
+
+  resources :playlists do
+    resources :songs, only: [:index, :new, :create, :edit]
+  end
+
   resources :songs
   resources :playlists
   resources :users 

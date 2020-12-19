@@ -13,10 +13,10 @@ class SongsController < ApplicationController
     end
 
     def create
-        @song = Song.new(song_params)
-        #@song = Song.new(name: params[:song][:name])
-        #@song.artist = Artist.find_or_create_by(name: params[:song][:artist])
-        #@song.rating = params[:song][:rating]
+        @song = Song.create(song_params)
+        @song.artist_id = Artist.find_or_create_by(name: params[:song][artist_name])
+        #@song.artist = Artist.find_or_create_by(name: params["song"]["artist_name"])
+        #@song.rating = params["song"]["rating"]
         byebug
         @song.save
         #byebug
@@ -35,7 +35,7 @@ class SongsController < ApplicationController
     private
 
     def song_params
-        params.require(:song).permit(:name, :artist, :rating)
+        params.require(:song).permit(:name, :artist_name, :rating)
     end
 
     def song_selector

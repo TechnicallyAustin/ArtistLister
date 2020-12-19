@@ -1,4 +1,4 @@
-class PlaylistSongs < ApplicationRecord 
+class PlaylistSong < ApplicationRecord 
     def index 
     end
 

@@ -6,10 +6,14 @@ class Playlist < ApplicationRecord
     # Validations
     validates :title, presence: true
     validates :description, presence: true
-    validates :song, presence: true
-    validates :artist, presence: true 
+
+
 
 
     #methods
+    def artist_attributes=(artist)
+        self.artist = Artist.find_or_create_by(name: artist[:name])
+        self.artist.update(artist)
+    end
     
 end
