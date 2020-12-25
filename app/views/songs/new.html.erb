@@ -1,5 +1,7 @@
 <h1>Create a New Song  </h1>
 <%=form_for @song do |t|%>
+
+
 <%= t.label :name %>
 <%= t.text_field :name %>
 
@@ -10,6 +12,6 @@
 <%=t.number_field :rating%>
 
 
-<%= t.submit%>
 
+<%= t.submit%>
 <%end%>
