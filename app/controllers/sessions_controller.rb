@@ -35,8 +35,9 @@ class SessionsController < ApplicationController
   def welcome
   end
   
-  def logout
+  def destroy
     session.delete :email
+    redirect_to "/"
   end
 
   private

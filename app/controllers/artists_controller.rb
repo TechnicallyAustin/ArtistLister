@@ -5,6 +5,7 @@ class ArtistsController < ApplicationController
     #skips the before action for the specififed routes
     skip_before_action :require_login, only: [:index]
        layout 'layouts/songs'
+
     def index
         @artists = Artist.all
     end
@@ -19,7 +20,8 @@ class ArtistsController < ApplicationController
 
     def create
         @artist = Artist.new(artist_params)
-        if @artist.save
+        if @artist.valid
+            @artist.save
             redirect_to :show
         else
             redirect_to :new
