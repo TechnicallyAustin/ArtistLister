@@ -37607,3 +37607,49 @@ Processing by SongsController#create as HTML
   Parameters: {"authenticity_token"=>"ap2QwdwKDTeAkcGTziNMGfO3tiZPEPRjUlVctBQXMyVHLfwDHr6Tt41QGWI4RfYRHXnz/MHIUlvx2Zvl8DJdGA==", "song"=>{"name"=>"Night Job", "artist_name"=>"Bas", "rating"=>"5"}, "commit"=>"Create Song"}
   [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."name" = ? LIMIT ?[0m  [["name", "Bas"], ["LIMIT", 1]]
   ↳ (pry):2:in `create'
+Started GET "/" for ::1 at 2021-04-28 11:20:01 -0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#welcome as HTML
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 1.3ms | Allocations: 805)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 40ms (Views: 34.7ms | ActiveRecord: 0.0ms | Allocations: 12788)
+
+
+Started GET "/auth/facebook" for ::1 at 2021-04-28 11:20:02 -0700
+Started GET "/auth/facebook" for ::1 at 2021-04-28 11:20:02 -0700
+Started GET "/auth/facebook/callback?code=AQCxxYDznli3PGhgrcOqMZwNZpE47JcHF8iyJt3U2cvlJtRD2TiMBY5S3cEwpQF-3FfOhdZ9KhDtvL7YM-k7_uwbt0REnChIEd3v1n9WNI94CMeRUMd5e71rX4ZO3SfZHBJEYqmoTZPMk7hH1KdErC5UjY1nxnqriECgQ9oOrN0SPZZuosatnqKDYRWV5oovfV8AlhLegCvxo3qBX7fYmpwF1EBRllrtKycHtPSpqATfOZbWfGCyzkl00Z7myEELA_s3JX5ujLq0PMjzHs2F_QwWdoD3u4ow_uzjzRuYbFCNQh9q5j7b6Npdh0DgbU13s_M&state=a6fcc32a8a88509e767b7ad27a101ff9e8a0c6b479eb7f17" for ::1 at 2021-04-28 11:20:03 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"AQCxxYDznli3PGhgrcOqMZwNZpE47JcHF8iyJt3U2cvlJtRD2TiMBY5S3cEwpQF-3FfOhdZ9KhDtvL7YM-k7_uwbt0REnChIEd3v1n9WNI94CMeRUMd5e71rX4ZO3SfZHBJEYqmoTZPMk7hH1KdErC5UjY1nxnqriECgQ9oOrN0SPZZuosatnqKDYRWV5oovfV8AlhLegCvxo3qBX7fYmpwF1EBRllrtKycHtPSpqATfOZbWfGCyzkl00Z7myEELA_s3JX5ujLq0PMjzHs2F_QwWdoD3u4ow_uzjzRuYbFCNQh9q5j7b6Npdh0DgbU13s_M", "state"=>"a6fcc32a8a88509e767b7ad27a101ff9e8a0c6b479eb7f17"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 959)
+
+
+  
+NoMethodError (undefined method `find_or_create_by' for nil:NilClass):
+  
+app/controllers/sessions_controller.rb:8:in `create'
+Started GET "/auth/facebook" for ::1 at 2021-04-28 11:22:52 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/auth/facebook" for ::1 at 2021-04-28 11:22:52 -0700
+Started GET "/auth/facebook/callback?code=AQDWNJ1AEyYSzpnRXwb1dX4VBJmthnZiR0eLdPRrYijXP72jCqrTS1d-I92cPdMX5tkl-WLk3cNSoCjKB9xh9a45sdTYJTh_-6GiqQYbJ4PYaz_N9ONPQYkAUqIy-tphxl-aw4VDc39taQi40JoSfQPLPsYngpZMxwSAu9REa1D4fzdcJ0dYWqZ5JrRZnx6LitKm2e_A_bdv7mULacL_yj2iWOKKaMRgJ8XmrXjIhQlr0jEMU0BG5MuXvtcUfoMmjMbQpnIh6ubyYgX67Pcw72Ysj0hfa1e3XNNnQbSfoOffmYNG-0JwJj-bvYoXo-EckqI&state=8a12dc96d26701bb2d8649dad0e1d03892d833a95a6af3d6" for ::1 at 2021-04-28 11:22:52 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"AQDWNJ1AEyYSzpnRXwb1dX4VBJmthnZiR0eLdPRrYijXP72jCqrTS1d-I92cPdMX5tkl-WLk3cNSoCjKB9xh9a45sdTYJTh_-6GiqQYbJ4PYaz_N9ONPQYkAUqIy-tphxl-aw4VDc39taQi40JoSfQPLPsYngpZMxwSAu9REa1D4fzdcJ0dYWqZ5JrRZnx6LitKm2e_A_bdv7mULacL_yj2iWOKKaMRgJ8XmrXjIhQlr0jEMU0BG5MuXvtcUfoMmjMbQpnIh6ubyYgX67Pcw72Ysj0hfa1e3XNNnQbSfoOffmYNG-0JwJj-bvYoXo-EckqI", "state"=>"8a12dc96d26701bb2d8649dad0e1d03892d833a95a6af3d6"}
+Completed 500 Internal Server Error in 123343ms (ActiveRecord: 0.0ms | Allocations: 32034)
+
+
+  
+NoMethodError (undefined method `find_or_create_by' for nil:NilClass):
+  
+app/controllers/sessions_controller.rb:10:in `create'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddOmniauthToUsers (20210428182509)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" ADD "provider" varchar[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "users" ADD "uid" varchar[0m
+  [1m[36mprimary::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210428182509"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m

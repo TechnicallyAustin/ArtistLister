@@ -1,3 +1,4 @@
+require 'pry'
 class SessionsController < ApplicationController
   def new
     @user = User.new
@@ -5,6 +6,7 @@ class SessionsController < ApplicationController
 
   def create
     if auth #facebook login
+      binding.pry
         @user.find_or_create_by(email: auth["info"]["email"]) do |u|
           u.full_name = auth["info"]["name"]
           # Secure Random generates a secrue 10 digit hexadecimal string that will be encrypted by bcrypt

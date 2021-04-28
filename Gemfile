@@ -24,7 +24,7 @@ gem 'bcrypt', '~> 3.1.7'
 # creates seed data for migrations
 gem 'faker', '~> 2.15', '>= 2.15.1'
 # flexible authentication for rails
-#gem 'devise', '~> 4.2'
+gem 'devise', '~> 4.2'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 # allows for facebook login
