@@ -1,1 +1,6 @@
-NEW artist form
+<h1>New Artist Form</h1>
+<%= form_for @artist do |t|%>
+<%=t.label :name %>
+<%=t.string :name%>
+<%=t.submit "Create Artist"%>
+<%end%>

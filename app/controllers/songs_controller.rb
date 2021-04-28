@@ -1,3 +1,4 @@
+require 'pry'
 class SongsController < ApplicationController
     #layout 'layouts/songs'
     def index
@@ -13,9 +14,9 @@ class SongsController < ApplicationController
     end
 
     def create
+        binding.pry
         @song = Song.new(song_params)
         @song.artist = Artist.find_or_create_by(name: params["song"]["artist_name"])
-        @song.artist.save
         #@song.rating = params["song"]["rating"]
         byebug
 

@@ -1,18 +1,62 @@
+Roll back Migraitons 
+
 Fix Login
+    - The standard login will not pass
+    - Signup will automatically log in and direct users to the home page.
+    - implement a logout button
+    - add alerts for failed logins and signups
+        - add errors for alerts
+    - add a username field 
 
 Check FB Auth
+    - my app has been inactive for 90 so FB  suspended access, verify it works.
 
 Create Song objects
+    - When creating Songs need to fix associations with Artist
+    - Creating a song needs to associate an artist if they exist or create a new one if they dont.
+        -- This is currently all done in the Song class but I could seperate concerns 
+            -- Some of my Song validations are failing as well.
 
 Create Song Database
+    - I need to create a drop down menu with artist ID's when creating a song
+        - give a user the option to select from existing artists or make a new one.
 
 Create a playlist that uses cookies
+    - When a user adds a song object to a playlist, the playlist should be updated using cookies to maintain it's state.
 
-Create artist objects 
+Create artist objects
+    - Artist objects can be creatined by themselves, or when a Song is created.
+    - Artist only have a name but can belong to Songs and playlists.
 
 Verify Associations
+    ** Make sure that migrations have correction association syntax **
+        User
+            - Has many playlists 
+            - Has many songs, through playlists
+            - Has many artists, through songs 
+
+        Artist
+            - Has many songs
+            - Has many Genres, through songs
+            - belongs to many playlists 
+        
+        Song
+            - belongs to Artist
+            - belongs to User
+            - belongs to Playlist
+
+        Playlist
+            - has many songs
+            - has many artists, through songs
+            - has many genres
+            - belongs to user
 
 Nesting Playlist within User
+    - When a user is logged in and makes a playlist that playist should be associated with the user
+    - That playlist should rediredct to /user/#/playlists/#
+    - render /user/# as a specific username.
 
 Directing to the song show page for each palylist song.
+    - When selecting a playlist song the browser should rediredct to the song show page.
+
 
