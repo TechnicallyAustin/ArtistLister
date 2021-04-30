@@ -3,11 +3,10 @@ require "users_helper"
 class SessionsController < ApplicationController
 
   def new
-    @user = User.new
   end
 
   def create
-    binding.pry
+    #binding.pry
     #if auth #facebook login
       
         #@user.find_or_create_by(email: auth["info"]["email"]) do |u|
@@ -38,7 +37,7 @@ class SessionsController < ApplicationController
   end
   
   def destroy
-    session.delete :email
+    session.delete :user_id
     redirect_to "/"
   end
 
