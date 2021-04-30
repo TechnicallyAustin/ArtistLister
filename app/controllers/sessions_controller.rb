@@ -1,36 +1,36 @@
 require 'pry'
+require "users_helper"
 class SessionsController < ApplicationController
+
   def new
     @user = User.new
   end
 
   def create
-    if auth #facebook login
-      binding.pry
-        @user.find_or_create_by(email: auth["info"]["email"]) do |u|
-          u.full_name = auth["info"]["name"]
+    binding.pry
+    #if auth #facebook login
+      
+        #@user.find_or_create_by(email: auth["info"]["email"]) do |u|
+          #u.full_name = auth["info"]["name"]
           # Secure Random generates a secrue 10 digit hexadecimal string that will be encrypted by bcrypt
-          u.password = SecureRandom.hex(10)
-        end
-        if @user.save
-          sessions[:user_id] = @user.user_id
-          redirect_to @user 
-        else
-        redirect_to root_path
-        end
-    else 
-    @user = User.find(params[:id])
-      if @user && @user.authenticate(params[:password])
-        session[:user_id] = @user.id
-        redirect_to '/playlists'
-      else
-        redirect_to '/login'
-      end
+         # u.password = SecureRandom.hex(10)
+        #end
+    @user = User.find_by(email: params[:email])
+
+    if @user && @user.authenticate(params[:password])
+      session[:user_id] = @user.id
+      redirect_to user_path(@user)
+    else
+      alert = "It looks like those credentials are Invalid, can you try again?"
+      redirect_to login_path, notice: alert 
     end
   end
 
+      
+
   def login
-    @user = User.find(params[:id])
+    binding.pry
+    @user = User.find_by(email: params[:email])
     session[:user_id] = @user.id
   end
 

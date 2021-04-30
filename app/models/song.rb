@@ -1,7 +1,8 @@
-class Song < ApplicationRecord
+class Song < ActiveRecord::Base 
     # Associations
+    belongs_to :song
     belongs_to :artist
-    belongs_to :playlist 
+    belongs_to :playlist_song
     # Validations
     validates :name, presence: true
     validates :artist, presence: true

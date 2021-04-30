@@ -1,5 +1,5 @@
-class Artist < ApplicationRecord
-    attr_accessor :artist
+class Artist < ActiveRecord::Base 
+    serialize :song, Array
     # Associations
     has_many :songs
     belongs_to :playlists

@@ -3,6 +3,7 @@ class CreatePlaylistSongs < ActiveRecord::Migration[6.0]
     create_table :playlist_songs do |t|
       t.belongs_to :user
       t.belongs_to :playlist
+      t.text :songs
 
     end
   end

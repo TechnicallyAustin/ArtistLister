@@ -1,8 +1,8 @@
-Roll back Migraitons 
+X: Roll back Migraitons 
 
-Fix Login
-    - The standard login will not pass
-    - Signup will automatically log in and direct users to the home page.
+:Fix Login
+ :   - The standard login will not pass
+ :  - Signup will automatically log in and direct users to the home page.
     - implement a logout button
     - add alerts for failed logins and signups
         - add errors for alerts

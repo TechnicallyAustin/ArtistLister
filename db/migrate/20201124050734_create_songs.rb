@@ -5,7 +5,8 @@ class CreateSongs < ActiveRecord::Migration[6.0]
       t.string :artist_name
       t.integer :rating
       t.belongs_to :artist
-      t.belongs_to :playlist
+      
+      t.belongs_to :playlist_song
 
       t.timestamps
     end

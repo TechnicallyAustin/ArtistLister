@@ -24,11 +24,12 @@ Rails.application.routes.draw do
 
 
   get 'login', to: 'sessions#new'
-  post 'login', to: 'sessions#login'
+  post 'login', to: 'sessions#create'
   get '/', to: 'sessions#welcome'
   get 'signup', to: 'users#new'
   post 'signup', to: 'users#create'
   get 'logout', to: 'sessions#destroy'
+  post 'logout', to: 'sessions#destroy'
 
   get '/auth/facebook/callback', to: 'sessions#create'
 
