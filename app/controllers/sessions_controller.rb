@@ -7,13 +7,14 @@ class SessionsController < ApplicationController
 
   def create
     #binding.pry
-    #if auth #facebook login
+    if auth #facebook login
       
-        #@user.find_or_create_by(email: auth["info"]["email"]) do |u|
-          #u.full_name = auth["info"]["name"]
-          # Secure Random generates a secrue 10 digit hexadecimal string that will be encrypted by bcrypt
-         # u.password = SecureRandom.hex(10)
-        #end
+        @user.find_or_create_by(email: auth["info"]["email"]) do |u|
+          u.full_name = auth["info"]["name"]
+          #Secure Random generates a secrue 10 digit hexadecimal string that will be encrypted by bcrypt
+          u.password = SecureRandom.hex(10)
+        end
+    end
     @user = User.find_by(email: params[:email])
 
     if @user && @user.authenticate(params[:password])

@@ -39738,3 +39738,1911 @@ Migrating to CreateArtists (20201124050439)
   [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/users/3" for ::1 at 2021-05-03 11:29:26 -0700
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (6.0.3.4) lib/active_record/migration.rb:586:in `check_pending!'
+activerecord (6.0.3.4) lib/active_record/migration.rb:564:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateArtists (20201124050439)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "artists" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "song" text, "song_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_artists_on_song_id" ON "artists" ("song_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201124050439"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreatePlaylists (20201124050613)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "playlists" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" varchar, "song" text, "artist" text, "user_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_playlists_on_user_id" ON "playlists" ("user_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201124050613"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateUsers (20201124050643)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "username" varchar, "email" varchar, "password" varchar, "password_digest" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201124050643"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateSongs (20201124050734)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "songs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "artist_name" varchar, "rating" integer, "artist_id" integer, "playlist_song_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_songs_on_artist_id" ON "songs" ("artist_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_songs_on_playlist_song_id" ON "songs" ("playlist_song_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201124050734"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreatePlaylistSongs (20201215030646)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "playlist_songs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "playlist_id" integer, "songs" text)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_playlist_songs_on_user_id" ON "playlist_songs" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_playlist_songs_on_playlist_id" ON "playlist_songs" ("playlist_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201215030646"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddOmniauthToUsers (20210428182509)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "users" ADD "provider" varchar[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "uid" varchar[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210428182509"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for ::1 at 2021-05-03 11:31:28 -0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#welcome as HTML
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 0.8ms | Allocations: 388)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 44ms (Views: 31.6ms | ActiveRecord: 0.0ms | Allocations: 10835)
+
+
+Started GET "/signup" for ::1 at 2021-05-03 11:31:30 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/user
+  Rendered users/new.html.erb within layouts/user (Duration: 191.4ms | Allocations: 207533)
+Completed 200 OK in 232ms (Views: 192.6ms | ActiveRecord: 2.2ms | Allocations: 219712)
+
+
+Started POST "/users" for ::1 at 2021-05-03 11:31:37 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"R1xXJSNNo6cuR3t/D4YT2v7egwATzkml3Zp0tr4BTLpbBg1k9+rHr6acVcS3+g1IU/lexTybnNJbn6XyVr/1cA==", "user"=>{"first_name"=>"Austin", "last_name"=>"Johnson", "username"=>"AJ", "email"=>"technicallyaustin@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:11:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "technicallyaustin@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `create'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Austin"], ["last_name", "Johnson"], ["username", "AJ"], ["email", "technicallyaustin@gmail.com"], ["password_digest", "$2a$12$Bdybsn.1SCLFCYuJYdL4OeyExXpoe12gVI6jEhXAMPquwQ4q1M8iW"], ["created_at", "2021-05-03 18:31:37.977717"], ["updated_at", "2021-05-03 18:31:37.977717"]]
+  ↳ app/controllers/users_controller.rb:11:in `create'
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:11:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 221ms (ActiveRecord: 1.2ms | Allocations: 4979)
+
+
+Started GET "/" for ::1 at 2021-05-03 11:31:37 -0700
+Processing by SessionsController#welcome as HTML
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 0.1ms | Allocations: 106)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.0ms | Allocations: 4366)
+
+
+Started GET "/login" for ::1 at 2021-05-03 11:31:49 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 473)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.0ms | Allocations: 4867)
+
+
+Started POST "/login" for ::1 at 2021-05-03 11:31:54 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"w568NiVkiAvJy1e4Lkl8bDR7yu3UCmQ+0jWxb9KgN+HVCyqGMjdw5TnKi5n/tF7nPBFM99SOOQKiO+S9EQH0/A==", "email"=>"technicallyaustin@gmail.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "technicallyaustin@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:17:in `create'
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 212ms (ActiveRecord: 0.2ms | Allocations: 1103)
+
+
+Started GET "/users/1" for ::1 at 2021-05-03 11:31:54 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:32:in `user_selector'
+  Rendering users/show.html.erb within layouts/user
+  Rendered users/show.html.erb within layouts/user (Duration: 1.5ms | Allocations: 1385)
+Completed 200 OK in 4ms (Views: 2.3ms | ActiveRecord: 0.1ms | Allocations: 2653)
+
+
+Started GET "/users/1" for ::1 at 2021-05-03 11:32:01 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:32:in `user_selector'
+  Rendering users/show.html.erb within layouts/user
+  Rendered users/show.html.erb within layouts/user (Duration: 0.5ms | Allocations: 264)
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.2ms | Allocations: 1251)
+
+
+Started GET "/users/1" for ::1 at 2021-05-03 11:32:03 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:32:in `user_selector'
+  Rendering users/show.html.erb within layouts/user
+  Rendered users/show.html.erb within layouts/user (Duration: 0.4ms | Allocations: 264)
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.1ms | Allocations: 1252)
+
+
+Started GET "/songs/new" for ::1 at 2021-05-03 11:32:06 -0700
+Processing by SongsController#new as HTML
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (Duration: 4.1ms | Allocations: 1491)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 31ms (Views: 12.2ms | ActiveRecord: 0.6ms | Allocations: 13652)
+
+
+Started GET "/songs" for ::1 at 2021-05-03 11:32:09 -0700
+Processing by SongsController#index as HTML
+  Rendering songs/index.html.erb within layouts/application
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/views/songs/index.html.erb:2
+  Rendered songs/index.html.erb within layouts/application (Duration: 2.0ms | Allocations: 812)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 0.3ms | Allocations: 5250)
+
+
+Started GET "/artists/new" for ::1 at 2021-05-03 11:32:12 -0700
+Processing by ArtistsController#new as HTML
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.6ms | Allocations: 7190)
+
+
+  
+ActionView::MissingTemplate (Missing template layouts/songs with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/Users/austinjohnson/ArtistLister/app/views"
+  * "/Users/austinjohnson/.rvm/gems/ruby-2.6.1/gems/devise-4.7.3/app/views"
+  * "/Users/austinjohnson/.rvm/gems/ruby-2.6.1/gems/actiontext-6.0.3.4/app/views"
+  * "/Users/austinjohnson/.rvm/gems/ruby-2.6.1/gems/actionmailbox-6.0.3.4/app/views"
+):
+  
+actionview (6.0.3.4) lib/action_view/path_set.rb:48:in `find'
+actionview (6.0.3.4) lib/action_view/lookup_context.rb:131:in `find'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:94:in `resolve_layout'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:101:in `resolve_layout'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:80:in `find_layout'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:64:in `render_with_layout'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:56:in `render_template'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:13:in `render'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:61:in `render_template_to_object'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:29:in `render_to_object'
+actionview (6.0.3.4) lib/action_view/rendering.rb:117:in `block in _render_template'
+actionview (6.0.3.4) lib/action_view/base.rb:304:in `in_rendering_context'
+actionview (6.0.3.4) lib/action_view/rendering.rb:116:in `_render_template'
+actionpack (6.0.3.4) lib/action_controller/metal/streaming.rb:218:in `_render_template'
+actionview (6.0.3.4) lib/action_view/rendering.rb:103:in `render_to_body'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:52:in `render_to_body'
+actionpack (6.0.3.4) lib/action_controller/metal/renderers.rb:142:in `render_to_body'
+actionpack (6.0.3.4) lib/abstract_controller/rendering.rb:25:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:36:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+activesupport (6.0.3.4) lib/active_support/core_ext/benchmark.rb:14:in `block in ms'
+/Users/austinjohnson/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/benchmark.rb:308:in `realtime'
+activesupport (6.0.3.4) lib/active_support/core_ext/benchmark.rb:14:in `ms'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+activerecord (6.0.3.4) lib/active_record/railties/controller_runtime.rb:34:in `cleanup_view_runtime'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:43:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/implicit_render.rb:35:in `default_render'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:195:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+omniauth (1.9.1) lib/omniauth/strategy.rb:192:in `call!'
+omniauth (1.9.1) lib/omniauth/strategy.rb:169:in `call'
+omniauth (1.9.1) lib/omniauth/builder.rb:45:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.4) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/artists" for ::1 at 2021-05-03 11:32:15 -0700
+Processing by ArtistsController#index as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1112)
+
+
+  
+ActionView::MissingTemplate (Missing template layouts/songs with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/Users/austinjohnson/ArtistLister/app/views"
+  * "/Users/austinjohnson/.rvm/gems/ruby-2.6.1/gems/devise-4.7.3/app/views"
+  * "/Users/austinjohnson/.rvm/gems/ruby-2.6.1/gems/actiontext-6.0.3.4/app/views"
+  * "/Users/austinjohnson/.rvm/gems/ruby-2.6.1/gems/actionmailbox-6.0.3.4/app/views"
+):
+  
+actionview (6.0.3.4) lib/action_view/path_set.rb:48:in `find'
+actionview (6.0.3.4) lib/action_view/lookup_context.rb:131:in `find'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:94:in `resolve_layout'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:101:in `resolve_layout'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:80:in `find_layout'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:64:in `render_with_layout'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:56:in `render_template'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:13:in `render'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:61:in `render_template_to_object'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:29:in `render_to_object'
+actionview (6.0.3.4) lib/action_view/rendering.rb:117:in `block in _render_template'
+actionview (6.0.3.4) lib/action_view/base.rb:304:in `in_rendering_context'
+actionview (6.0.3.4) lib/action_view/rendering.rb:116:in `_render_template'
+actionpack (6.0.3.4) lib/action_controller/metal/streaming.rb:218:in `_render_template'
+actionview (6.0.3.4) lib/action_view/rendering.rb:103:in `render_to_body'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:52:in `render_to_body'
+actionpack (6.0.3.4) lib/action_controller/metal/renderers.rb:142:in `render_to_body'
+actionpack (6.0.3.4) lib/abstract_controller/rendering.rb:25:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:36:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+activesupport (6.0.3.4) lib/active_support/core_ext/benchmark.rb:14:in `block in ms'
+/Users/austinjohnson/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/benchmark.rb:308:in `realtime'
+activesupport (6.0.3.4) lib/active_support/core_ext/benchmark.rb:14:in `ms'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+activerecord (6.0.3.4) lib/active_record/railties/controller_runtime.rb:34:in `cleanup_view_runtime'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:43:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/implicit_render.rb:35:in `default_render'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:195:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+omniauth (1.9.1) lib/omniauth/strategy.rb:192:in `call!'
+omniauth (1.9.1) lib/omniauth/strategy.rb:169:in `call'
+omniauth (1.9.1) lib/omniauth/builder.rb:45:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.4) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/artists/new" for ::1 at 2021-05-03 11:32:17 -0700
+Processing by ArtistsController#new as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 964)
+
+
+  
+ActionView::MissingTemplate (Missing template layouts/songs with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/Users/austinjohnson/ArtistLister/app/views"
+  * "/Users/austinjohnson/.rvm/gems/ruby-2.6.1/gems/devise-4.7.3/app/views"
+  * "/Users/austinjohnson/.rvm/gems/ruby-2.6.1/gems/actiontext-6.0.3.4/app/views"
+  * "/Users/austinjohnson/.rvm/gems/ruby-2.6.1/gems/actionmailbox-6.0.3.4/app/views"
+):
+  
+actionview (6.0.3.4) lib/action_view/path_set.rb:48:in `find'
+actionview (6.0.3.4) lib/action_view/lookup_context.rb:131:in `find'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:94:in `resolve_layout'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:101:in `resolve_layout'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:80:in `find_layout'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:64:in `render_with_layout'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:56:in `render_template'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:13:in `render'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:61:in `render_template_to_object'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:29:in `render_to_object'
+actionview (6.0.3.4) lib/action_view/rendering.rb:117:in `block in _render_template'
+actionview (6.0.3.4) lib/action_view/base.rb:304:in `in_rendering_context'
+actionview (6.0.3.4) lib/action_view/rendering.rb:116:in `_render_template'
+actionpack (6.0.3.4) lib/action_controller/metal/streaming.rb:218:in `_render_template'
+actionview (6.0.3.4) lib/action_view/rendering.rb:103:in `render_to_body'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:52:in `render_to_body'
+actionpack (6.0.3.4) lib/action_controller/metal/renderers.rb:142:in `render_to_body'
+actionpack (6.0.3.4) lib/abstract_controller/rendering.rb:25:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:36:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+activesupport (6.0.3.4) lib/active_support/core_ext/benchmark.rb:14:in `block in ms'
+/Users/austinjohnson/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/benchmark.rb:308:in `realtime'
+activesupport (6.0.3.4) lib/active_support/core_ext/benchmark.rb:14:in `ms'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+activerecord (6.0.3.4) lib/active_record/railties/controller_runtime.rb:34:in `cleanup_view_runtime'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:43:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/implicit_render.rb:35:in `default_render'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:195:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+omniauth (1.9.1) lib/omniauth/strategy.rb:192:in `call!'
+omniauth (1.9.1) lib/omniauth/strategy.rb:169:in `call'
+omniauth (1.9.1) lib/omniauth/builder.rb:45:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.4) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/users/1" for ::1 at 2021-05-03 11:33:07 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:32:in `user_selector'
+  Rendering users/show.html.erb within layouts/user
+  Rendered users/show.html.erb within layouts/user (Duration: 1.1ms | Allocations: 461)
+Completed 200 OK in 5ms (Views: 2.7ms | ActiveRecord: 0.2ms | Allocations: 2017)
+
+
+Started GET "/songs" for ::1 at 2021-05-03 11:33:12 -0700
+Processing by SongsController#index as HTML
+  Rendering songs/index.html.erb within layouts/application
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/views/songs/index.html.erb:2
+  Rendered songs/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 747)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 34ms (Views: 32.4ms | ActiveRecord: 0.2ms | Allocations: 6021)
+
+
+Started GET "/songs/new" for ::1 at 2021-05-03 11:33:14 -0700
+Processing by SongsController#new as HTML
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1144)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 28ms (Views: 27.1ms | ActiveRecord: 0.0ms | Allocations: 5568)
+
+
+Started GET "/users/1" for ::1 at 2021-05-03 11:34:08 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:32:in `user_selector'
+  Rendering users/show.html.erb within layouts/user
+  Rendered users/show.html.erb within layouts/user (Duration: 0.9ms | Allocations: 532)
+Completed 200 OK in 4ms (Views: 2.5ms | ActiveRecord: 0.1ms | Allocations: 2079)
+
+
+Started GET "/playlists/new" for ::1 at 2021-05-03 11:34:09 -0700
+Processing by PlaylistsController#new as HTML
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms | Allocations: 6509)
+
+
+  
+NoMethodError (undefined method `has_may' for #<Class:0x00007f9b89026b20>
+Did you mean?  has_many):
+  
+app/models/playlist.rb:8:in `<class:Playlist>'
+app/models/playlist.rb:1:in `<main>'
+app/controllers/playlists_controller.rb:13:in `new'
+Started GET "/playlists/new" for ::1 at 2021-05-03 11:34:28 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PlaylistsController#new as HTML
+  Rendering playlists/new.html.erb within layouts/playlist
+  Rendered playlists/new.html.erb within layouts/playlist (Duration: 5.5ms | Allocations: 1238)
+Completed 200 OK in 18ms (Views: 7.2ms | ActiveRecord: 0.6ms | Allocations: 10290)
+
+
+Started GET "/users/1" for ::1 at 2021-05-03 11:35:21 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:32:in `user_selector'
+  Rendering users/show.html.erb within layouts/user
+  Rendered users/show.html.erb within layouts/user (Duration: 1.4ms | Allocations: 1497)
+Completed 200 OK in 17ms (Views: 2.7ms | ActiveRecord: 0.6ms | Allocations: 13085)
+
+
+Started GET "/playlists" for ::1 at 2021-05-03 11:35:22 -0700
+Processing by PlaylistsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:4:in `index'
+  Rendering playlists/index.html.erb within layouts/playlist
+  Rendered playlists/index.html.erb within layouts/playlist (Duration: 0.3ms | Allocations: 82)
+Completed 200 OK in 4ms (Views: 1.7ms | ActiveRecord: 0.1ms | Allocations: 1642)
+
+
+Started GET "/users/1" for ::1 at 2021-05-03 11:35:41 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:32:in `user_selector'
+  Rendering users/show.html.erb within layouts/user
+  Rendered users/show.html.erb within layouts/user (Duration: 0.9ms | Allocations: 524)
+Completed 200 OK in 4ms (Views: 2.4ms | ActiveRecord: 0.1ms | Allocations: 2077)
+
+
+Started GET "/users/1" for ::1 at 2021-05-03 11:36:03 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:32:in `user_selector'
+  Rendering users/show.html.erb within layouts/user
+  Rendered users/show.html.erb within layouts/user (Duration: 0.9ms | Allocations: 524)
+Completed 200 OK in 4ms (Views: 2.3ms | ActiveRecord: 0.1ms | Allocations: 2072)
+
+
+Started GET "/playlists/new" for ::1 at 2021-05-03 11:36:09 -0700
+Processing by PlaylistsController#new as HTML
+  Rendering playlists/new.html.erb within layouts/playlist
+  Rendered playlists/new.html.erb within layouts/playlist (Duration: 1.7ms | Allocations: 902)
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.0ms | Allocations: 1892)
+
+
+Started GET "/playlists" for ::1 at 2021-05-03 11:36:11 -0700
+Processing by PlaylistsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:4:in `index'
+  Rendering playlists/index.html.erb within layouts/playlist
+  Rendered playlists/index.html.erb within layouts/playlist (Duration: 0.3ms | Allocations: 79)
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.1ms | Allocations: 1212)
+
+
+Started GET "/songs/new" for ::1 at 2021-05-03 11:36:14 -0700
+Processing by SongsController#new as HTML
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1202)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 10.8ms | ActiveRecord: 0.6ms | Allocations: 12698)
+
+
+Started GET "/songs" for ::1 at 2021-05-03 11:36:17 -0700
+Processing by SongsController#index as HTML
+  Rendering songs/index.html.erb within layouts/application
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/views/songs/index.html.erb:2
+  Rendered songs/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 799)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.2ms | Allocations: 5222)
+
+
+Started GET "/artists" for ::1 at 2021-05-03 11:36:20 -0700
+Processing by ArtistsController#index as HTML
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 2745)
+
+
+  
+ActionView::MissingTemplate (Missing template layouts/songs with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/Users/austinjohnson/ArtistLister/app/views"
+  * "/Users/austinjohnson/.rvm/gems/ruby-2.6.1/gems/devise-4.7.3/app/views"
+  * "/Users/austinjohnson/.rvm/gems/ruby-2.6.1/gems/actiontext-6.0.3.4/app/views"
+  * "/Users/austinjohnson/.rvm/gems/ruby-2.6.1/gems/actionmailbox-6.0.3.4/app/views"
+):
+  
+actionview (6.0.3.4) lib/action_view/path_set.rb:48:in `find'
+actionview (6.0.3.4) lib/action_view/lookup_context.rb:131:in `find'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:94:in `resolve_layout'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:101:in `resolve_layout'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:80:in `find_layout'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:64:in `render_with_layout'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:56:in `render_template'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:13:in `render'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:61:in `render_template_to_object'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:29:in `render_to_object'
+actionview (6.0.3.4) lib/action_view/rendering.rb:117:in `block in _render_template'
+actionview (6.0.3.4) lib/action_view/base.rb:304:in `in_rendering_context'
+actionview (6.0.3.4) lib/action_view/rendering.rb:116:in `_render_template'
+actionpack (6.0.3.4) lib/action_controller/metal/streaming.rb:218:in `_render_template'
+actionview (6.0.3.4) lib/action_view/rendering.rb:103:in `render_to_body'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:52:in `render_to_body'
+actionpack (6.0.3.4) lib/action_controller/metal/renderers.rb:142:in `render_to_body'
+actionpack (6.0.3.4) lib/abstract_controller/rendering.rb:25:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:36:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+activesupport (6.0.3.4) lib/active_support/core_ext/benchmark.rb:14:in `block in ms'
+/Users/austinjohnson/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/benchmark.rb:308:in `realtime'
+activesupport (6.0.3.4) lib/active_support/core_ext/benchmark.rb:14:in `ms'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+activerecord (6.0.3.4) lib/active_record/railties/controller_runtime.rb:34:in `cleanup_view_runtime'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:43:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/implicit_render.rb:35:in `default_render'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:195:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+omniauth (1.9.1) lib/omniauth/strategy.rb:192:in `call!'
+omniauth (1.9.1) lib/omniauth/strategy.rb:169:in `call'
+omniauth (1.9.1) lib/omniauth/builder.rb:45:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.4) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/artists" for ::1 at 2021-05-03 11:36:40 -0700
+Processing by ArtistsController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 945)
+
+
+  
+ActionView::MissingTemplate (Missing template layouts/songs with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/Users/austinjohnson/ArtistLister/app/views"
+  * "/Users/austinjohnson/.rvm/gems/ruby-2.6.1/gems/devise-4.7.3/app/views"
+  * "/Users/austinjohnson/.rvm/gems/ruby-2.6.1/gems/actiontext-6.0.3.4/app/views"
+  * "/Users/austinjohnson/.rvm/gems/ruby-2.6.1/gems/actionmailbox-6.0.3.4/app/views"
+):
+  
+actionview (6.0.3.4) lib/action_view/path_set.rb:48:in `find'
+actionview (6.0.3.4) lib/action_view/lookup_context.rb:131:in `find'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:94:in `resolve_layout'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:101:in `resolve_layout'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:80:in `find_layout'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:64:in `render_with_layout'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:56:in `render_template'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:13:in `render'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:61:in `render_template_to_object'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:29:in `render_to_object'
+actionview (6.0.3.4) lib/action_view/rendering.rb:117:in `block in _render_template'
+actionview (6.0.3.4) lib/action_view/base.rb:304:in `in_rendering_context'
+actionview (6.0.3.4) lib/action_view/rendering.rb:116:in `_render_template'
+actionpack (6.0.3.4) lib/action_controller/metal/streaming.rb:218:in `_render_template'
+actionview (6.0.3.4) lib/action_view/rendering.rb:103:in `render_to_body'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:52:in `render_to_body'
+actionpack (6.0.3.4) lib/action_controller/metal/renderers.rb:142:in `render_to_body'
+actionpack (6.0.3.4) lib/abstract_controller/rendering.rb:25:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:36:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+activesupport (6.0.3.4) lib/active_support/core_ext/benchmark.rb:14:in `block in ms'
+/Users/austinjohnson/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/benchmark.rb:308:in `realtime'
+activesupport (6.0.3.4) lib/active_support/core_ext/benchmark.rb:14:in `ms'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+activerecord (6.0.3.4) lib/active_record/railties/controller_runtime.rb:34:in `cleanup_view_runtime'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:43:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/implicit_render.rb:35:in `default_render'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:195:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+omniauth (1.9.1) lib/omniauth/strategy.rb:192:in `call!'
+omniauth (1.9.1) lib/omniauth/strategy.rb:169:in `call'
+omniauth (1.9.1) lib/omniauth/builder.rb:45:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.4) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/artists" for ::1 at 2021-05-03 11:37:21 -0700
+Processing by ArtistsController#index as HTML
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 2195)
+
+
+  
+ActionView::MissingTemplate (Missing template layouts/songs with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/Users/austinjohnson/ArtistLister/app/views"
+  * "/Users/austinjohnson/.rvm/gems/ruby-2.6.1/gems/devise-4.7.3/app/views"
+  * "/Users/austinjohnson/.rvm/gems/ruby-2.6.1/gems/actiontext-6.0.3.4/app/views"
+  * "/Users/austinjohnson/.rvm/gems/ruby-2.6.1/gems/actionmailbox-6.0.3.4/app/views"
+):
+  
+actionview (6.0.3.4) lib/action_view/path_set.rb:48:in `find'
+actionview (6.0.3.4) lib/action_view/lookup_context.rb:131:in `find'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:94:in `resolve_layout'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:101:in `resolve_layout'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:80:in `find_layout'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:64:in `render_with_layout'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:56:in `render_template'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:13:in `render'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:61:in `render_template_to_object'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:29:in `render_to_object'
+actionview (6.0.3.4) lib/action_view/rendering.rb:117:in `block in _render_template'
+actionview (6.0.3.4) lib/action_view/base.rb:304:in `in_rendering_context'
+actionview (6.0.3.4) lib/action_view/rendering.rb:116:in `_render_template'
+actionpack (6.0.3.4) lib/action_controller/metal/streaming.rb:218:in `_render_template'
+actionview (6.0.3.4) lib/action_view/rendering.rb:103:in `render_to_body'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:52:in `render_to_body'
+actionpack (6.0.3.4) lib/action_controller/metal/renderers.rb:142:in `render_to_body'
+actionpack (6.0.3.4) lib/abstract_controller/rendering.rb:25:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:36:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+activesupport (6.0.3.4) lib/active_support/core_ext/benchmark.rb:14:in `block in ms'
+/Users/austinjohnson/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/benchmark.rb:308:in `realtime'
+activesupport (6.0.3.4) lib/active_support/core_ext/benchmark.rb:14:in `ms'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+activerecord (6.0.3.4) lib/active_record/railties/controller_runtime.rb:34:in `cleanup_view_runtime'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:43:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/implicit_render.rb:35:in `default_render'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:195:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+omniauth (1.9.1) lib/omniauth/strategy.rb:192:in `call!'
+omniauth (1.9.1) lib/omniauth/strategy.rb:169:in `call'
+omniauth (1.9.1) lib/omniauth/builder.rb:45:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.4) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/artists" for ::1 at 2021-05-03 11:37:24 -0700
+Processing by ArtistsController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 945)
+
+
+  
+ActionView::MissingTemplate (Missing template layouts/songs with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/Users/austinjohnson/ArtistLister/app/views"
+  * "/Users/austinjohnson/.rvm/gems/ruby-2.6.1/gems/devise-4.7.3/app/views"
+  * "/Users/austinjohnson/.rvm/gems/ruby-2.6.1/gems/actiontext-6.0.3.4/app/views"
+  * "/Users/austinjohnson/.rvm/gems/ruby-2.6.1/gems/actionmailbox-6.0.3.4/app/views"
+):
+  
+actionview (6.0.3.4) lib/action_view/path_set.rb:48:in `find'
+actionview (6.0.3.4) lib/action_view/lookup_context.rb:131:in `find'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:94:in `resolve_layout'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:101:in `resolve_layout'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:80:in `find_layout'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:64:in `render_with_layout'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:56:in `render_template'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:13:in `render'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:61:in `render_template_to_object'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:29:in `render_to_object'
+actionview (6.0.3.4) lib/action_view/rendering.rb:117:in `block in _render_template'
+actionview (6.0.3.4) lib/action_view/base.rb:304:in `in_rendering_context'
+actionview (6.0.3.4) lib/action_view/rendering.rb:116:in `_render_template'
+actionpack (6.0.3.4) lib/action_controller/metal/streaming.rb:218:in `_render_template'
+actionview (6.0.3.4) lib/action_view/rendering.rb:103:in `render_to_body'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:52:in `render_to_body'
+actionpack (6.0.3.4) lib/action_controller/metal/renderers.rb:142:in `render_to_body'
+actionpack (6.0.3.4) lib/abstract_controller/rendering.rb:25:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:36:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+activesupport (6.0.3.4) lib/active_support/core_ext/benchmark.rb:14:in `block in ms'
+/Users/austinjohnson/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/benchmark.rb:308:in `realtime'
+activesupport (6.0.3.4) lib/active_support/core_ext/benchmark.rb:14:in `ms'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+activerecord (6.0.3.4) lib/active_record/railties/controller_runtime.rb:34:in `cleanup_view_runtime'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:43:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/implicit_render.rb:35:in `default_render'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:195:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+omniauth (1.9.1) lib/omniauth/strategy.rb:192:in `call!'
+omniauth (1.9.1) lib/omniauth/strategy.rb:169:in `call'
+omniauth (1.9.1) lib/omniauth/builder.rb:45:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.4) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/users/1" for ::1 at 2021-05-03 11:37:41 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:32:in `user_selector'
+  Rendering users/show.html.erb within layouts/user
+  Rendered users/show.html.erb within layouts/user (Duration: 1.1ms | Allocations: 547)
+Completed 200 OK in 5ms (Views: 2.7ms | ActiveRecord: 0.1ms | Allocations: 2076)
+
+
+Started GET "/artists" for ::1 at 2021-05-03 11:37:43 -0700
+Processing by ArtistsController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 957)
+
+
+  
+ActionView::MissingTemplate (Missing template layouts/songs with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/Users/austinjohnson/ArtistLister/app/views"
+  * "/Users/austinjohnson/.rvm/gems/ruby-2.6.1/gems/devise-4.7.3/app/views"
+  * "/Users/austinjohnson/.rvm/gems/ruby-2.6.1/gems/actiontext-6.0.3.4/app/views"
+  * "/Users/austinjohnson/.rvm/gems/ruby-2.6.1/gems/actionmailbox-6.0.3.4/app/views"
+):
+  
+actionview (6.0.3.4) lib/action_view/path_set.rb:48:in `find'
+actionview (6.0.3.4) lib/action_view/lookup_context.rb:131:in `find'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:94:in `resolve_layout'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:101:in `resolve_layout'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:80:in `find_layout'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:64:in `render_with_layout'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:56:in `render_template'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:13:in `render'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:61:in `render_template_to_object'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:29:in `render_to_object'
+actionview (6.0.3.4) lib/action_view/rendering.rb:117:in `block in _render_template'
+actionview (6.0.3.4) lib/action_view/base.rb:304:in `in_rendering_context'
+actionview (6.0.3.4) lib/action_view/rendering.rb:116:in `_render_template'
+actionpack (6.0.3.4) lib/action_controller/metal/streaming.rb:218:in `_render_template'
+actionview (6.0.3.4) lib/action_view/rendering.rb:103:in `render_to_body'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:52:in `render_to_body'
+actionpack (6.0.3.4) lib/action_controller/metal/renderers.rb:142:in `render_to_body'
+actionpack (6.0.3.4) lib/abstract_controller/rendering.rb:25:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:36:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+activesupport (6.0.3.4) lib/active_support/core_ext/benchmark.rb:14:in `block in ms'
+/Users/austinjohnson/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/benchmark.rb:308:in `realtime'
+activesupport (6.0.3.4) lib/active_support/core_ext/benchmark.rb:14:in `ms'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+activerecord (6.0.3.4) lib/active_record/railties/controller_runtime.rb:34:in `cleanup_view_runtime'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:43:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/implicit_render.rb:35:in `default_render'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:195:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+omniauth (1.9.1) lib/omniauth/strategy.rb:192:in `call!'
+omniauth (1.9.1) lib/omniauth/strategy.rb:169:in `call'
+omniauth (1.9.1) lib/omniauth/builder.rb:45:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.4) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/artists" for ::1 at 2021-05-03 11:39:36 -0700
+Processing by ArtistsController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 956)
+
+
+  
+ActionView::MissingTemplate (Missing template layouts/songs with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/Users/austinjohnson/ArtistLister/app/views"
+  * "/Users/austinjohnson/.rvm/gems/ruby-2.6.1/gems/devise-4.7.3/app/views"
+  * "/Users/austinjohnson/.rvm/gems/ruby-2.6.1/gems/actiontext-6.0.3.4/app/views"
+  * "/Users/austinjohnson/.rvm/gems/ruby-2.6.1/gems/actionmailbox-6.0.3.4/app/views"
+):
+  
+actionview (6.0.3.4) lib/action_view/path_set.rb:48:in `find'
+actionview (6.0.3.4) lib/action_view/lookup_context.rb:131:in `find'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:94:in `resolve_layout'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:101:in `resolve_layout'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:80:in `find_layout'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:64:in `render_with_layout'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:56:in `render_template'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:13:in `render'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:61:in `render_template_to_object'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:29:in `render_to_object'
+actionview (6.0.3.4) lib/action_view/rendering.rb:117:in `block in _render_template'
+actionview (6.0.3.4) lib/action_view/base.rb:304:in `in_rendering_context'
+actionview (6.0.3.4) lib/action_view/rendering.rb:116:in `_render_template'
+actionpack (6.0.3.4) lib/action_controller/metal/streaming.rb:218:in `_render_template'
+actionview (6.0.3.4) lib/action_view/rendering.rb:103:in `render_to_body'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:52:in `render_to_body'
+actionpack (6.0.3.4) lib/action_controller/metal/renderers.rb:142:in `render_to_body'
+actionpack (6.0.3.4) lib/abstract_controller/rendering.rb:25:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:36:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+activesupport (6.0.3.4) lib/active_support/core_ext/benchmark.rb:14:in `block in ms'
+/Users/austinjohnson/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/benchmark.rb:308:in `realtime'
+activesupport (6.0.3.4) lib/active_support/core_ext/benchmark.rb:14:in `ms'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+activerecord (6.0.3.4) lib/active_record/railties/controller_runtime.rb:34:in `cleanup_view_runtime'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:43:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/implicit_render.rb:35:in `default_render'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:195:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+omniauth (1.9.1) lib/omniauth/strategy.rb:192:in `call!'
+omniauth (1.9.1) lib/omniauth/strategy.rb:169:in `call'
+omniauth (1.9.1) lib/omniauth/builder.rb:45:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.4) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/songs/new" for ::1 at 2021-05-03 11:40:28 -0700
+Processing by SongsController#new as HTML
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 1144)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.0ms | Allocations: 6048)
+
+
+Started POST "/songs" for ::1 at 2021-05-03 11:40:35 -0700
+Processing by SongsController#create as HTML
+  Parameters: {"authenticity_token"=>"hOubQ3eM2xq6Me4SUhsgkD66Svk+ddkfvPXqpT6hMkGSfg3zYN8j9EowMjOD5gIbNtDM4z7xhCPM+793/QDxXA==", "song"=>{"name"=>"Night Job", "artist_name"=>"Bas", "rating"=>"10"}, "commit"=>"Create Song"}
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."name" = ? LIMIT ?[0m  [["name", "Bas"], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:19:in `create'
+Completed 500 Internal Server Error in 102596ms (ActiveRecord: 1.1ms | Allocations: 486197)
+
+
+  
+SystemExit (exit):
+  
+(byebug):1:in `exit'
+(byebug):1:in `create'
+app/controllers/songs_controller.rb:26:in `create'
+Started GET "/songs/new" for ::1 at 2021-05-03 11:42:28 -0700
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SongsController#new as HTML
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (Duration: 92.5ms | Allocations: 207315)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 129ms (Views: 115.3ms | ActiveRecord: 0.6ms | Allocations: 226295)
+
+
+Started POST "/songs" for ::1 at 2021-05-03 11:42:37 -0700
+Processing by SongsController#create as HTML
+  Parameters: {"authenticity_token"=>"CILCEJHdzpn4wQlHpcUj96B8ink6ltmGB4LMmPwUbbQeF1Sgho42dwjA1WZ0OAF8qBYMYzoShLp3jJlKP7WuqQ==", "song"=>{"name"=>"Night Job", "artist_name"=>"Bas", "rating"=>"10"}, "commit"=>"Create Song"}
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 932)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 8.2ms | ActiveRecord: 0.0ms | Allocations: 13309)
+
+
+Started POST "/songs" for ::1 at 2021-05-03 11:42:39 -0700
+Processing by SongsController#create as HTML
+  Parameters: {"authenticity_token"=>"rjOGF/smIEaFomAHxrugIux6i4qUUX8Es8kurZDhu824phCn7HXYqHWjvCYXRoKp5BANkJTVIjjDx3t/U0B40A==", "song"=>{"name"=>"Night Job", "artist_name"=>"Bas", "rating"=>"10"}, "commit"=>"Create Song"}
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 920)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 8.2ms | ActiveRecord: 0.0ms | Allocations: 8640)
+
+
+Started GET "/songs" for ::1 at 2021-05-03 11:42:48 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SongsController#index as HTML
+  Rendering songs/index.html.erb within layouts/application
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/views/songs/index.html.erb:2
+  Rendered songs/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1417)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 7.8ms | ActiveRecord: 0.6ms | Allocations: 7033)
+
+
+Started POST "/songs" for ::1 at 2021-05-03 11:42:53 -0700
+Processing by SongsController#create as HTML
+  Parameters: {"authenticity_token"=>"CILCEJHdzpn4wQlHpcUj96B8ink6ltmGB4LMmPwUbbQeF1Sgho42dwjA1WZ0OAF8qBYMYzoShLp3jJlKP7WuqQ==", "song"=>{"name"=>"Night Job", "artist_name"=>"Bas", "rating"=>"10"}, "commit"=>"Create Song"}
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 937)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 7.9ms | ActiveRecord: 0.4ms | Allocations: 15238)
+
+
+Started POST "/songs" for ::1 at 2021-05-03 11:42:54 -0700
+Processing by SongsController#create as HTML
+  Parameters: {"authenticity_token"=>"9DO6HrniQXC8vtZw+9PqA4mB260CuFPserNsLvqIfZnipiyurrG5nky/ClEqLsiIgetdtwI8DtAKvTn8OSm+hA==", "song"=>{"name"=>"Night Job", "artist_name"=>"Bas", "rating"=>"10"}, "commit"=>"Create Song"}
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 922)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 8.7ms | ActiveRecord: 0.0ms | Allocations: 6970)
+
+
+Started GET "/songs" for ::1 at 2021-05-03 11:42:55 -0700
+Processing by SongsController#index as HTML
+  Rendering songs/index.html.erb within layouts/application
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/views/songs/index.html.erb:2
+  Rendered songs/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 631)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.1ms | Allocations: 4900)
+
+
+Started GET "/songs/new" for ::1 at 2021-05-03 11:42:59 -0700
+Processing by SongsController#new as HTML
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 907)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.0ms | Allocations: 5175)
+
+
+Started POST "/songs" for ::1 at 2021-05-03 11:43:05 -0700
+Processing by SongsController#create as HTML
+  Parameters: {"authenticity_token"=>"IjO8AKODAYPweTizDXm3DlaXInUMYutQzwzLKpwMVMo0piqwtND5bQB45JLchJWFXv2kbwzmtmy/Ap74X62X1w==", "song"=>{"name"=>"Night Job", "artist_name"=>"Bas", "rating"=>"10"}, "commit"=>"Create Song"}
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 922)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 8.8ms | ActiveRecord: 0.0ms | Allocations: 6966)
+
+
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" ORDER BY "songs"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs" ORDER BY "songs"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Started POST "/songs" for ::1 at 2021-05-03 11:45:13 -0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SongsController#create as HTML
+  Parameters: {"authenticity_token"=>"jEBmsUKcKUId2ZVThjwjJxWWuhl+Vn+gXT8SCIPXzFOa1fABVc/RrO3YSXJXwQGsHfw8A37SIpwtMUfaQHYPTg==", "song"=>{"name"=>"Night Job", "artist_name"=>"Bas", "rating"=>"10"}, "commit"=>"Create Song"}
+Started GET "/songs" for ::1 at 2021-05-03 11:45:14 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SongsController#index as HTML
+  Rendering songs/index.html.erb within layouts/application
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/views/songs/index.html.erb:2
+  Rendered songs/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 1081)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 60ms (Views: 54.9ms | ActiveRecord: 0.2ms | Allocations: 13540)
+
+
+Started GET "/songs/new" for ::1 at 2021-05-03 11:45:18 -0700
+Processing by SongsController#new as HTML
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (Duration: 101.5ms | Allocations: 207015)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 109ms (Views: 106.9ms | ActiveRecord: 0.0ms | Allocations: 211438)
+
+
+Started POST "/songs" for ::1 at 2021-05-03 11:45:28 -0700
+Processing by SongsController#create as HTML
+  Parameters: {"authenticity_token"=>"PqzhQjtF0xN9CHikagm09FGr2VL5skl6dNvc/S3OS4IoOXfyLBYr/Y0JpIW79JZ/WcFfSPk2FEYE1Ykv7m+Inw==", "song"=>{"name"=>"Too high to riot", "artist_name"=>"Kid Cudi", "rating"=>"2"}, "commit"=>"Create Song"}
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 930)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 180282ms (Views: 7.7ms | ActiveRecord: 0.0ms | Allocations: 76946)
+
+
+Started POST "/songs" for ::1 at 2021-05-03 11:48:49 -0700
+Started GET "/songs/new" for ::1 at 2021-05-03 11:49:32 -0700
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SongsController#new as HTML
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (Duration: 103.5ms | Allocations: 207296)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 152ms (Views: 127.9ms | ActiveRecord: 0.6ms | Allocations: 226585)
+
+
+Started POST "/songs" for ::1 at 2021-05-03 11:49:39 -0700
+Processing by SongsController#create as HTML
+  Parameters: {"authenticity_token"=>"let7lWBNXi/VGtskjSbwb+v6O2VNDnfKMZ0BBjeC6XCDfu0ldx6mwSUbBwVc29Lk45C9f02KKvZBk1TU9CMqbQ==", "song"=>{"name"=>"test 3 song", "artist_name"=>"Kid Cudi", "rating"=>"4"}, "commit"=>"Create Song"}
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 941)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 9.0ms | ActiveRecord: 0.0ms | Allocations: 11634)
+
+
+Started POST "/songs" for ::1 at 2021-05-03 11:50:05 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SongsController#create as HTML
+  Parameters: {"authenticity_token"=>"W3PVCYYK4fhCJmb/uc/4sq7a+d8m718w2O0SuZbQ1UtN5kO5kVkZFrInut5oMto5prB/xSZrAgyo40drVXEWVg==", "song"=>{"name"=>"test 3 song", "artist_name"=>"Kid Cudi", "rating"=>"4"}, "commit"=>"Create Song"}
+Completed 500 Internal Server Error in 112ms (ActiveRecord: 0.6ms | Allocations: 68762)
+
+
+  
+NoMethodError (undefined method `redirect' for #<SongsController:0x00007fdbed246e10>
+Did you mean?  redirect_to):
+  
+app/controllers/songs_controller.rb:24:in `create'
+Started POST "/songs" for ::1 at 2021-05-03 11:50:18 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SongsController#create as HTML
+  Parameters: {"authenticity_token"=>"W3PVCYYK4fhCJmb/uc/4sq7a+d8m718w2O0SuZbQ1UtN5kO5kVkZFrInut5oMto5prB/xSZrAgyo40drVXEWVg==", "song"=>{"name"=>"test 3 song", "artist_name"=>"Kid Cudi", "rating"=>"4"}, "commit"=>"Create Song"}
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 940)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 8.1ms | ActiveRecord: 0.8ms | Allocations: 16907)
+
+
+Started POST "/songs" for ::1 at 2021-05-03 11:50:22 -0700
+Processing by SongsController#create as HTML
+  Parameters: {"authenticity_token"=>"xJKdy3cK/aPUZZpaUAmAnMDyPbqfjE+0Y3wDAVDZiJ3SBwt7YFkFTSRkRnuB9KIXyJi7oJ8IEogTclbTk3hLgA==", "song"=>{"name"=>"test 3 song", "artist_name"=>"Kid Cudi", "rating"=>"46"}, "commit"=>"Create Song"}
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 924)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 9.4ms | ActiveRecord: 0.0ms | Allocations: 6988)
+
+
+Started GET "/songs/1" for ::1 at 2021-05-03 11:50:41 -0700
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:49:in `song_selector'
+Completed 404 Not Found in 10ms (ActiveRecord: 0.2ms | Allocations: 3753)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Song with 'id'=1):
+  
+app/controllers/songs_controller.rb:49:in `song_selector'
+app/controllers/songs_controller.rb:9:in `show'
+Started GET "/songs" for ::1 at 2021-05-03 11:53:15 -0700
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SongsController#index as HTML
+  Rendering songs/index.html.erb within layouts/application
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/views/songs/index.html.erb:2
+  Rendered songs/index.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1382)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 8.2ms | ActiveRecord: 0.5ms | Allocations: 6923)
+
+
+Started GET "/songs/new" for ::1 at 2021-05-03 11:53:18 -0700
+Processing by SongsController#new as HTML
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 971)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 9.0ms | ActiveRecord: 0.4ms | Allocations: 10242)
+
+
+Started POST "/songs" for ::1 at 2021-05-03 11:53:26 -0700
+Processing by SongsController#create as HTML
+  Parameters: {"authenticity_token"=>"zKdX27+vCi32pyIz+plvL32iZ3gBYxRsFDye1DDitTTaMsFrqPzywwam/hIrZE2kdcjhYgHnSVBkMssG80N2KQ==", "song"=>{"name"=>"She Knows This", "artist_name"=>"Q", "rating"=>"2"}, "commit"=>"Create Song"}
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 922)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 9.7ms | ActiveRecord: 0.0ms | Allocations: 11850)
+
+
+Started GET "/songs" for ::1 at 2021-05-03 11:54:03 -0700
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+SyntaxError (/Users/austinjohnson/ArtistLister/app/controllers/songs_controller.rb:22: else without rescue is useless
+       else
+       ^~~~
+/Users/austinjohnson/ArtistLister/app/controllers/songs_controller.rb:50: syntax error, unexpected end, expecting end-of-input):
+  
+app/controllers/songs_controller.rb:22: else without rescue is useless
+app/controllers/songs_controller.rb:50: syntax error, unexpected end, expecting end-of-input
+app/controllers/songs_controller.rb:22: else without rescue is useless
+app/controllers/songs_controller.rb:50: syntax error, unexpected end, expecting end-of-input
+app/controllers/songs_controller.rb:22: else without rescue is useless
+app/controllers/songs_controller.rb:50: syntax error, unexpected end, expecting end-of-input
+Started GET "/songs" for ::1 at 2021-05-03 11:54:13 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+SyntaxError (/Users/austinjohnson/ArtistLister/app/controllers/songs_controller.rb:48: syntax error, unexpected end, expecting end-of-input):
+  
+app/controllers/songs_controller.rb:48: syntax error, unexpected end, expecting end-of-input
+app/controllers/songs_controller.rb:48: syntax error, unexpected end, expecting end-of-input
+app/controllers/songs_controller.rb:48: syntax error, unexpected end, expecting end-of-input
+Started GET "/songs" for ::1 at 2021-05-03 11:54:40 -0700
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SongsController#index as HTML
+  Rendering songs/index.html.erb within layouts/application
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/views/songs/index.html.erb:2
+  Rendered songs/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 1192)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 7.4ms | ActiveRecord: 0.4ms | Allocations: 6596)
+
+
+Started GET "/songs/new" for ::1 at 2021-05-03 11:54:43 -0700
+Processing by SongsController#new as HTML
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 971)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 9.2ms | ActiveRecord: 0.4ms | Allocations: 10255)
+
+
+Started POST "/songs" for ::1 at 2021-05-03 11:54:51 -0700
+Processing by SongsController#create as HTML
+  Parameters: {"authenticity_token"=>"53Kyww7O0wwjyEI2ujiQnYt9T173uxOqdmglqrYUzMrx5yRzGZ0r4tPJnhdrxbIWgxfJRPc/TpYGZnB4dbUP1w==", "song"=>{"name"=>"She Knows This", "artist_name"=>"Q", "rating"=>"5"}, "commit"=>"Create Song"}
+Redirected to 
+Completed 500 Internal Server Error in 186ms (ActiveRecord: 0.0ms | Allocations: 110577)
+
+
+  
+NoMethodError (undefined method `show_url' for #<SongsController:0x00007fdbe3f300b8>
+Did you mean?  song_url):
+  
+app/controllers/songs_controller.rb:22:in `create'
+Started POST "/songs" for ::1 at 2021-05-03 11:55:09 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SongsController#create as HTML
+  Parameters: {"authenticity_token"=>"53Kyww7O0wwjyEI2ujiQnYt9T173uxOqdmglqrYUzMrx5yRzGZ0r4tPJnhdrxbIWgxfJRPc/TpYGZnB4dbUP1w==", "song"=>{"name"=>"She Knows This", "artist_name"=>"Q", "rating"=>"5"}, "commit"=>"Create Song"}
+  Rendering songs/show.html.erb within layouts/application
+  Rendered songs/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 125)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 7.4ms | ActiveRecord: 0.5ms | Allocations: 11308)
+
+
+Started GET "/songs/new" for ::1 at 2021-05-03 11:55:40 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SongsController#new as HTML
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 973)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 8.1ms | ActiveRecord: 0.9ms | Allocations: 11827)
+
+
+Started POST "/songs" for ::1 at 2021-05-03 11:55:47 -0700
+Processing by SongsController#create as HTML
+  Parameters: {"authenticity_token"=>"HZc0pCC2UDXX7graQaL/5UA2oi1J6s1VUOSqA2WtozMLAqIUN+Wo2yfv1vuQX91uSFwkN0lukGkg6v/RpgxgLg==", "song"=>{"name"=>"Night Job", "artist_name"=>"Turtle and villys", "rating"=>"9"}, "commit"=>"Create Song"}
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 926)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 8.3ms | ActiveRecord: 0.0ms | Allocations: 10167)
+
+
+Started POST "/songs" for ::1 at 2021-05-03 11:56:08 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SongsController#create as HTML
+  Parameters: {"authenticity_token"=>"JzAt+58Q8J+eICzzKooeMSCfpavRtsawSnW+bUy5FjcxpbtLiEMIcW4h8NL7dzy6KPUjsdEym4w6e+u/jxjVKg==", "song"=>{"name"=>"Night Job", "artist_name"=>"Turtle and villys", "rating"=>"9"}, "commit"=>"Create Song"}
+No template found for SongsController#create, rendering head :no_content
+Completed 204 No Content in 16ms (ActiveRecord: 0.5ms | Allocations: 13675)
+
+
+Started GET "/songs" for ::1 at 2021-05-03 11:56:13 -0700
+Processing by SongsController#index as HTML
+  Rendering songs/index.html.erb within layouts/application
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ app/views/songs/index.html.erb:2
+  Rendered songs/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 675)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.2ms | Allocations: 5138)
+
+
+Started GET "/songs/1" for ::1 at 2021-05-03 11:56:17 -0700
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:50:in `song_selector'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms | Allocations: 1278)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Song with 'id'=1):
+  
+app/controllers/songs_controller.rb:50:in `song_selector'
+app/controllers/songs_controller.rb:9:in `show'
+Started GET "/songs/new" for ::1 at 2021-05-03 11:56:22 -0700
+Processing by SongsController#new as HTML
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 918)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.0ms | Allocations: 5200)
+
+
+Started POST "/songs" for ::1 at 2021-05-03 11:56:26 -0700
+Processing by SongsController#create as HTML
+  Parameters: {"authenticity_token"=>"mZBWsX6VsZV59Z+lVQ+jR5GqpPgxb32pmd4+dR+hz8yPBcABacZJe4n0Q4SE8oHMmcAi4jHrIJXp0Gun3AAM0Q==", "song"=>{"name"=>"Night Job", "artist_name"=>"Bas", "rating"=>"1"}, "commit"=>"Create Song"}
+No template found for SongsController#create, rendering head :no_content
+Completed 204 No Content in 3ms (ActiveRecord: 0.0ms | Allocations: 2225)
+
+
+Started GET "/songs/new" for ::1 at 2021-05-03 11:56:42 -0700
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SongsController#new as HTML
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 973)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 7.3ms | ActiveRecord: 0.5ms | Allocations: 11863)
+
+
+Started POST "/songs" for ::1 at 2021-05-03 11:56:47 -0700
+Processing by SongsController#create as HTML
+  Parameters: {"authenticity_token"=>"KpXBxYIhesyojCIEu8UlvY36r6ldQVPw+P2BcIEceoM8AFd1lXKCIliN/iVqOAc2hZAps13FDsyI89SiQr25ng==", "song"=>{"name"=>"Night Job", "artist_name"=>"Bas", "rating"=>"1"}, "commit"=>"Create Song"}
+No template found for SongsController#create, rendering head :no_content
+Completed 204 No Content in 8ms (ActiveRecord: 0.0ms | Allocations: 7097)
+
+
+Started GET "/songs/new" for ::1 at 2021-05-03 11:57:18 -0700
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SongsController#new as HTML
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 973)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 6.8ms | ActiveRecord: 0.5ms | Allocations: 11868)
+
+
+Started POST "/songs" for ::1 at 2021-05-03 11:57:23 -0700
+Processing by SongsController#create as HTML
+  Parameters: {"authenticity_token"=>"kXENikG0W+/vDo5TAsQYI6j0AL56NUOaoLCKtOctfaqH5Js6VuejAR8PUnLTOTqooJ6GpHqxHqbQvt9mJIy+tw==", "song"=>{"name"=>"Too high to riot", "artist_name"=>"Bas", "rating"=>"1"}, "commit"=>"Create Song"}
+No template found for SongsController#create, rendering head :no_content
+Completed 204 No Content in 110831ms (ActiveRecord: 0.0ms | Allocations: 41678)
+
+
+Started GET "/songs/new" for ::1 at 2021-05-03 11:59:33 -0700
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SongsController#new as HTML
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (Duration: 125.2ms | Allocations: 207387)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 165ms (Views: 149.4ms | ActiveRecord: 0.7ms | Allocations: 226367)
+
+
+Started POST "/songs" for ::1 at 2021-05-03 11:59:41 -0700
+Processing by SongsController#create as HTML
+  Parameters: {"authenticity_token"=>"Y9vYqZ0MI/jxPsWjVJr6TPGn559H76Hx5Ec/5XVKd5d1Tk4Zil/bFgE/GYKFZ9jH+c1hhUdr/M2USWo3tuu0ig==", "song"=>{"name"=>"test 4", "artist_name"=>"me", "rating"=>"1"}, "commit"=>"Create Song"}
+No template found for SongsController#create, rendering head :no_content
+Completed 204 No Content in 67994ms (ActiveRecord: 0.0ms | Allocations: 51486)
+
+
+Started GET "/songs/new" for ::1 at 2021-05-03 12:00:51 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SongsController#new as HTML
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 974)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 8.9ms | ActiveRecord: 0.6ms | Allocations: 11929)
+
+
+Started POST "/songs" for ::1 at 2021-05-03 12:00:57 -0700
+Processing by SongsController#create as HTML
+  Parameters: {"authenticity_token"=>"BZul421OLDWy2PlAT9b79x09WmbUswFlWQfut/7t0zgTDjNTeh3U20LZJWGeK9l8FVfcfNQ3XFkpCbtlPUwQJQ==", "song"=>{"name"=>"Night Job", "artist_name"=>"Bas", "rating"=>"5"}, "commit"=>"Create Song"}
+No template found for SongsController#create, rendering head :no_content
+Completed 204 No Content in 58047ms (ActiveRecord: 0.0ms | Allocations: 31240)
+
+
+Started GET "/songs/new" for ::1 at 2021-05-03 12:01:56 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SongsController#new as HTML
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 974)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 8.5ms | ActiveRecord: 0.6ms | Allocations: 11716)
+
+
+Started POST "/songs" for ::1 at 2021-05-03 12:02:04 -0700
+Processing by SongsController#create as HTML
+  Parameters: {"authenticity_token"=>"tc/kXrBXywMaXo/pXq6rfIN2f91GXpR9Xf0MMM+Vt2ejWnLupwQz7epfU8iPU4n3ixz5x0bayUEt81niDDR0eg==", "song"=>{"name"=>"Midnight City", "artist_name"=>"M83", "rating"=>"9"}, "commit"=>"Create Song"}
+Started GET "/songs/new" for ::1 at 2021-05-03 12:02:22 -0700
+No template found for SongsController#create, rendering head :no_content
+Completed 204 No Content in 21476ms (ActiveRecord: 0.0ms | Allocations: 24031)
+
+
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SongsController#new as HTML
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 973)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 8.0ms | ActiveRecord: 0.6ms | Allocations: 11759)
+
+
+Started POST "/songs" for ::1 at 2021-05-03 12:02:31 -0700
+Processing by SongsController#create as HTML
+  Parameters: {"authenticity_token"=>"Oe76FyFDhSf3kZkxitrdGK67+2gtzHDZxdRTRO1Bs7Uve2ynNhB9yQeQRRBbJ/+TptF9ci1ILeW12gaWLuBwqA==", "song"=>{"name"=>"test 3 song", "artist_name"=>"Bas", "rating"=>"213"}, "commit"=>"Create Song"}
+Started GET "/songs/new" for ::1 at 2021-05-03 12:05:06 -0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SongsController#new as HTML
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (Duration: 125.7ms | Allocations: 207462)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 168ms (Views: 150.6ms | ActiveRecord: 0.7ms | Allocations: 226770)
+
+
+Started POST "/songs" for ::1 at 2021-05-03 12:05:12 -0700
+Processing by SongsController#create as HTML
+  Parameters: {"authenticity_token"=>"0qLV8834mfaAxf2YKV9kHQNAwEOcMHxyNYZ/DRskljTEN0ND2qthGHDEIbn4okaWCypGWZy0IU5FiCrf2IVVKQ==", "song"=>{"name"=>"Too high to riot", "artist_name"=>"Q", "rating"=>"5"}, "commit"=>"Create Song"}
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."name" = ? LIMIT ?[0m  [["name", "Too high to riot"], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:18:in `create'
+  [1m[36mCACHE Artist Load (0.0ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."name" = ? LIMIT ?[0m  [["name", "Too high to riot"], ["LIMIT", 1]]
+  ↳ (pry):2:in `create'
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."name" = ? LIMIT ?[0m  [["name", "Q"], ["LIMIT", 1]]
+  ↳ (pry):3:in `create'
+No template found for SongsController#create, rendering head :no_content
+Completed 204 No Content in 336747ms (ActiveRecord: 1.6ms | Allocations: 196637)
+
+
+Started GET "/" for ::1 at 2021-05-03 12:10:58 -0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/Users/austinjohnson/ArtistLister/app/controllers/sessions_controller.rb:14: syntax error, unexpected tIDENTIFIER, expecting end
+...dom generates a secrue 10 digit hexadecimal string that will...
+...                          ^~~~~):
+  
+app/controllers/sessions_controller.rb:14: syntax error, unexpected tIDENTIFIER, expecting end
+app/controllers/sessions_controller.rb:14: syntax error, unexpected tIDENTIFIER, expecting end
+app/controllers/sessions_controller.rb:14: syntax error, unexpected tIDENTIFIER, expecting end
+Started GET "/" for ::1 at 2021-05-03 12:11:28 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+SyntaxError (/Users/austinjohnson/ArtistLister/app/controllers/sessions_controller.rb:50: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/sessions_controller.rb:50: syntax error, unexpected end-of-input, expecting end
+app/controllers/sessions_controller.rb:50: syntax error, unexpected end-of-input, expecting end
+app/controllers/sessions_controller.rb:50: syntax error, unexpected end-of-input, expecting end
+Started GET "/" for ::1 at 2021-05-03 12:12:04 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#welcome as HTML
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 0.6ms | Allocations: 275)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 14.8ms | ActiveRecord: 0.0ms | Allocations: 9970)
+
+
+Started GET "/auth/facebook" for ::1 at 2021-05-03 12:12:06 -0700
+Started GET "/auth/facebook" for ::1 at 2021-05-03 12:12:06 -0700
+Started GET "/auth/facebook/callback?code=AQDeu3S7d7LbS8FDkAcy_lyV3uRr2OzOUdZDb7j28h3sfJOUMIzN1sW-5WNGQUxIUP5FQalWAR1kf-xVaEDgghQRYOw50IB2XV2My_X-NbEIxLsYtyAD5E7vPdD71YzMCCzmml2uMEl0Yav7a4i8PUUf6bhGEq5PixrHkQ5gAL_z17b8v4uoKahqkmNvkZ9_obgJBEsLZ_bjr_LUPF8L3l7QuP7uRC7hVQCaUEtQAwlJXsYLV4OhBLZ3WAwKf5ssnt0Ht9v4DST68yPQEwWhJcZTuBS2f0Y6Vl3Z47glb6W0NF9Pu2587XOa0mOnGK2zkk8&state=f4f40217b6b93d9ee58f9e14f4b96a8e330e8b5ceb974e71" for ::1 at 2021-05-03 12:12:06 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"code"=>"AQDeu3S7d7LbS8FDkAcy_lyV3uRr2OzOUdZDb7j28h3sfJOUMIzN1sW-5WNGQUxIUP5FQalWAR1kf-xVaEDgghQRYOw50IB2XV2My_X-NbEIxLsYtyAD5E7vPdD71YzMCCzmml2uMEl0Yav7a4i8PUUf6bhGEq5PixrHkQ5gAL_z17b8v4uoKahqkmNvkZ9_obgJBEsLZ_bjr_LUPF8L3l7QuP7uRC7hVQCaUEtQAwlJXsYLV4OhBLZ3WAwKf5ssnt0Ht9v4DST68yPQEwWhJcZTuBS2f0Y6Vl3Z47glb6W0NF9Pu2587XOa0mOnGK2zkk8", "state"=>"f4f40217b6b93d9ee58f9e14f4b96a8e330e8b5ceb974e71"}
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 1000)
+
+
+  
+NoMethodError (undefined method `find_or_create_by' for nil:NilClass):
+  
+app/controllers/sessions_controller.rb:12:in `create'

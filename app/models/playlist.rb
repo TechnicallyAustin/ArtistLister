@@ -5,7 +5,7 @@ class Playlist < ActiveRecord::Base
     has_many :users
     has_many :songs
     has_many :artists, through: :songs
-    has_may :playlist_songs
+    has_many :playlist_songs
     # Validations
     validates :title, presence: true
     validates :description, presence: true

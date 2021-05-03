@@ -14,11 +14,17 @@ class SongsController < ApplicationController
     end
 
     def create
-        binding.pry
-        @song = Song.new(song_params)
-        @song.artist = Artist.find_or_create_by(name: params["song"]["artist_name"])
-        #@song.rating = params["song"]["rating"]
-        byebug
+       @song = Song.new(song_params)
+       @song.artist_id = Artist.find_or_create_by(name: song_params[:artist_name])
+       binding.pry
+       # a method that finds or creates the artist and assigns the song.artist_id with that id
+       # a method that associates this song with a playlist. can be done from the palylist page maybe
+       if @song.save
+        render :show
+        else
+        "failed"
+        end
+
 
     
 

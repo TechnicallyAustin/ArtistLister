@@ -5,7 +5,7 @@ class Song < ActiveRecord::Base
     belongs_to :playlist_song
     # Validations
     validates :name, presence: true
-    validates :artist, presence: true
+    validates :artist_name, presence: true
     validates :rating, presence: true
     # Write a validation that will Limit the rating value from 1-10
 
