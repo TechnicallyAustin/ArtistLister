@@ -6,11 +6,11 @@ Rails.application.routes.draw do
   get 'sessions/welcome'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :artists do
-    resources :songs, only: [:index, :show, :new, :create, :edit ]
+    resources :songs, only: [:index, :show]
   end
 
   resources :playlists do
-    resources :songs, only: [:index, :new, :create, :edit]
+    resources :songs, only: [:index, :show]
   end
 
   resources :users do 
@@ -30,6 +30,7 @@ Rails.application.routes.draw do
   post 'signup', to: 'users#create'
   get 'logout', to: 'sessions#destroy'
   post 'logout', to: 'sessions#destroy'
+
 
   get '/auth/facebook/callback', to: 'sessions#create'
 

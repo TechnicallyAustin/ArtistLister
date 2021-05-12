@@ -14,8 +14,11 @@ class SongsController < ApplicationController
     end
 
     def create
-       @song = Song.new(song_params)
-       @song.artist_id = Artist.find_or_create_by(name: song_params[:artist_name])
+
+       @song = Song.create(song_params)
+       @song.artist = Artist.find_or_create_by(name: params[:song][:artist_name])
+       @song.save
+
        binding.pry
        # a method that finds or creates the artist and assigns the song.artist_id with that id
        # a method that associates this song with a playlist. can be done from the palylist page maybe

@@ -15,9 +15,11 @@ class UserPlaylistsController < ApplicationController
     end
 
     def new
+        @user_playlist = UserPlaylist.new
     end
 
     def create 
+        @user_playlist = UserPlaylist.new
     end
 
     def destroy

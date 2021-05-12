@@ -20,6 +20,7 @@ class ArtistsController < ApplicationController
 
     def create
         @artist = Artist.new(artist_params)
+        
         if @artist.valid
             @artist.save
             redirect_to :show

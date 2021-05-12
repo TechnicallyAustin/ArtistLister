@@ -5,6 +5,4 @@ class Artist < ActiveRecord::Base
     belongs_to :playlists
     # Validations
 
-
-
 end
