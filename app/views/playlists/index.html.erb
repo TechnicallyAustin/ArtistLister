@@ -1,1 +1,10 @@
 Playlist index
+
+<h1> Display all playlists here, with links to edit, and view individual playlists, deleting is done from the edit menu.  </h1>
+<%=Playlist.all.select{|x|x.user_id == @user.id}%>
+<ul>
+    <li><%=link_to "Create a Playlist", new_user_playlist_path(@user.id)%></li>
+
+    <li>Link to Song Hub </li>
+    <li>Link to Artist Hub</li>
+</ul>

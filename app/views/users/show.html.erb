@@ -2,11 +2,9 @@
 <nav>
 <ul>
     <li> Home</li>
-    <li><%=link_to "New Playlist", new_user_playlist_path(@user_playlist) %></li>
-    <li><%=link_to "My Playlists", playlists_path(@playlist)%>
-    <li><%=link_to "Add a New Song", new_song_path(@song) %> </li>
-    <li><%=link_to "My Songs", songs_path(@songs)%> </li>
-    <li> <%=link_to "My Artists", artists_path(@artist)%></li>
+    <li><%=link_to "Playlist Hub", user_playlists_path(@user.id, @playlist.id) %></li>
+    
+    <li> <%=link_to "Artist Hub", artists_path(@artist)%></li>
     <li><%= link_to "Logout"%> </li>
 </ul>
 </nav>

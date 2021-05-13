@@ -11,6 +11,7 @@ class SongsController < ApplicationController
 
     def new
         @song = Song.new
+        @playlist_song = Song.new
     end
 
     def create

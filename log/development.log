@@ -42558,3 +42558,1189 @@ Did you mean?  sti_name):
   
 config/routes.rb:33:in `block in <main>'
 config/routes.rb:1:in `<main>'
+Started GET "/" for ::1 at 2021-05-13 09:22:55 -0700
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#welcome as HTML
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 1.3ms | Allocations: 729)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 56ms (Views: 51.8ms | ActiveRecord: 0.0ms | Allocations: 12184)
+
+
+Started GET "/login" for ::1 at 2021-05-13 09:22:58 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 490)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 12.5ms | ActiveRecord: 0.0ms | Allocations: 4868)
+
+
+Started GET "/users/1" for ::1 at 2021-05-13 09:23:05 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:32:in `user_selector'
+  Rendering users/show.html.erb within layouts/user
+  Rendered users/show.html.erb within layouts/user (Duration: 3.1ms | Allocations: 1561)
+Completed 500 Internal Server Error in 62ms (ActiveRecord: 1.9ms | Allocations: 14701)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"new", :controller=>"playlists", :user_id=>nil}, missing required keys: [:user_id]):
+    2: <nav>
+    3: <ul>
+    4:     <li> Home</li>
+    5:     <li><%=link_to "New Playlist", new_user_playlist_path(@user_playlist) %></li>
+    6:     <li><%=link_to "My Playlists", playlists_path(@playlist)%>
+    7:     <li><%=link_to "Add a New Song", new_song_path(@song) %> </li>
+    8:     <li><%=link_to "My Songs", songs_path(@songs)%> </li>
+  
+app/views/users/show.html.erb:5
+Started GET "/users/1" for ::1 at 2021-05-13 09:26:25 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:32:in `user_selector'
+  Rendering users/show.html.erb within layouts/user
+  Rendered users/show.html.erb within layouts/user (Duration: 1.6ms | Allocations: 1355)
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 0.1ms | Allocations: 2909)
+
+
+Started GET "/songs/new" for ::1 at 2021-05-13 09:26:29 -0700
+Processing by SongsController#new as HTML
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (Duration: 204.0ms | Allocations: 206994)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 225ms (Views: 212.5ms | ActiveRecord: 0.5ms | Allocations: 219059)
+
+
+Started POST "/songs" for ::1 at 2021-05-13 09:26:42 -0700
+Processing by SongsController#create as HTML
+  Parameters: {"authenticity_token"=>"RoyxG+taxT4UPIWyLCdBL02K45ziutq5A9JTRtsEZrcvWEaZ4TynUTKlSmaToPAFm9BL4GB6tgyjUDakhn3rNw==", "song"=>{"name"=>"Night Job", "artist_name"=>"Bas", "rating"=>"4"}, "commit"=>"Create Song"}
+  [1m[36mArtist Load (0.5ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."name" = ? LIMIT ?[0m  [["name", "Bas"], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:19:in `create'
+No template found for SongsController#create, rendering head :no_content
+Completed 204 No Content in 58976ms (ActiveRecord: 1.1ms | Allocations: 52576)
+
+
+Started GET "/user/1" for ::1 at 2021-05-13 09:27:50 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/user/1"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/users/1" for ::1 at 2021-05-13 09:27:55 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:32:in `user_selector'
+  Rendering users/show.html.erb within layouts/user
+  Rendered users/show.html.erb within layouts/user (Duration: 182.4ms | Allocations: 85348)
+Completed 500 Internal Server Error in 187ms (ActiveRecord: 0.2ms | Allocations: 86748)
+
+
+  
+ActionView::Template::Error (undefined method `new_playlist_song_path' for #<#<Class:0x00007fea053ad440>:0x00007fea053b7a58>
+Did you mean?  new_playlist_path):
+    3: <ul>
+    4:     <li> Home</li>
+    5:     <li><%=link_to "My Playlists", playlists_path(@playlist)%>
+    6:     <li><%=link_to "Add a New Song", new_playlist_song_path(@playlist_song) %> </li>
+    7:     <li><%=link_to "My Songs", songs_path(@songs)%> </li>
+    8:     <li> <%=link_to "My Artists", artists_path(@artist)%></li>
+    9:     <li><%= link_to "Logout"%> </li>
+  
+app/views/users/show.html.erb:6
+Started GET "/users/1" for ::1 at 2021-05-13 09:28:52 -0700
+  
+SyntaxError (/Users/austinjohnson/ArtistLister/config/routes.rb:13: syntax error, unexpected ':', expecting ']'
+..., only: [:new, :create, :edit :index, :show]
+...                              ^
+/Users/austinjohnson/ArtistLister/config/routes.rb:13: syntax error, unexpected ']', expecting '.' or &. or :: or '['
+..., :create, :edit :index, :show]
+...                              ^
+/Users/austinjohnson/ArtistLister/config/routes.rb:37: syntax error, unexpected end-of-input, expecting end):
+  
+config/routes.rb:13: syntax error, unexpected ':', expecting ']'
+config/routes.rb:13: syntax error, unexpected ']', expecting '.' or &. or :: or '['
+config/routes.rb:37: syntax error, unexpected end-of-input, expecting end
+config/routes.rb:13: syntax error, unexpected ':', expecting ']'
+config/routes.rb:13: syntax error, unexpected ']', expecting '.' or &. or :: or '['
+config/routes.rb:37: syntax error, unexpected end-of-input, expecting end
+config/routes.rb:13: syntax error, unexpected ':', expecting ']'
+config/routes.rb:13: syntax error, unexpected ']', expecting '.' or &. or :: or '['
+config/routes.rb:37: syntax error, unexpected end-of-input, expecting end
+Started GET "/users/1" for ::1 at 2021-05-13 09:29:00 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:32:in `user_selector'
+  Rendering users/show.html.erb within layouts/user
+  Rendered users/show.html.erb within layouts/user (Duration: 0.5ms | Allocations: 1057)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.7ms | Allocations: 12482)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"new", :controller=>"songs", :playlist_id=>nil}, missing required keys: [:playlist_id]):
+    3: <ul>
+    4:     <li> Home</li>
+    5:     <li><%=link_to "My Playlists", playlists_path(@playlist)%>
+    6:     <li><%=link_to "Add a New Song", new_playlist_song_path(@playlist_song) %> </li>
+    7:     <li><%=link_to "My Songs", songs_path(@songs)%> </li>
+    8:     <li> <%=link_to "My Artists", artists_path(@artist)%></li>
+    9:     <li><%= link_to "Logout"%> </li>
+  
+app/views/users/show.html.erb:6
+Started GET "/users/1/routes" for ::1 at 2021-05-13 09:32:12 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/users/1/routes"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/users/1/" for ::1 at 2021-05-13 09:33:33 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:32:in `user_selector'
+  Rendering users/show.html.erb within layouts/user
+  Rendered users/show.html.erb within layouts/user (Duration: 0.5ms | Allocations: 1005)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.7ms | Allocations: 12415)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"new", :controller=>"songs", :playlist_id=>nil}, missing required keys: [:playlist_id]):
+    3: <ul>
+    4:     <li> Home</li>
+    5:     <li><%=link_to "My Playlists", playlists_path(@playlist)%>
+    6:     <li><%=link_to "Add a New Song", new_playlist_song_path(@playlist_song) %> </li>
+    7:     <li><%=link_to "My Songs", songs_path(@songs)%> </li>
+    8:     <li> <%=link_to "My Artists", artists_path(@artist)%></li>
+    9:     <li><%= link_to "Logout"%> </li>
+  
+app/views/users/show.html.erb:6
+Started GET "/users/1/" for ::1 at 2021-05-13 09:33:47 -0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:32:in `user_selector'
+  Rendering users/show.html.erb within layouts/user
+  Rendered users/show.html.erb within layouts/user (Duration: 3.6ms | Allocations: 1691)
+Completed 500 Internal Server Error in 39ms (ActiveRecord: 1.1ms | Allocations: 15936)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"new", :controller=>"songs", :playlist_id=>nil}, missing required keys: [:playlist_id]):
+    3: <ul>
+    4:     <li> Home</li>
+    5:     <li><%=link_to "My Playlists", playlists_path(@playlist)%>
+    6:     <li><%=link_to "Add a New Song", new_playlist_song_path(@playlist_song) %> </li>
+    7:     <li><%=link_to "My Songs", songs_path(@songs)%> </li>
+    8:     <li> <%=link_to "My Artists", artists_path(@artist)%></li>
+    9:     <li><%= link_to "Logout"%> </li>
+  
+app/views/users/show.html.erb:6
+Started GET "/users/1/r" for ::1 at 2021-05-13 09:34:28 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/users/1/r"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/users/1" for ::1 at 2021-05-13 09:35:05 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:32:in `user_selector'
+  Rendering users/show.html.erb within layouts/user
+  Rendered users/show.html.erb within layouts/user (Duration: 1.1ms | Allocations: 1240)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.2ms | Allocations: 2653)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"index", :controller=>"songs", :playlist_id=>nil}, missing required keys: [:playlist_id]):
+    3: <ul>
+    4:     <li> Home</li>
+    5:     <li><%=link_to "My Playlists", playlists_path(@playlist)%>
+    6:     <li><%=link_to "Add a New Song", playlist_songs_path(@playlist_song) %> </li>
+    7:     <li><%=link_to "My Songs", songs_path(@songs)%> </li>
+    8:     <li> <%=link_to "My Artists", artists_path(@artist)%></li>
+    9:     <li><%= link_to "Logout"%> </li>
+  
+app/views/users/show.html.erb:6
+Started GET "/users/1" for ::1 at 2021-05-13 09:35:08 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:32:in `user_selector'
+  Rendering users/show.html.erb within layouts/user
+  Rendered users/show.html.erb within layouts/user (Duration: 0.6ms | Allocations: 1050)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.1ms | Allocations: 2007)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"index", :controller=>"songs", :playlist_id=>nil}, missing required keys: [:playlist_id]):
+    3: <ul>
+    4:     <li> Home</li>
+    5:     <li><%=link_to "My Playlists", playlists_path(@playlist)%>
+    6:     <li><%=link_to "Add a New Song", playlist_songs_path(@playlist_song) %> </li>
+    7:     <li><%=link_to "My Songs", songs_path(@songs)%> </li>
+    8:     <li> <%=link_to "My Artists", artists_path(@artist)%></li>
+    9:     <li><%= link_to "Logout"%> </li>
+  
+app/views/users/show.html.erb:6
+Started GET "/users/1" for ::1 at 2021-05-13 09:47:42 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:32:in `user_selector'
+  Rendering users/show.html.erb within layouts/user
+  Rendered users/show.html.erb within layouts/user (Duration: 1.4ms | Allocations: 1443)
+Completed 200 OK in 5ms (Views: 2.6ms | ActiveRecord: 0.2ms | Allocations: 3018)
+
+
+Started GET "/songs/new" for ::1 at 2021-05-13 09:47:44 -0700
+Processing by SongsController#new as HTML
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (Duration: 0.7ms | Allocations: 1107)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.5ms | Allocations: 9361)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1>Create a New Song  </h1>
+    2: <%=form_for @playlist_song do |t|%>
+    3: 
+    4: 
+    5: <%= t.label :name %>
+  
+app/views/songs/new.html.erb:2
+Started GET "/users/1" for ::1 at 2021-05-13 09:51:56 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:32:in `user_selector'
+  Rendering users/show.html.erb within layouts/user
+  Rendered users/show.html.erb within layouts/user (Duration: 1.1ms | Allocations: 1634)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.8ms | Allocations: 13346)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    2: <nav>
+    3: <ul>
+    4:     <li> Home</li>
+    5:     <li><%=link_to "New Playlist", new_user_playlist_path(@user.id, @playlist.id) %></li>
+    6:     <li><%=link_to "My Playlists", playlists_path(@playlist)%>
+    7:     <li><%=link_to "Add a New Song", new_song_path(@song) %> </li>
+    8:     <li><%=link_to "My Songs", songs_path(@songs)%> </li>
+  
+app/views/users/show.html.erb:5
+Started GET "/users/1" for ::1 at 2021-05-13 09:53:35 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:32:in `user_selector'
+  Rendering users/show.html.erb within layouts/user
+  Rendered users/show.html.erb within layouts/user (Duration: 242925.6ms | Allocations: 81714)
+Completed 500 Internal Server Error in 242929ms (ActiveRecord: 0.8ms | Allocations: 83129)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    3: <ul>
+    4:     <li> Home</li>
+    5:     <%=binding.pry%>
+    6:     <li><%=link_to "New Playlist", new_user_playlist_path(@user.id, @playlist.id) %></li>
+    7:     <li><%=link_to "My Playlists", playlists_path(@playlist)%>
+    8:     <li><%=link_to "Add a New Song", new_song_path(@song) %> </li>
+    9:     <li><%=link_to "My Songs", songs_path(@songs)%> </li>
+  
+app/views/users/show.html.erb:6
+Started GET "/" for ::1 at 2021-05-13 09:57:42 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#welcome as HTML
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 0.6ms | Allocations: 260)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 18.0ms | ActiveRecord: 0.0ms | Allocations: 9732)
+
+
+Started GET "/users/1" for ::1 at 2021-05-13 09:57:49 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33:in `user_selector'
+  [1m[36mPlaylist Load (0.8ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."title" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `show'
+  Rendering users/show.html.erb within layouts/user
+  Rendered users/show.html.erb within layouts/user (Duration: 7838.2ms | Allocations: 14141)
+Completed 200 OK in 8042ms (Views: 7839.5ms | ActiveRecord: 2.5ms | Allocations: 240837)
+
+
+Started GET "/playlists" for ::1 at 2021-05-13 09:58:06 -0700
+Processing by PlaylistsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:4:in `index'
+  Rendering playlists/index.html.erb within layouts/playlist
+  Rendered playlists/index.html.erb within layouts/playlist (Duration: 0.7ms | Allocations: 82)
+Completed 200 OK in 5ms (Views: 2.4ms | ActiveRecord: 0.2ms | Allocations: 1606)
+
+
+Started GET "/playlists" for ::1 at 2021-05-13 09:58:14 -0700
+Processing by PlaylistsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:4:in `index'
+  Rendering playlists/index.html.erb within layouts/playlist
+  Rendered playlists/index.html.erb within layouts/playlist (Duration: 0.0ms | Allocations: 4)
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 976)
+
+
+Started GET "/playlists" for ::1 at 2021-05-13 10:00:39 -0700
+Processing by PlaylistsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:4:in `index'
+  Rendering playlists/index.html.erb within layouts/playlist
+  Rendered playlists/index.html.erb within layouts/playlist (Duration: 0.0ms | Allocations: 4)
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 971)
+
+
+Started GET "/playlists/1" for ::1 at 2021-05-13 10:01:17 -0700
+Processing by PlaylistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlaylist Load (0.2ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:44:in `playlist_selector'
+  Rendering playlists/show.html.erb within layouts/playlist
+  Rendered playlists/show.html.erb within layouts/playlist (Duration: 1.0ms | Allocations: 184)
+Completed 200 OK in 6ms (Views: 2.6ms | ActiveRecord: 0.2ms | Allocations: 1846)
+
+
+Started GET "/playlists/1/songs/new" for ::1 at 2021-05-13 10:01:20 -0700
+Processing by SongsController#new as HTML
+  Parameters: {"playlist_id"=>"1"}
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1704)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 12.0ms | ActiveRecord: 0.6ms | Allocations: 13269)
+
+
+Started GET "/playlists/1/songs/new" for ::1 at 2021-05-13 10:01:24 -0700
+Processing by SongsController#new as HTML
+  Parameters: {"playlist_id"=>"1"}
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 913)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 0.0ms | Allocations: 5202)
+
+
+Started GET "/user/1" for ::1 at 2021-05-13 10:18:35 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+ActionController::RoutingError (No route matches [GET] "/user/1"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/users/1" for ::1 at 2021-05-13 10:18:39 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33:in `user_selector'
+  [1m[36mPlaylist Load (0.2ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."title" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `show'
+  Rendering users/show.html.erb within layouts/user
+  Rendered users/show.html.erb within layouts/user (Duration: 16543.2ms | Allocations: 17299)
+Completed 200 OK in 16551ms (Views: 16545.1ms | ActiveRecord: 0.4ms | Allocations: 20804)
+
+
+Started GET "/users/1/playlists/new" for ::1 at 2021-05-13 10:19:02 -0700
+Processing by PlaylistsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  Rendering playlists/new.html.erb within layouts/playlist
+  Rendered playlists/new.html.erb within layouts/playlist (Duration: 2.2ms | Allocations: 1117)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 1982)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1> Create a new Playlist </h1>
+    2: 
+    3: <%= form_for @user_playlist do |t| %>
+    4: 
+    5: <%= t.label :title %>
+    6: <%= t.text_field :title %><br /><br />
+  
+app/views/playlists/new.html.erb:3
+Started GET "/users/1/playlists/new" for ::1 at 2021-05-13 10:19:14 -0700
+Processing by PlaylistsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  Rendering playlists/new.html.erb within layouts/playlist
+  Rendered playlists/new.html.erb within layouts/playlist (Duration: 0.3ms | Allocations: 919)
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 1329)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1> Create a new Playlist </h1>
+    2: 
+    3: <%= form_for @user_playlist do |t| %>
+    4: 
+    5: <%= t.label :title %>
+    6: <%= t.text_field :title %><br /><br />
+  
+app/views/playlists/new.html.erb:3
+Started GET "/users/1/playlists/new" for ::1 at 2021-05-13 10:19:35 -0700
+Processing by PlaylistsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  Rendering playlists/new.html.erb within layouts/playlist
+  Rendered playlists/new.html.erb within layouts/playlist (Duration: 1.2ms | Allocations: 1110)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 1975)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1> Create a new Playlist </h1>
+    2: 
+    3: <%= form_for @user_playlist do |t| %>
+    4: 
+    5: <%= t.label :title %>
+    6: <%= t.text_field :title %><br /><br />
+  
+app/views/playlists/new.html.erb:3
+Started GET "/users/1" for ::1 at 2021-05-13 10:19:43 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33:in `user_selector'
+  [1m[36mPlaylist Load (0.1ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."title" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `show'
+  Rendering users/show.html.erb within layouts/user
+  Rendered users/show.html.erb within layouts/user (Duration: 1.3ms | Allocations: 1114)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.2ms | Allocations: 4401)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"show", :controller=>"playlists", :id=>nil, :user_id=>"1"}, missing required keys: [:id]):
+    2: <nav>
+    3: <ul>
+    4:     <li> Home</li>
+    5:     <li><%=link_to "Playlist Hub", user_playlist_path(@user.id, @playlist.id) %></li>
+    6:     <li><%=link_to "Song Hub", songs_path(@songs)%> </li>
+    7:     <li> <%=link_to "Artist Hub", artists_path(@artist)%></li>
+    8:     <li><%= link_to "Logout"%> </li>
+  
+app/views/users/show.html.erb:5
+Started GET "/users/1" for ::1 at 2021-05-13 10:20:10 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33:in `user_selector'
+  [1m[36mPlaylist Load (0.2ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."title" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `show'
+  Rendering users/show.html.erb within layouts/user
+  Rendered users/show.html.erb within layouts/user (Duration: 1.2ms | Allocations: 434)
+Completed 200 OK in 8ms (Views: 3.1ms | ActiveRecord: 0.3ms | Allocations: 3883)
+
+
+Started GET "/users/1/playlists" for ::1 at 2021-05-13 10:20:12 -0700
+Processing by PlaylistsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:4:in `index'
+  Rendering playlists/index.html.erb within layouts/playlist
+  Rendered playlists/index.html.erb within layouts/playlist (Duration: 0.4ms | Allocations: 81)
+Completed 200 OK in 24ms (Views: 21.3ms | ActiveRecord: 0.2ms | Allocations: 1605)
+
+
+Started GET "/users/1" for ::1 at 2021-05-13 10:20:54 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33:in `user_selector'
+  [1m[36mPlaylist Load (0.1ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."title" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `show'
+  Rendering users/show.html.erb within layouts/user
+  Rendered users/show.html.erb within layouts/user (Duration: 1.5ms | Allocations: 1639)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.3ms | Allocations: 4942)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    3: <ul>
+    4:     <li> Home</li>
+    5:     <li><%=link_to "Playlist Hub", user_playlists_path(@user.id, @playlist.id) %></li>
+    6:     <li><%=link_to "Song Hub", playlist_songs_path(@playlist.id, @songs.id)%> </li>
+    7:     <li> <%=link_to "Artist Hub", artists_path(@artist)%></li>
+    8:     <li><%= link_to "Logout"%> </li>
+    9: </ul>
+  
+app/views/users/show.html.erb:6
+Started GET "/users/1" for ::1 at 2021-05-13 10:21:38 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:33:in `user_selector'
+  [1m[36mPlaylist Load (0.1ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."title" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `show'
+  Rendering users/show.html.erb within layouts/user
+  Rendered users/show.html.erb within layouts/user (Duration: 2.2ms | Allocations: 1639)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.2ms | Allocations: 4945)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    3: <ul>
+    4:     <li> Home</li>
+    5:     <li><%=link_to "Playlist Hub", user_playlists_path(@user.id, @playlist.id) %></li>
+    6:     <li><%=link_to "Song Hub", playlist_songs_path(@playlist.id, @song.id)%> </li>
+    7:     <li> <%=link_to "Artist Hub", artists_path(@artist)%></li>
+    8:     <li><%= link_to "Logout"%> </li>
+    9: </ul>
+  
+app/views/users/show.html.erb:6
+Started GET "/users/1" for ::1 at 2021-05-13 10:22:38 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34:in `user_selector'
+  [1m[36mPlaylist Load (0.1ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."title" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `show'
+  [1m[36mSong Load (0.7ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:23:in `show'
+  Rendering users/show.html.erb within layouts/user
+  Rendered users/show.html.erb within layouts/user (Duration: 17.9ms | Allocations: 1022)
+Completed 500 Internal Server Error in 65ms (ActiveRecord: 2.8ms | Allocations: 35762)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"index", :controller=>"songs", :format=>nil, :id=>"1", :playlist_id=>nil}, possible unmatched constraints: [:playlist_id]):
+    3: <ul>
+    4:     <li> Home</li>
+    5:     <li><%=link_to "Playlist Hub", user_playlists_path(@user.id, @playlist.id) %></li>
+    6:     <li><%=link_to "Song Hub", playlist_songs_path(@playlist.id, @song.id)%> </li>
+    7:     <li> <%=link_to "Artist Hub", artists_path(@artist)%></li>
+    8:     <li><%= link_to "Logout"%> </li>
+    9: </ul>
+  
+app/views/users/show.html.erb:6
+Started GET "/users/1" for ::1 at 2021-05-13 10:23:22 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34:in `user_selector'
+  [1m[36mPlaylist Load (0.1ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."title" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `show'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:23:in `show'
+  Rendering users/show.html.erb within layouts/user
+  Rendered users/show.html.erb within layouts/user (Duration: 0.6ms | Allocations: 1013)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.5ms | Allocations: 6917)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"index", :controller=>"songs", :format=>nil, :id=>"1", :playlist_id=>nil}, possible unmatched constraints: [:playlist_id]):
+    3: <ul>
+    4:     <li> Home</li>
+    5:     <li><%=link_to "Playlist Hub", user_playlists_path(@user.id, @playlist.id) %></li>
+    6:     <li><%=link_to "Song Hub", playlist_songs_path(@playlist.id, @song.id)%> </li>
+    7:     <li> <%=link_to "Artist Hub", artists_path(@artist)%></li>
+    8:     <li><%= link_to "Logout"%> </li>
+    9: </ul>
+  
+app/views/users/show.html.erb:6
+Started GET "/users/1" for ::1 at 2021-05-13 10:24:04 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34:in `user_selector'
+  [1m[36mPlaylist Load (0.1ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."title" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `show'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:23:in `show'
+  Rendering users/show.html.erb within layouts/user
+  Rendered users/show.html.erb within layouts/user (Duration: 1.2ms | Allocations: 1186)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.4ms | Allocations: 7547)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"index", :controller=>"songs", :format=>nil, :id=>"1", :playlist_id=>nil}, possible unmatched constraints: [:playlist_id]):
+    3: <ul>
+    4:     <li> Home</li>
+    5:     <li><%=link_to "Playlist Hub", user_playlists_path(@user.id, @playlist.id) %></li>
+    6:     <li><%=link_to "Song Hub", playlist_songs_path(@playlist_id, @song.id)%> </li>
+    7:     <li> <%=link_to "Artist Hub", artists_path(@artist)%></li>
+    8:     <li><%= link_to "Logout"%> </li>
+    9: </ul>
+  
+app/views/users/show.html.erb:6
+Started GET "/users/1" for ::1 at 2021-05-13 10:24:34 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34:in `user_selector'
+  [1m[36mPlaylist Load (0.2ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."title" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `show'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:23:in `show'
+  Rendering users/show.html.erb within layouts/user
+  Rendered users/show.html.erb within layouts/user (Duration: 1.1ms | Allocations: 1022)
+Completed 500 Internal Server Error in 66ms (ActiveRecord: 2.5ms | Allocations: 34830)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"index", :controller=>"songs", :format=>nil, :id=>"1", :playlist_id=>nil}, possible unmatched constraints: [:playlist_id]):
+    3: <ul>
+    4:     <li> Home</li>
+    5:     <li><%=link_to "Playlist Hub", user_playlists_path(@user.id, @playlist.id) %></li>
+    6:     <li><%=link_to "Song Hub", playlist_songs_path(@playlist_id, @song.id)%> </li>
+    7:     <li> <%=link_to "Artist Hub", artists_path(@artist)%></li>
+    8:     <li><%= link_to "Logout"%> </li>
+    9: </ul>
+  
+app/views/users/show.html.erb:6
+Started GET "/user/1" for ::1 at 2021-05-13 10:25:25 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/user/1"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/user/1" for ::1 at 2021-05-13 10:25:28 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/user/1"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/user/1" for ::1 at 2021-05-13 10:25:35 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/user/1"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/users/1" for ::1 at 2021-05-13 10:25:44 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34:in `user_selector'
+  [1m[36mPlaylist Load (0.2ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."title" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `show'
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:23:in `show'
+  Rendering users/show.html.erb within layouts/user
+  Rendered users/show.html.erb within layouts/user (Duration: 1.3ms | Allocations: 1257)
+Completed 200 OK in 14ms (Views: 2.6ms | ActiveRecord: 0.7ms | Allocations: 7753)
+
+
+Started GET "/users/1/playlists" for ::1 at 2021-05-13 10:25:46 -0700
+Processing by PlaylistsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:4:in `index'
+  Rendering playlists/index.html.erb within layouts/playlist
+  Rendered playlists/index.html.erb within layouts/playlist (Duration: 0.3ms | Allocations: 80)
+Completed 200 OK in 4ms (Views: 1.5ms | ActiveRecord: 0.2ms | Allocations: 1603)
+
+
+Started GET "/users/1/playlists" for ::1 at 2021-05-13 10:29:17 -0700
+Processing by PlaylistsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:4:in `index'
+  Rendering playlists/index.html.erb within layouts/playlist
+  Rendered playlists/index.html.erb within layouts/playlist (Duration: 0.3ms | Allocations: 97)
+Completed 200 OK in 5ms (Views: 1.7ms | ActiveRecord: 0.2ms | Allocations: 1639)
+
+
+Started GET "/users/1/playlists" for ::1 at 2021-05-13 10:33:14 -0700
+Processing by PlaylistsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:4:in `index'
+  Rendering playlists/index.html.erb within layouts/playlist
+  Rendered playlists/index.html.erb within layouts/playlist (Duration: 0.8ms | Allocations: 1064)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.2ms | Allocations: 2466)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check Playlist index
+
+<h1> Display all playlists here, with links to edit, and view individual playlists, deleting is done from the edit menu.  </h1>
+<%=Playlist.all.select{|x|x.user_id == @user.id%>
+<ul>
+    <li>Link to a create a playlist</li>
+
+    <li>Link to Song Hub </li>
+    <li>Link to Artist Hub</li>
+</ul>
+
+):
+1:    Playlist index
+2:    
+3:    <h1> Display all playlists here, with links to edit, and view individual playlists, deleting is done from the edit menu.  </h1>
+4:    <%=Playlist.all.select{|x|x.user_id == @user.id%>
+5:    <ul>
+6:        <li>Link to a create a playlist</li>
+7:    
+8:        <li>Link to Song Hub </li>
+9:        <li>Link to Artist Hub</li>
+10:    </ul>
+  
+app/views/playlists/index.html.erb:4: syntax error, unexpected ')', expecting '}'
+app/views/playlists/index.html.erb:13: syntax error, unexpected end, expecting ')'
+app/views/playlists/index.html.erb:4: syntax error, unexpected ')', expecting '}'
+app/views/playlists/index.html.erb:13: syntax error, unexpected end, expecting ')'
+app/views/playlists/index.html.erb:4: syntax error, unexpected ')', expecting '}'
+app/views/playlists/index.html.erb:13: syntax error, unexpected end, expecting ')'
+app/views/playlists/index.html.erb:4: syntax error, unexpected ')', expecting '}'
+app/views/playlists/index.html.erb:13: syntax error, unexpected end, expecting ')'
+app/views/playlists/index.html.erb:4: syntax error, unexpected ')', expecting '}'
+app/views/playlists/index.html.erb:13: syntax error, unexpected end, expecting ')'
+app/views/playlists/index.html.erb:4: syntax error, unexpected ')', expecting '}'
+app/views/playlists/index.html.erb:13: syntax error, unexpected end, expecting ')'
+Started GET "/users/1/playlists" for ::1 at 2021-05-13 10:33:26 -0700
+Processing by PlaylistsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:4:in `index'
+  Rendering playlists/index.html.erb within layouts/playlist
+  [1m[36mPlaylist Load (0.2ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists"[0m
+  ↳ app/views/playlists/index.html.erb:4
+  Rendered playlists/index.html.erb within layouts/playlist (Duration: 1.6ms | Allocations: 804)
+Completed 200 OK in 6ms (Views: 2.8ms | ActiveRecord: 0.4ms | Allocations: 2344)
+
+
+Started GET "/users/1/playlists" for ::1 at 2021-05-13 10:36:00 -0700
+Processing by PlaylistsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:4:in `index'
+  Rendering playlists/index.html.erb within layouts/playlist
+  Rendered playlists/index.html.erb within layouts/playlist (Duration: 0.8ms | Allocations: 1086)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.1ms | Allocations: 2484)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check Playlist index
+
+<h1> Display all playlists here, with links to edit, and view individual playlists, deleting is done from the edit menu.  </h1>
+<%=Playlist.all.select{|x|x.user_id == @user.id}%>
+<ul>
+    <li><%=link_to "Create a Playlist" new_user_playlist_path(@user.id, @playlist.id)%></li>
+
+    <li>Link to Song Hub </li>
+    <li>Link to Artist Hub</li>
+</ul>
+
+):
+1:    Playlist index
+2:    
+3:    <h1> Display all playlists here, with links to edit, and view individual playlists, deleting is done from the edit menu.  </h1>
+4:    <%=Playlist.all.select{|x|x.user_id == @user.id}%>
+5:    <ul>
+6:        <li><%=link_to "Create a Playlist" new_user_playlist_path(@user.id, @playlist.id)%></li>
+7:    
+8:        <li>Link to Song Hub </li>
+9:        <li>Link to Artist Hub</li>
+10:    </ul>
+  
+app/views/playlists/index.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/playlists/index.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/playlists/index.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/playlists/index.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/playlists/index.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+app/views/playlists/index.html.erb:6: syntax error, unexpected tIDENTIFIER, expecting ')'
+Started GET "/users/1/playlists" for ::1 at 2021-05-13 10:36:48 -0700
+Processing by PlaylistsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:4:in `index'
+  Rendering playlists/index.html.erb within layouts/playlist
+  [1m[36mPlaylist Load (0.1ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists"[0m
+  ↳ app/views/playlists/index.html.erb:4
+  Rendered playlists/index.html.erb within layouts/playlist (Duration: 2.3ms | Allocations: 2245)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.3ms | Allocations: 3641)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    3: <h1> Display all playlists here, with links to edit, and view individual playlists, deleting is done from the edit menu.  </h1>
+    4: <%=Playlist.all.select{|x|x.user_id == @user.id}%>
+    5: <ul>
+    6:     <li><%=link_to "Create a Playlist", new_user_playlist_path(@user.id, @playlist.id)%></li>
+    7: 
+    8:     <li>Link to Song Hub </li>
+    9:     <li>Link to Artist Hub</li>
+  
+app/views/playlists/index.html.erb:6
+Started GET "/users/1/playlists" for ::1 at 2021-05-13 10:37:27 -0700
+Processing by PlaylistsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:4:in `index'
+  Rendering playlists/index.html.erb within layouts/playlist
+  [1m[36mPlaylist Load (0.2ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists"[0m
+  ↳ app/views/playlists/index.html.erb:4
+  Rendered playlists/index.html.erb within layouts/playlist (Duration: 3.3ms | Allocations: 2109)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.4ms | Allocations: 3050)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    3: <h1> Display all playlists here, with links to edit, and view individual playlists, deleting is done from the edit menu.  </h1>
+    4: <%=Playlist.all.select{|x|x.user_id == @user.id}%>
+    5: <ul>
+    6:     <li><%=link_to "Create a Playlist", new_user_playlist_path(@user.id, @playlist.id)%></li>
+    7: 
+    8:     <li>Link to Song Hub </li>
+    9:     <li>Link to Artist Hub</li>
+  
+app/views/playlists/index.html.erb:6
+Started GET "/users/1/r" for ::1 at 2021-05-13 10:37:47 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/users/1/r"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/users/1/r" for ::1 at 2021-05-13 10:38:17 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/users/1/r"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/users/1/" for ::1 at 2021-05-13 10:38:20 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:34:in `user_selector'
+  [1m[36mPlaylist Load (0.1ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."title" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `show'
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:23:in `show'
+  Rendering users/show.html.erb within layouts/user
+  Rendered users/show.html.erb within layouts/user (Duration: 1.9ms | Allocations: 370)
+Completed 200 OK in 18ms (Views: 4.7ms | ActiveRecord: 0.5ms | Allocations: 6863)
+
+
+Started GET "/users/1/playlists" for ::1 at 2021-05-13 10:38:21 -0700
+Processing by PlaylistsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:4:in `index'
+  Rendering playlists/index.html.erb within layouts/playlist
+  [1m[36mPlaylist Load (0.4ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists"[0m
+  ↳ app/views/playlists/index.html.erb:4
+  Rendered playlists/index.html.erb within layouts/playlist (Duration: 3.1ms | Allocations: 826)
+Completed 200 OK in 7ms (Views: 4.6ms | ActiveRecord: 0.5ms | Allocations: 2342)
+
+
+Started GET "/users/1/playlists/new" for ::1 at 2021-05-13 10:38:23 -0700
+Processing by PlaylistsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  Rendering playlists/new.html.erb within layouts/playlist
+  Rendered playlists/new.html.erb within layouts/playlist (Duration: 1.2ms | Allocations: 1110)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 1657)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <h1> Create a new Playlist </h1>
+    2: 
+    3: <%= form_for @user_playlist do |t| %>
+    4: 
+    5: <%= t.label :title %>
+    6: <%= t.text_field :title %><br /><br />
+  
+app/views/playlists/new.html.erb:3
+Started GET "/users/1/playlists/new" for ::1 at 2021-05-13 10:38:58 -0700
+Processing by PlaylistsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  Rendering playlists/new.html.erb within layouts/playlist
+  Rendered playlists/new.html.erb within layouts/playlist (Duration: 1.0ms | Allocations: 1151)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 2014)
+
+
+  
+ActionView::Template::Error (can't write unknown attribute `html`):
+    1: <h1> Create a new Playlist </h1>
+    2: 
+    3: <%= form_for @user, @playlist do |t| %>
+    4: 
+    5: <%= t.label :title %>
+    6: <%= t.text_field :title %><br /><br />
+  
+app/views/playlists/new.html.erb:3
+Started GET "/users/1/playlists/new" for ::1 at 2021-05-13 10:39:47 -0700
+Processing by PlaylistsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  Rendering playlists/new.html.erb within layouts/playlist
+  Rendered playlists/new.html.erb within layouts/playlist (Duration: 1.0ms | Allocations: 1146)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 2009)
+
+
+  
+ActionView::Template::Error (can't write unknown attribute `html`):
+    1: <h1> Create a new Playlist </h1>
+    2: 
+    3: <%= form_for @user, @playlist do |u,p| %>
+    4: 
+    5: <%= u.p.label :title %>
+    6: <%= u.p.text_field :title %><br /><br />
+  
+app/views/playlists/new.html.erb:3

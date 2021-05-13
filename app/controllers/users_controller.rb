@@ -18,7 +18,9 @@ class UsersController < ApplicationController
     end
 
     def show
-        user_selector 
+        user_selector
+        @playlist = Playlist.find_or_create_by(title: params[:title])
+        @song = Song.find_or_create_by(name: params[:name])
     end
 
 
