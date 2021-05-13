@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 2021_05_12_184740) do
     t.string "name"
     t.string "artist_name"
     t.integer "rating"
+    t.integer "playlist_id"
     t.integer "artist_id"
     t.integer "playlist_songs_id"
     t.datetime "created_at", precision: 6, null: false

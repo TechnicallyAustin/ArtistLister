@@ -1,5 +1,6 @@
 class Playlist < ActiveRecord::Base 
     serialize :song, Array 
+    serialize :song_id, Array
     serialize :artist, Array 
     # Associations 
     has_many :users

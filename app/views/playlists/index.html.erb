@@ -1,5 +1,5 @@
 Playlist index
-
+<%binding.pry%>
 <h1> Display all playlists here, with links to edit, and view individual playlists, deleting is done from the edit menu.  </h1>
 <%=Playlist.all.select{|x|x.user_id == @user.id}%>
 <ul>

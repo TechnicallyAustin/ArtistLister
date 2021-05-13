@@ -10,11 +10,12 @@ class PlaylistsController < ApplicationController
     end
 
     def new
-        @playlist = Playlist.new
+        @playlist = Playlist.new(user_id: params[:user_id])
     end
 
     def create
         @playlist = Playlist.create(playlist_params)
+        @playlist.user_id = find_user
         if @playlist.save 
         redirect_to @playlist 
         else
@@ -43,6 +44,11 @@ class PlaylistsController < ApplicationController
     def playlist_selector
         @playlist = Playlist.find(params[:id])
     end
+
+    def find_user
+        User.find(session[:user_id])
+    end
+
     
 
 

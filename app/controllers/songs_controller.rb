@@ -10,7 +10,7 @@ class SongsController < ApplicationController
     end
 
     def new
-        @song = Song.new
+        @song = Song.new(playlist_id: params[:playlist_id])
         @playlist_song = Song.new
     end
 
