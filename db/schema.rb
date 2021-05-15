@@ -48,11 +48,12 @@ ActiveRecord::Schema.define(version: 2021_05_12_184740) do
     t.integer "rating"
     t.integer "playlist_id"
     t.integer "artist_id"
-    t.integer "playlist_songs_id"
+    t.integer "playlist_song_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["artist_id"], name: "index_songs_on_artist_id"
-    t.index ["playlist_songs_id"], name: "index_songs_on_playlist_songs_id"
+    t.index ["playlist_id"], name: "index_songs_on_playlist_id"
+    t.index ["playlist_song_id"], name: "index_songs_on_playlist_song_id"
   end
 
   create_table "user_playlists", force: :cascade do |t|

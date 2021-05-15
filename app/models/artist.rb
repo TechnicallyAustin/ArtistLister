@@ -4,5 +4,5 @@ class Artist < ActiveRecord::Base
     has_many :songs
     belongs_to :playlists
     # Validations
-
+    validates :name, presence: :true 
 end

@@ -2,7 +2,6 @@ class PlaylistSongsController < ApplicationController
 
     def create
         @playlist_song = Playlist_song.new
-        
     end
 
     def new

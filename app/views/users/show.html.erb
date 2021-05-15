@@ -3,8 +3,7 @@
 <ul>
     <li> Home</li>
     <li><%=link_to "Playlist Hub", user_playlists_path(@user.id, @playlist.id) %></li>
-    
-    <li> <%=link_to "Artist Hub", artists_path(@artist)%></li>
+    <li> <%= link_to "Song Hub", user_songs_path(@user.id, @song.id)%></li>
     <li><%= link_to "Logout"%> </li>
 </ul>
 </nav>

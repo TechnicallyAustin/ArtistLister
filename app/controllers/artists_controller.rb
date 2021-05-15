@@ -7,7 +7,9 @@ class ArtistsController < ApplicationController
        layout 'layouts/songs'
 
     def index
+        # Set the current user and pull all artists associated with the current user 
         @artists = Artist.all
+
     end
 
     def show
@@ -15,12 +17,14 @@ class ArtistsController < ApplicationController
     end
 
     def new
-        @artist = Artist.new
+        # When creating a new artist, assign to user and associate a song.
+        @artist = Artist.new()
+        
     end
 
     def create
         @artist = Artist.new(artist_params)
-        
+
         if @artist.valid
             @artist.save
             redirect_to :show

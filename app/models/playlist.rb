@@ -11,6 +11,8 @@ class Playlist < ActiveRecord::Base
     validates :title, presence: true
     validates :description, presence: true
 
+    
+
 
 
 
