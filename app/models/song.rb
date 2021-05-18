@@ -8,7 +8,7 @@ class Song < ActiveRecord::Base
     validates :artist_name, presence: true
     validates :rating, presence: true
     # Write a validation that will Limit the rating value from 1-10
-    @@all = []
+    accepts_nested_attributes_for :artist 
 
 
 end

@@ -6,7 +6,9 @@ class PlaylistsController < ApplicationController
     end
 
     def show
+        @user = User.find(session[:user_id])
         playlist_selector
+
     end
 
     def new
@@ -15,9 +17,10 @@ class PlaylistsController < ApplicationController
 
     def create
         @playlist = Playlist.create(playlist_params)
-        @playlist.user_id = find_user
+        @playlist.user_id = find_user.id
+        #binding.pry 
         if @playlist.save 
-        redirect_to @playlist 
+        redirect_to user_playlist_path(find_user.id, @playlist) 
         else
             render :new
             #add auto popoluation and errors to new

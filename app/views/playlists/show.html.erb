@@ -1,4 +1,4 @@
 <h1><%=@playlist.title%></h1>
 <h2><%=@playlist.description%></h2>
 
-<%= link_to "Add Songs", new_playlist_song_path(@playlist) %>
+<%= link_to "Add Songs", new_user_playlist_song_path(@user.id, @playlist.id) %>

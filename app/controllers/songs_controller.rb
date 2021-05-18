@@ -16,9 +16,9 @@ class SongsController < ApplicationController
     end
 
     def create
-       @song = Song.new(song_params)
-       @song.artist = Artist.find_or_create_by(name: params[:song][:artist_name])
-       @song.artist_id = @song.artist.id
+       @song = Song.create(song_params)
+       #@song.artist = Artist.find_or_create_by(name: params[:song][:artist_name])
+       #@song.artist_id = @song.artist.id
        binding.pry 
        if @song.save
         render :show

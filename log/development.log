@@ -45792,3 +45792,1169 @@ Processing by PlaylistsController#index as HTML
 Completed 200 OK in 5338ms (Views: 5335.5ms | ActiveRecord: 0.5ms | Allocations: 28187)
 
 
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to UserPlaylists (20210512184740)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.4ms)[0m  [1m[35mDROP TABLE "user_playlists"[0m
+  [1m[36mprimary::SchemaMigration Destroy (0.6ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20210512184740"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddOmniauthToUsers (20210428182509)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" integer NOT NULL PRIMARY KEY, "first_name" varchar DEFAULT NULL, "last_name" varchar DEFAULT NULL, "username" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "password" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "provider" varchar DEFAULT NULL, "uid" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "ausers" ("id","first_name","last_name","username","email","password","password_digest","created_at","updated_at","provider","uid")
+                     SELECT "id","first_name","last_name","username","email","password","password_digest","created_at","updated_at","provider","uid" FROM "users"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer NOT NULL PRIMARY KEY, "first_name" varchar DEFAULT NULL, "last_name" varchar DEFAULT NULL, "username" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "password" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "provider" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "users" ("id","first_name","last_name","username","email","password","password_digest","created_at","updated_at","provider")
+                     SELECT "id","first_name","last_name","username","email","password","password_digest","created_at","updated_at","provider" FROM "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TEMPORARY TABLE "ausers" ("id" integer NOT NULL PRIMARY KEY, "first_name" varchar DEFAULT NULL, "last_name" varchar DEFAULT NULL, "username" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "password" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "provider" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "ausers" ("id","first_name","last_name","username","email","password","password_digest","created_at","updated_at","provider")
+                     SELECT "id","first_name","last_name","username","email","password","password_digest","created_at","updated_at","provider" FROM "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer NOT NULL PRIMARY KEY, "first_name" varchar DEFAULT NULL, "last_name" varchar DEFAULT NULL, "username" varchar DEFAULT NULL, "email" varchar DEFAULT NULL, "password" varchar DEFAULT NULL, "password_digest" varchar DEFAULT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "users" ("id","first_name","last_name","username","email","password","password_digest","created_at","updated_at")
+                     SELECT "id","first_name","last_name","username","email","password","password_digest","created_at","updated_at" FROM "ausers"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "ausers"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mprimary::SchemaMigration Destroy (0.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20210428182509"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePlaylistSongs (20201215030646)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE "playlist_songs"[0m
+  [1m[36mprimary::SchemaMigration Destroy (0.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20201215030646"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateSongs (20201124050734)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "songs"[0m
+  [1m[36mprimary::SchemaMigration Destroy (0.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20201124050734"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20201124050643)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "users"[0m
+  [1m[36mprimary::SchemaMigration Destroy (0.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20201124050643"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePlaylists (20201124050613)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "playlists"[0m
+  [1m[36mprimary::SchemaMigration Destroy (0.2ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20201124050613"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateArtists (20201124050439)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE "artists"[0m
+  [1m[36mprimary::SchemaMigration Destroy (0.1ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20201124050439"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateArtists (20201124050439)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "artists" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "song" text, "song_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_artists_on_song_id" ON "artists" ("song_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201124050439"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreatePlaylists (20201124050613)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "playlists" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" varchar, "song" text, "artist" text, "user_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_playlists_on_user_id" ON "playlists" ("user_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201124050613"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateUsers (20201124050643)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar, "last_name" varchar, "username" varchar, "email" varchar, "password" varchar, "password_digest" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201124050643"]]
+  [1m[35m (4.3ms)[0m  [1m[36mcommit transaction[0m
+Migrating to CreateSongs (20201124050734)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "songs" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "artist_name" varchar, "rating" integer, "playlist_id" integer, "artist_id" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_songs_on_playlist_id" ON "songs" ("playlist_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_songs_on_artist_id" ON "songs" ("artist_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20201124050734"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddOmniauthToUsers (20210428182509)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" ADD "provider" varchar[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "uid" varchar[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210428182509"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Migrating to UserPlaylists (20210512184740)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "user_playlists" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" text, "user_id" integer, "songs" varchar)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_user_playlists_on_user_id" ON "user_playlists" ("user_id")[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20210512184740"]]
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/users/1/playlists" for ::1 at 2021-05-17 08:22:29 -0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PlaylistsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:4:in `index'
+Completed 404 Not Found in 189ms (ActiveRecord: 1.3ms | Allocations: 53159)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=1):
+  
+app/controllers/playlists_controller.rb:4:in `index'
+Started GET "/" for ::1 at 2021-05-17 08:22:33 -0700
+Processing by SessionsController#welcome as HTML
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 0.9ms | Allocations: 267)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 40ms (Views: 38.6ms | ActiveRecord: 0.0ms | Allocations: 10319)
+
+
+Started GET "/signup" for ::1 at 2021-05-17 08:22:36 -0700
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/user
+  Rendered users/new.html.erb within layouts/user (Duration: 170.7ms | Allocations: 207619)
+Completed 200 OK in 182ms (Views: 172.1ms | ActiveRecord: 0.0ms | Allocations: 215709)
+
+
+Started POST "/users" for ::1 at 2021-05-17 08:22:46 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"aJRPBVTyXG/TlYNxcTRzdr6yu/LBqw/GbfSeCl3ziOsrVn4CanjNFNQ4yHntw3PvDSezi44ovtl6lfky2/bxBA==", "user"=>{"first_name"=>"Austin", "last_name"=>"Johnson", "username"=>"Master", "email"=>"technicallyaustin@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:11:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "technicallyaustin@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:11:in `create'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Austin"], ["last_name", "Johnson"], ["username", "Master"], ["email", "technicallyaustin@gmail.com"], ["password_digest", "$2a$12$yJ7mOCJRf4RsVUzj6w.5Z.PDX03wk4U0D1ig/.G/Ldg2T8Po4Ybrq"], ["created_at", "2021-05-17 15:22:46.394042"], ["updated_at", "2021-05-17 15:22:46.394042"]]
+  ↳ app/controllers/users_controller.rb:11:in `create'
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:11:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 217ms (ActiveRecord: 1.6ms | Allocations: 4603)
+
+
+Started GET "/" for ::1 at 2021-05-17 08:22:46 -0700
+Processing by SessionsController#welcome as HTML
+  Rendering sessions/welcome.html.erb within layouts/application
+  Rendered sessions/welcome.html.erb within layouts/application (Duration: 0.1ms | Allocations: 106)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.0ms | Allocations: 4406)
+
+
+Started GET "/login" for ::1 at 2021-05-17 08:22:50 -0700
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 472)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.0ms | Allocations: 4896)
+
+
+Started POST "/login" for ::1 at 2021-05-17 08:22:56 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"9f1A+dHmWqs/PINy62DWYuGniKPC+FMhPBk0uKl529KcKbd724A4xBmlTKZU52dIN/0g30A4P5Scm1Fa9ABWUg==", "email"=>"technicallyaustin@gmail.com", "password"=>"[FILTERED]", "commit"=>"Login"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "technicallyaustin@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:18:in `create'
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 212ms (ActiveRecord: 0.4ms | Allocations: 1061)
+
+
+Started GET "/users/1" for ::1 at 2021-05-17 08:22:57 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:35:in `user_selector'
+  [1m[36mPlaylist Load (0.1ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."title" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:22:in `show'
+  [1m[36mSong Load (0.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:23:in `show'
+  Rendering users/show.html.erb within layouts/user
+  Rendered users/show.html.erb within layouts/user (Duration: 2.1ms | Allocations: 1393)
+Completed 200 OK in 49ms (Views: 2.7ms | ActiveRecord: 1.5ms | Allocations: 29029)
+
+
+Started GET "/users/1/playlists" for ::1 at 2021-05-17 08:23:01 -0700
+Processing by PlaylistsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:4:in `index'
+  Rendering playlists/index.html.erb within layouts/playlist
+  [1m[36mPlaylist Load (0.4ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists"[0m
+  ↳ app/views/playlists/index.html.erb:4
+  Rendered playlists/index.html.erb within layouts/playlist (Duration: 7611.2ms | Allocations: 26618)
+Completed 200 OK in 7617ms (Views: 7613.0ms | ActiveRecord: 0.6ms | Allocations: 28151)
+
+
+Started GET "/users/1/playlists/new" for ::1 at 2021-05-17 08:23:13 -0700
+Processing by PlaylistsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  Rendering playlists/new.html.erb within layouts/playlist
+  Rendered playlists/new.html.erb within layouts/playlist (Duration: 3.9ms | Allocations: 1025)
+Completed 200 OK in 6ms (Views: 4.5ms | ActiveRecord: 0.0ms | Allocations: 1616)
+
+
+Started POST "/playlists" for ::1 at 2021-05-17 08:23:20 -0700
+Processing by PlaylistsController#create as HTML
+  Parameters: {"authenticity_token"=>"2ExSWxhtYyTI1ZLtTeg27Qn21i5mI/NUTQl14FSVbnhACU1x+Fe/SS4XVbpdw6IAacNHqbBSBrJTjkFM/ra71g==", "playlist"=>{"title"=>"Saturdaze", "description"=>"testing"}, "commit"=>"Create Playlist"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/playlists_controller.rb:17:in `create'
+  [1m[36mPlaylist Create (0.5ms)[0m  [1m[32mINSERT INTO "playlists" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Saturdaze"], ["description", "testing"], ["created_at", "2021-05-17 15:23:20.126914"], ["updated_at", "2021-05-17 15:23:20.126914"]]
+  ↳ app/controllers/playlists_controller.rb:17:in `create'
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/playlists_controller.rb:17:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:49:in `find_user'
+Redirected to http://localhost:3000/playlists/1
+Completed 302 Found in 11ms (ActiveRecord: 2.1ms | Allocations: 4198)
+
+
+Started GET "/playlists/1" for ::1 at 2021-05-17 08:23:20 -0700
+Processing by PlaylistsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPlaylist Load (0.2ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:45:in `playlist_selector'
+  Rendering playlists/show.html.erb within layouts/playlist
+  Rendered playlists/show.html.erb within layouts/playlist (Duration: 1.0ms | Allocations: 183)
+Completed 200 OK in 5ms (Views: 1.9ms | ActiveRecord: 0.2ms | Allocations: 1417)
+
+
+Started GET "/users/1/playlists/1" for ::1 at 2021-05-17 08:24:30 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PlaylistsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"1"}
+  [1m[36mPlaylist Load (0.2ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:46:in `playlist_selector'
+  Rendering playlists/show.html.erb within layouts/playlist
+  Rendered playlists/show.html.erb within layouts/playlist (Duration: 0.2ms | Allocations: 55)
+Completed 200 OK in 17ms (Views: 1.7ms | ActiveRecord: 0.9ms | Allocations: 9795)
+
+
+Started GET "/users/1/playlists/new" for ::1 at 2021-05-17 08:24:36 -0700
+Processing by PlaylistsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  Rendering playlists/new.html.erb within layouts/playlist
+  Rendered playlists/new.html.erb within layouts/playlist (Duration: 1.9ms | Allocations: 757)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms | Allocations: 1212)
+
+
+Started POST "/playlists" for ::1 at 2021-05-17 08:24:41 -0700
+Processing by PlaylistsController#create as HTML
+  Parameters: {"authenticity_token"=>"E6K9i2HdBRsyOm1Z4FZ9NYCTHlzsWrFLhRrfDL5l8sCL56KhgefZdtT4qg7wfenY4KaP2zorRK2bneugFEYnbg==", "playlist"=>{"title"=>"test 3", "description"=>"test"}, "commit"=>"Create Playlist"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/playlists_controller.rb:17:in `create'
+  [1m[36mPlaylist Create (0.5ms)[0m  [1m[32mINSERT INTO "playlists" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "test 3"], ["description", "test"], ["created_at", "2021-05-17 15:24:41.518823"], ["updated_at", "2021-05-17 15:24:41.518823"]]
+  ↳ app/controllers/playlists_controller.rb:17:in `create'
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/playlists_controller.rb:17:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:50:in `find_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:50:in `find_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:50:in `find_user'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:50:in `find_user'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/playlists_controller.rb:20:in `create'
+  [1m[36mPlaylist Update (0.4ms)[0m  [1m[33mUPDATE "playlists" SET "user_id" = ?, "updated_at" = ? WHERE "playlists"."id" = ?[0m  [["user_id", 1], ["updated_at", "2021-05-17 15:25:36.210490"], ["id", 2]]
+  ↳ app/controllers/playlists_controller.rb:20:in `create'
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/playlists_controller.rb:20:in `create'
+Redirected to http://localhost:3000/playlists/2
+Completed 302 Found in 54697ms (ActiveRecord: 3.7ms | Allocations: 46756)
+
+
+Started GET "/playlists/2" for ::1 at 2021-05-17 08:25:36 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PlaylistsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mPlaylist Load (0.1ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:46:in `playlist_selector'
+  Rendering playlists/show.html.erb within layouts/playlist
+  Rendered playlists/show.html.erb within layouts/playlist (Duration: 0.3ms | Allocations: 55)
+Completed 200 OK in 22ms (Views: 2.0ms | ActiveRecord: 0.7ms | Allocations: 9906)
+
+
+Started GET "/users/1/playlists/new" for ::1 at 2021-05-17 08:25:48 -0700
+Processing by PlaylistsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  Rendering playlists/new.html.erb within layouts/playlist
+  Rendered playlists/new.html.erb within layouts/playlist (Duration: 2.2ms | Allocations: 757)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.0ms | Allocations: 1213)
+
+
+Started POST "/playlists" for ::1 at 2021-05-17 08:26:02 -0700
+Processing by PlaylistsController#create as HTML
+  Parameters: {"authenticity_token"=>"u7nGxcKQc+QW9irKpo04CmDjktK9ABIWOvZbtnhHnYIj/NnvIqqvifA07Z22pqznANYDVWtx5/AkcW8a0mRILA==", "playlist"=>{"title"=>"Nested test", "description"=>"Can i finish?"}, "commit"=>"Create Playlist"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/playlists_controller.rb:17:in `create'
+  [1m[36mPlaylist Create (0.6ms)[0m  [1m[32mINSERT INTO "playlists" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Nested test"], ["description", "Can i finish?"], ["created_at", "2021-05-17 15:26:02.826995"], ["updated_at", "2021-05-17 15:26:02.826995"]]
+  ↳ app/controllers/playlists_controller.rb:17:in `create'
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/playlists_controller.rb:17:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:50:in `find_user'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/playlists_controller.rb:20:in `create'
+  [1m[36mPlaylist Update (0.4ms)[0m  [1m[33mUPDATE "playlists" SET "user_id" = ?, "updated_at" = ? WHERE "playlists"."id" = ?[0m  [["user_id", 1], ["updated_at", "2021-05-17 15:26:59.909091"], ["id", 3]]
+  ↳ app/controllers/playlists_controller.rb:20:in `create'
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/playlists_controller.rb:20:in `create'
+Redirected to http://localhost:3000/playlists/3
+Completed 302 Found in 57088ms (ActiveRecord: 4.2ms | Allocations: 67634)
+
+
+Started GET "/playlists/3" for ::1 at 2021-05-17 08:26:59 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PlaylistsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mPlaylist Load (0.1ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:46:in `playlist_selector'
+  Rendering playlists/show.html.erb within layouts/playlist
+  Rendered playlists/show.html.erb within layouts/playlist (Duration: 0.2ms | Allocations: 55)
+Completed 200 OK in 15ms (Views: 1.1ms | ActiveRecord: 0.8ms | Allocations: 9220)
+
+
+Started GET "/users/1/playlists/3" for ::1 at 2021-05-17 08:27:09 -0700
+Processing by PlaylistsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"3"}
+  [1m[36mPlaylist Load (0.1ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:46:in `playlist_selector'
+  Rendering playlists/show.html.erb within layouts/playlist
+  Rendered playlists/show.html.erb within layouts/playlist (Duration: 0.2ms | Allocations: 46)
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.1ms | Allocations: 1014)
+
+
+Started GET "/users/1/playlists/" for ::1 at 2021-05-17 08:27:12 -0700
+Processing by PlaylistsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:4:in `index'
+  Rendering playlists/index.html.erb within layouts/playlist
+  [1m[36mPlaylist Load (0.2ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists"[0m
+  ↳ app/views/playlists/index.html.erb:4
+  Rendered playlists/index.html.erb within layouts/playlist (Duration: 4601.4ms | Allocations: 16557)
+Completed 200 OK in 4617ms (Views: 4601.7ms | ActiveRecord: 1.1ms | Allocations: 27551)
+
+
+Started GET "/users/1/playlists/new" for ::1 at 2021-05-17 08:29:27 -0700
+Processing by PlaylistsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  Rendering playlists/new.html.erb within layouts/playlist
+  Rendered playlists/new.html.erb within layouts/playlist (Duration: 1.4ms | Allocations: 757)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.0ms | Allocations: 1204)
+
+
+Started POST "/playlists" for ::1 at 2021-05-17 08:29:36 -0700
+Processing by PlaylistsController#create as HTML
+  Parameters: {"authenticity_token"=>"YbAjbUZtx5/yctRn4HpNhOuFao/55sc2WsZJ9pNP2gv59TxHplcb8hSwEzDwUdlpi7D7CC+XMtBEQX1aOWwPpQ==", "playlist"=>{"title"=>"Super Behind", "description"=>"please work"}, "commit"=>"Create Playlist"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/playlists_controller.rb:17:in `create'
+  [1m[36mPlaylist Create (0.5ms)[0m  [1m[32mINSERT INTO "playlists" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Super Behind"], ["description", "please work"], ["created_at", "2021-05-17 15:29:36.323154"], ["updated_at", "2021-05-17 15:29:36.323154"]]
+  ↳ app/controllers/playlists_controller.rb:17:in `create'
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/playlists_controller.rb:17:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:50:in `find_user'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/playlists_controller.rb:20:in `create'
+  [1m[36mPlaylist Update (0.5ms)[0m  [1m[33mUPDATE "playlists" SET "user_id" = ?, "updated_at" = ? WHERE "playlists"."id" = ?[0m  [["user_id", 1], ["updated_at", "2021-05-17 15:29:36.330458"], ["id", 4]]
+  ↳ app/controllers/playlists_controller.rb:20:in `create'
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/playlists_controller.rb:20:in `create'
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 3.6ms | Allocations: 6278)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"playlists", :user_id=>#<Playlist id: 4, title: "Super Behind", description: "please work", song: [], artist: [], user_id: 1, created_at: "2021-05-17 15:29:36", updated_at: "2021-05-17 15:29:36">}, missing required keys: [:id]):
+  
+app/controllers/playlists_controller.rb:21:in `create'
+Started POST "/playlists" for ::1 at 2021-05-17 08:30:27 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PlaylistsController#create as HTML
+  Parameters: {"authenticity_token"=>"YbAjbUZtx5/yctRn4HpNhOuFao/55sc2WsZJ9pNP2gv59TxHplcb8hSwEzDwUdlpi7D7CC+XMtBEQX1aOWwPpQ==", "playlist"=>{"title"=>"Super Behind", "description"=>"please work"}, "commit"=>"Create Playlist"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/playlists_controller.rb:17:in `create'
+  [1m[36mPlaylist Create (0.5ms)[0m  [1m[32mINSERT INTO "playlists" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Super Behind"], ["description", "please work"], ["created_at", "2021-05-17 15:30:27.497077"], ["updated_at", "2021-05-17 15:30:27.497077"]]
+  ↳ app/controllers/playlists_controller.rb:17:in `create'
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/playlists_controller.rb:17:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:50:in `find_user'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/playlists_controller.rb:20:in `create'
+  [1m[36mPlaylist Update (0.4ms)[0m  [1m[33mUPDATE "playlists" SET "user_id" = ?, "updated_at" = ? WHERE "playlists"."id" = ?[0m  [["user_id", 1], ["updated_at", "2021-05-17 15:30:27.517538"], ["id", 5]]
+  ↳ app/controllers/playlists_controller.rb:20:in `create'
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/playlists_controller.rb:20:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:50:in `find_user'
+Redirected to http://localhost:3000/users/1/playlists/5
+Completed 302 Found in 39ms (ActiveRecord: 4.0ms | Allocations: 27468)
+
+
+Started GET "/users/1/playlists/5" for ::1 at 2021-05-17 08:30:27 -0700
+Processing by PlaylistsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"5"}
+  [1m[36mPlaylist Load (0.2ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:46:in `playlist_selector'
+  Rendering playlists/show.html.erb within layouts/playlist
+  Rendered playlists/show.html.erb within layouts/playlist (Duration: 0.3ms | Allocations: 52)
+Completed 200 OK in 3ms (Views: 1.1ms | ActiveRecord: 0.2ms | Allocations: 1314)
+
+
+Started GET "/users/1/playlists/new" for ::1 at 2021-05-17 08:30:38 -0700
+Processing by PlaylistsController#new as HTML
+  Parameters: {"user_id"=>"1"}
+  Rendering playlists/new.html.erb within layouts/playlist
+  Rendered playlists/new.html.erb within layouts/playlist (Duration: 1.4ms | Allocations: 757)
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.0ms | Allocations: 1211)
+
+
+Started POST "/playlists" for ::1 at 2021-05-17 08:30:54 -0700
+Processing by PlaylistsController#create as HTML
+  Parameters: {"authenticity_token"=>"MjcQ3x+6dYFcYXGRObI0yez7FE5NysxEPoQKuI0KpGaqcg/1/4Cp7LqjtsYpmaAkjM6FyZu7OaIgAz4UJylxyA==", "playlist"=>{"title"=>"Bas Classics", "description"=>"All of my Favorite Bas Tracks"}, "commit"=>"Create Playlist"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/playlists_controller.rb:17:in `create'
+  [1m[36mPlaylist Create (0.5ms)[0m  [1m[32mINSERT INTO "playlists" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Bas Classics"], ["description", "All of my Favorite Bas Tracks"], ["created_at", "2021-05-17 15:30:54.967639"], ["updated_at", "2021-05-17 15:30:54.967639"]]
+  ↳ app/controllers/playlists_controller.rb:17:in `create'
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/playlists_controller.rb:17:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:50:in `find_user'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/playlists_controller.rb:20:in `create'
+  [1m[36mPlaylist Update (0.4ms)[0m  [1m[33mUPDATE "playlists" SET "user_id" = ?, "updated_at" = ? WHERE "playlists"."id" = ?[0m  [["user_id", 1], ["updated_at", "2021-05-17 15:30:54.974855"], ["id", 6]]
+  ↳ app/controllers/playlists_controller.rb:20:in `create'
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/playlists_controller.rb:20:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:50:in `find_user'
+Redirected to http://localhost:3000/users/1/playlists/6
+Completed 302 Found in 13ms (ActiveRecord: 3.4ms | Allocations: 6137)
+
+
+Started GET "/users/1/playlists/6" for ::1 at 2021-05-17 08:30:54 -0700
+Processing by PlaylistsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"6"}
+  [1m[36mPlaylist Load (0.2ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:46:in `playlist_selector'
+  Rendering playlists/show.html.erb within layouts/playlist
+  Rendered playlists/show.html.erb within layouts/playlist (Duration: 0.3ms | Allocations: 47)
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.2ms | Allocations: 1016)
+
+
+Started GET "/playlists/6/songs/new" for ::1 at 2021-05-17 08:30:59 -0700
+Processing by SongsController#new as HTML
+  Parameters: {"playlist_id"=>"6"}
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (Duration: 4.1ms | Allocations: 1335)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 24ms (Views: 12.4ms | ActiveRecord: 0.6ms | Allocations: 12584)
+
+
+Started POST "/songs" for ::1 at 2021-05-17 08:31:07 -0700
+Processing by SongsController#create as HTML
+  Parameters: {"authenticity_token"=>"lI9m9ilgNjlvSTVL2nCbZu8T5LhOjHlyBukjUSJkETH9W5F0IwZUVknQ+p9l9ypMOUlMxMxMFcema0azfx2csQ==", "song"=>{"name"=>"Night Job", "artist_name"=>"Bas", "rating"=>"8"}, "commit"=>"Create Song"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."name" = ? LIMIT ?[0m  [["name", "Bas"], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:20:in `create'
+Started GET "/users/1/playlists/6/r" for ::1 at 2021-05-17 08:34:58 -0700
+No template found for SongsController#create, rendering head :no_content
+Completed 204 No Content in 247331ms (ActiveRecord: 1.0ms | Allocations: 161773)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+ActionController::RoutingError (No route matches [GET] "/users/1/playlists/6/r"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/users/1/playlists/6/r" for ::1 at 2021-05-17 08:36:38 -0700
+  
+SyntaxError (/Users/austinjohnson/ArtistLister/config/routes.rb:43: syntax error, unexpected end, expecting end-of-input):
+  
+config/routes.rb:43: syntax error, unexpected end, expecting end-of-input
+config/routes.rb:43: syntax error, unexpected end, expecting end-of-input
+config/routes.rb:43: syntax error, unexpected end, expecting end-of-input
+Started GET "/users/1/playlists/6/r" for ::1 at 2021-05-17 08:37:07 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+ActionController::RoutingError (No route matches [GET] "/users/1/playlists/6/r"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/users/1/playlists/6/" for ::1 at 2021-05-17 08:37:42 -0700
+Processing by PlaylistsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"6"}
+  [1m[36mPlaylist Load (0.2ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:46:in `playlist_selector'
+  Rendering playlists/show.html.erb within layouts/playlist
+  Rendered playlists/show.html.erb within layouts/playlist (Duration: 0.5ms | Allocations: 182)
+Completed 200 OK in 17ms (Views: 1.7ms | ActiveRecord: 0.9ms | Allocations: 9784)
+
+
+Started GET "/playlists/6/songs/new" for ::1 at 2021-05-17 08:37:44 -0700
+Processing by SongsController#new as HTML
+  Parameters: {"playlist_id"=>"6"}
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1199)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 11.4ms | ActiveRecord: 0.6ms | Allocations: 12845)
+
+
+Started GET "/users/1/playlists/6/" for ::1 at 2021-05-17 08:37:48 -0700
+Processing by PlaylistsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"6"}
+  [1m[36mPlaylist Load (0.1ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:46:in `playlist_selector'
+  Rendering playlists/show.html.erb within layouts/playlist
+  Rendered playlists/show.html.erb within layouts/playlist (Duration: 0.3ms | Allocations: 52)
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.1ms | Allocations: 1019)
+
+
+Started GET "/users/1/playlists/6/" for ::1 at 2021-05-17 08:37:49 -0700
+Processing by PlaylistsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"6"}
+  [1m[36mPlaylist Load (0.1ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:46:in `playlist_selector'
+  Rendering playlists/show.html.erb within layouts/playlist
+  Rendered playlists/show.html.erb within layouts/playlist (Duration: 0.2ms | Allocations: 47)
+Completed 200 OK in 2ms (Views: 0.9ms | ActiveRecord: 0.1ms | Allocations: 1012)
+
+
+Started GET "/users/1/playlists/6/" for ::1 at 2021-05-17 08:38:12 -0700
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PlaylistsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"6"}
+  [1m[36mPlaylist Load (0.3ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:46:in `playlist_selector'
+  Rendering playlists/show.html.erb within layouts/playlist
+  Rendered playlists/show.html.erb within layouts/playlist (Duration: 1.0ms | Allocations: 346)
+Completed 200 OK in 30ms (Views: 4.3ms | ActiveRecord: 0.9ms | Allocations: 12064)
+
+
+Started GET "/playlists/6/songs/new" for ::1 at 2021-05-17 08:38:16 -0700
+Processing by SongsController#new as HTML
+  Parameters: {"playlist_id"=>"6"}
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (Duration: 107.2ms | Allocations: 207049)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 140ms (Views: 120.9ms | ActiveRecord: 1.4ms | Allocations: 224114)
+
+
+Started GET "/playlists/6/songs/new" for ::1 at 2021-05-17 08:38:23 -0700
+Processing by SongsController#new as HTML
+  Parameters: {"playlist_id"=>"6"}
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 914)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.0ms | Allocations: 5271)
+
+
+Started GET "/users/1/playlists/6/" for ::1 at 2021-05-17 08:39:00 -0700
+Processing by PlaylistsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"6"}
+  [1m[36mPlaylist Load (0.1ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:46:in `playlist_selector'
+  Rendering playlists/show.html.erb within layouts/playlist
+  Rendered playlists/show.html.erb within layouts/playlist (Duration: 0.6ms | Allocations: 186)
+Completed 200 OK in 4ms (Views: 2.0ms | ActiveRecord: 0.1ms | Allocations: 1761)
+
+
+Started GET "/users/1/playlists/6/" for ::1 at 2021-05-17 08:39:01 -0700
+Processing by PlaylistsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"6"}
+  [1m[36mPlaylist Load (0.1ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:46:in `playlist_selector'
+  Rendering playlists/show.html.erb within layouts/playlist
+  Rendered playlists/show.html.erb within layouts/playlist (Duration: 0.1ms | Allocations: 53)
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 1034)
+
+
+Started GET "/playlists/6/songs/new" for ::1 at 2021-05-17 08:39:04 -0700
+Processing by SongsController#new as HTML
+  Parameters: {"playlist_id"=>"6"}
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1144)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 0.0ms | Allocations: 6511)
+
+
+Started GET "/users/1/playlists/" for ::1 at 2021-05-17 08:39:10 -0700
+Processing by PlaylistsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:4:in `index'
+  Rendering playlists/index.html.erb within layouts/playlist
+  [1m[36mPlaylist Load (0.4ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists"[0m
+  ↳ app/views/playlists/index.html.erb:4
+  Rendered playlists/index.html.erb within layouts/playlist (Duration: 6589.2ms | Allocations: 27968)
+Completed 200 OK in 6615ms (Views: 6589.5ms | ActiveRecord: 1.4ms | Allocations: 41710)
+
+
+Started GET "/users/1/playlists/1" for ::1 at 2021-05-17 08:39:28 -0700
+Processing by PlaylistsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"1"}
+  [1m[36mPlaylist Load (0.1ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:46:in `playlist_selector'
+  Rendering playlists/show.html.erb within layouts/playlist
+  Rendered playlists/show.html.erb within layouts/playlist (Duration: 0.8ms | Allocations: 177)
+Completed 200 OK in 5ms (Views: 2.6ms | ActiveRecord: 0.1ms | Allocations: 1723)
+
+
+Started GET "/users/1/playlists/1" for ::1 at 2021-05-17 08:39:57 -0700
+Processing by PlaylistsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"1"}
+  [1m[36mPlaylist Load (0.1ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:46:in `playlist_selector'
+  Rendering playlists/show.html.erb within layouts/playlist
+  Rendered playlists/show.html.erb within layouts/playlist (Duration: 9.4ms | Allocations: 3741)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.1ms | Allocations: 5143)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"new", :controller=>"songs", :id=>"1", :user_id=>#<Playlist id: 1, title: "Saturdaze", description: "testing", song: [], artist: [], user_id: nil, created_at: "2021-05-17 15:23:20", updated_at: "2021-05-17 15:23:20">}, missing required keys: [:playlist_id]):
+    1: <h1><%=@playlist.title%></h1>
+    2: <h2><%=@playlist.description%></h2>
+    3: 
+    4: <%= link_to "Add Songs", new_user_playlist_song_path(@playlist) %>
+  
+app/views/playlists/show.html.erb:4
+Started GET "/users/1/playlists/1" for ::1 at 2021-05-17 08:40:19 -0700
+Processing by PlaylistsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"1"}
+  [1m[36mPlaylist Load (0.1ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:46:in `playlist_selector'
+  Rendering playlists/show.html.erb within layouts/playlist
+  Rendered playlists/show.html.erb within layouts/playlist (Duration: 1.1ms | Allocations: 1602)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.1ms | Allocations: 3001)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    1: <h1><%=@playlist.title%></h1>
+    2: <h2><%=@playlist.description%></h2>
+    3: 
+    4: <%= link_to "Add Songs", new_user_playlist_song_path(@user.id, @playlist).id %>
+  
+app/views/playlists/show.html.erb:4
+Started GET "/users/1/playlists/1" for ::1 at 2021-05-17 08:40:57 -0700
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PlaylistsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:9:in `show'
+  [1m[36mPlaylist Load (0.1ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:48:in `playlist_selector'
+  Rendering playlists/show.html.erb within layouts/playlist
+  Rendered playlists/show.html.erb within layouts/playlist (Duration: 1.2ms | Allocations: 2244)
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 1.2ms | Allocations: 21961)
+
+
+  
+ActionView::Template::Error (undefined method `id' for "/users/1/playlists/1/songs/new":String):
+    1: <h1><%=@playlist.title%></h1>
+    2: <h2><%=@playlist.description%></h2>
+    3: 
+    4: <%= link_to "Add Songs", new_user_playlist_song_path(@user.id, @playlist).id %>
+  
+app/views/playlists/show.html.erb:4
+Started GET "/users/1/playlists/1" for ::1 at 2021-05-17 08:41:05 -0700
+Processing by PlaylistsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:9:in `show'
+  [1m[36mPlaylist Load (0.1ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:48:in `playlist_selector'
+  Rendering playlists/show.html.erb within layouts/playlist
+  Rendered playlists/show.html.erb within layouts/playlist (Duration: 1.7ms | Allocations: 2288)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.3ms | Allocations: 3772)
+
+
+  
+ActionView::Template::Error (undefined method `id' for "/users/1/playlists/1/songs/new":String):
+    1: <h1><%=@playlist.title%></h1>
+    2: <h2><%=@playlist.description%></h2>
+    3: 
+    4: <%= link_to "Add Songs", new_user_playlist_song_path(@user.id, @playlist).id %>
+  
+app/views/playlists/show.html.erb:4
+Started GET "/users/1/playlists/1" for ::1 at 2021-05-17 08:41:28 -0700
+Processing by PlaylistsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:9:in `show'
+  [1m[36mPlaylist Load (0.1ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:48:in `playlist_selector'
+  Rendering playlists/show.html.erb within layouts/playlist
+  Rendered playlists/show.html.erb within layouts/playlist (Duration: 1.0ms | Allocations: 1230)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.3ms | Allocations: 3171)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"new", :controller=>"songs", :id=>"1", :user_id=>#<Playlist id: 1, title: "Saturdaze", description: "testing", song: [], artist: [], user_id: nil, created_at: "2021-05-17 15:23:20", updated_at: "2021-05-17 15:23:20">}, missing required keys: [:playlist_id]):
+    1: <h1><%=@playlist.title%></h1>
+    2: <h2><%=@playlist.description%></h2>
+    3: 
+    4: <%= link_to "Add Songs", new_user_playlist_song_path(@playlist).id %>
+  
+app/views/playlists/show.html.erb:4
+Started GET "/users/1/playlists/1" for ::1 at 2021-05-17 08:41:29 -0700
+Processing by PlaylistsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:9:in `show'
+  [1m[36mPlaylist Load (0.1ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:48:in `playlist_selector'
+  Rendering playlists/show.html.erb within layouts/playlist
+  Rendered playlists/show.html.erb within layouts/playlist (Duration: 0.9ms | Allocations: 1101)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.3ms | Allocations: 2586)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"new", :controller=>"songs", :id=>"1", :user_id=>#<Playlist id: 1, title: "Saturdaze", description: "testing", song: [], artist: [], user_id: nil, created_at: "2021-05-17 15:23:20", updated_at: "2021-05-17 15:23:20">}, missing required keys: [:playlist_id]):
+    1: <h1><%=@playlist.title%></h1>
+    2: <h2><%=@playlist.description%></h2>
+    3: 
+    4: <%= link_to "Add Songs", new_user_playlist_song_path(@playlist).id %>
+  
+app/views/playlists/show.html.erb:4
+Started GET "/users/1/playlists/1" for ::1 at 2021-05-17 08:42:03 -0700
+Processing by PlaylistsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:9:in `show'
+  [1m[36mPlaylist Load (0.1ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:48:in `playlist_selector'
+  Rendering playlists/show.html.erb within layouts/playlist
+  Rendered playlists/show.html.erb within layouts/playlist (Duration: 0.5ms | Allocations: 182)
+Completed 200 OK in 4ms (Views: 1.5ms | ActiveRecord: 0.3ms | Allocations: 2261)
+
+
+Started GET "/users/1/playlists/1/songs/new" for ::1 at 2021-05-17 08:42:11 -0700
+Processing by SongsController#new as HTML
+  Parameters: {"user_id"=>"1", "playlist_id"=>"1"}
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 1199)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 10.8ms | ActiveRecord: 0.5ms | Allocations: 12827)
+
+
+Started POST "/songs" for ::1 at 2021-05-17 08:42:53 -0700
+Processing by SongsController#create as HTML
+  Parameters: {"authenticity_token"=>"jCQV2RttjR1V0l83evrUgFpkcHhcQ7cDjffadUbklsvl8OJbEQvvcnNLkOPFfWWqjD7YBN6D27Ytdb+XG50bSw==", "song"=>{"name"=>"Too high to riot", "artist_name"=>"bas", "rating"=>"10"}, "commit"=>"Create Song"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."name" = ? LIMIT ?[0m  [["name", "bas"], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:20:in `create'
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 1.2ms | Allocations: 12345)
+
+
+  
+NoMethodError (undefined method `pl' for #<Song:0x00007fdcd2367de0>):
+  
+app/controllers/songs_controller.rb:21:in `create'
+Started POST "/songs" for ::1 at 2021-05-17 08:43:07 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SongsController#create as HTML
+  Parameters: {"authenticity_token"=>"jCQV2RttjR1V0l83evrUgFpkcHhcQ7cDjffadUbklsvl8OJbEQvvcnNLkOPFfWWqjD7YBN6D27Ytdb+XG50bSw==", "song"=>{"name"=>"Too high to riot", "artist_name"=>"bas", "rating"=>"10"}, "commit"=>"Create Song"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."name" = ? LIMIT ?[0m  [["name", "bas"], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:20:in `create'
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."name" IS NULL LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ (pry):8:in `create'
+No template found for SongsController#create, rendering head :no_content
+Completed 204 No Content in 379699ms (ActiveRecord: 1.5ms | Allocations: 71090)
+
+
+Started POST "/songs" for ::1 at 2021-05-17 08:49:34 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SongsController#create as HTML
+  Parameters: {"authenticity_token"=>"jCQV2RttjR1V0l83evrUgFpkcHhcQ7cDjffadUbklsvl8OJbEQvvcnNLkOPFfWWqjD7YBN6D27Ytdb+XG50bSw==", "song"=>{"name"=>"Too high to riot", "artist_name"=>"bas", "rating"=>"10"}, "commit"=>"Create Song"}
+  [1m[36mArtist Load (0.1ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."name" = ? LIMIT ?[0m  [["name", "bas"], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:20:in `create'
+No template found for SongsController#create, rendering head :no_content
+Completed 204 No Content in 126238ms (ActiveRecord: 1.0ms | Allocations: 50257)
+
+
+Started GET "/users/1/playlists/1/songs/new" for ::1 at 2021-05-17 08:51:49 -0700
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SongsController#new as HTML
+  Parameters: {"user_id"=>"1", "playlist_id"=>"1"}
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (Duration: 103.1ms | Allocations: 207443)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 148ms (Views: 127.3ms | ActiveRecord: 1.0ms | Allocations: 226887)
+
+
+Started POST "/songs" for ::1 at 2021-05-17 08:52:04 -0700
+Processing by SongsController#create as HTML
+  Parameters: {"authenticity_token"=>"FBoCVor2XCQVU/9UBQE7h4pgiFdlg9/62pVF8NBK0fJ9zvXUgJA+SzPKMIC6hoqtXDogK+dDs096FyASjTNccg==", "song"=>{"name"=>"She Knows This", "artist_name"=>"Kid Cudi", "rating"=>"9"}, "commit"=>"Create Song"}
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."name" = ? LIMIT ?[0m  [["name", "Kid Cudi"], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:20:in `create'
+Started GET "/users/1/playlists/1/" for ::1 at 2021-05-17 08:53:41 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PlaylistsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:9:in `show'
+  [1m[36mPlaylist Load (0.1ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:48:in `playlist_selector'
+  Rendering playlists/show.html.erb within layouts/playlist
+  Rendered playlists/show.html.erb within layouts/playlist (Duration: 0.7ms | Allocations: 196)
+Completed 200 OK in 34ms (Views: 2.3ms | ActiveRecord: 1.8ms | Allocations: 20879)
+
+
+Started GET "/users/1/playlists/1/songs/new" for ::1 at 2021-05-17 08:53:50 -0700
+Processing by SongsController#new as HTML
+  Parameters: {"user_id"=>"1", "playlist_id"=>"1"}
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 916)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 9.8ms | ActiveRecord: 0.0ms | Allocations: 5271)
+
+
+Started POST "/songs" for ::1 at 2021-05-17 08:55:54 -0700
+Processing by SongsController#create as HTML
+  Parameters: {"authenticity_token"=>"1BoB11grvD8v2q/gQbCHqtQxdw2qzu4jU/uycJQvJji9zvZVUk3eUAlDYDT+NzaAAmvfcSgOgpbzedeSyVaruA==", "song"=>{"name"=>"Too high to riot", "artist_name"=>"Bas", "rating"=>"9"}, "commit"=>"Create Song"}
+  [1m[36mArtist Load (0.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."name" = ? LIMIT ?[0m  [["name", "Bas"], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:20:in `create'
+Started GET "/users/1/playlists/1/artist/new" for ::1 at 2021-05-17 08:57:28 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+ActionController::RoutingError (No route matches [GET] "/users/1/playlists/1/artist/new"):
+  
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/users/1/playlists/1/artists/new" for ::1 at 2021-05-17 08:57:35 -0700
+Processing by ArtistsController#new as HTML
+  Parameters: {"user_id"=>"1", "playlist_id"=>"1"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 1786)
+
+
+  
+ActionView::MissingTemplate (Missing template layouts/songs with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:raw, :erb, :html, :builder, :ruby, :jbuilder]}. Searched in:
+  * "/Users/austinjohnson/ArtistLister/app/views"
+  * "/Users/austinjohnson/.rvm/gems/ruby-2.6.1/gems/devise-4.7.3/app/views"
+  * "/Users/austinjohnson/.rvm/gems/ruby-2.6.1/gems/actiontext-6.0.3.4/app/views"
+  * "/Users/austinjohnson/.rvm/gems/ruby-2.6.1/gems/actionmailbox-6.0.3.4/app/views"
+):
+  
+actionview (6.0.3.4) lib/action_view/path_set.rb:48:in `find'
+actionview (6.0.3.4) lib/action_view/lookup_context.rb:131:in `find'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:94:in `resolve_layout'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:101:in `resolve_layout'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:80:in `find_layout'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:64:in `render_with_layout'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:56:in `render_template'
+actionview (6.0.3.4) lib/action_view/renderer/template_renderer.rb:13:in `render'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:61:in `render_template_to_object'
+actionview (6.0.3.4) lib/action_view/renderer/renderer.rb:29:in `render_to_object'
+actionview (6.0.3.4) lib/action_view/rendering.rb:117:in `block in _render_template'
+actionview (6.0.3.4) lib/action_view/base.rb:304:in `in_rendering_context'
+actionview (6.0.3.4) lib/action_view/rendering.rb:116:in `_render_template'
+actionpack (6.0.3.4) lib/action_controller/metal/streaming.rb:218:in `_render_template'
+actionview (6.0.3.4) lib/action_view/rendering.rb:103:in `render_to_body'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:52:in `render_to_body'
+actionpack (6.0.3.4) lib/action_controller/metal/renderers.rb:142:in `render_to_body'
+actionpack (6.0.3.4) lib/abstract_controller/rendering.rb:25:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:36:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+activesupport (6.0.3.4) lib/active_support/core_ext/benchmark.rb:14:in `block in ms'
+/Users/austinjohnson/.rvm/rubies/ruby-2.6.1/lib/ruby/2.6.0/benchmark.rb:308:in `realtime'
+activesupport (6.0.3.4) lib/active_support/core_ext/benchmark.rb:14:in `ms'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+activerecord (6.0.3.4) lib/active_record/railties/controller_runtime.rb:34:in `cleanup_view_runtime'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:43:in `render'
+actionpack (6.0.3.4) lib/action_controller/metal/implicit_render.rb:35:in `default_render'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:195:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+omniauth (1.9.1) lib/omniauth/strategy.rb:192:in `call!'
+omniauth (1.9.1) lib/omniauth/strategy.rb:169:in `call'
+omniauth (1.9.1) lib/omniauth/builder.rb:45:in `call'
+warden (1.2.9) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.9) lib/warden/manager.rb:34:in `catch'
+warden (1.2.9) lib/warden/manager.rb:34:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.4) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/songs" for ::1 at 2021-05-17 08:58:01 -0700
+Processing by SongsController#create as HTML
+  Parameters: {"authenticity_token"=>"1BoB11grvD8v2q/gQbCHqtQxdw2qzu4jU/uycJQvJji9zvZVUk3eUAlDYDT+NzaAAmvfcSgOgpbzedeSyVaruA==", "song"=>{"name"=>"Too high to riot", "artist_name"=>"Bas", "rating"=>"9"}, "commit"=>"Create Song"}
+  [1m[36mArtist Load (0.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists" WHERE "artists"."name" = ? LIMIT ?[0m  [["name", "Bas"], ["LIMIT", 1]]
+  ↳ app/controllers/songs_controller.rb:20:in `create'
+Started GET "/users/1/playlists/1/songs/new" for ::1 at 2021-05-17 09:00:21 -0700
+No template found for SongsController#create, rendering head :no_content
+Completed 204 No Content in 141527ms (ActiveRecord: 0.2ms | Allocations: 51169)
+
+
+Completed 500 Internal Server Error in 298951ms (ActiveRecord: 0.3ms | Allocations: 477598)
+
+
+  
+Errno::EIO (Input/output error @ io_writev - <STDOUT>):
+  
+app/controllers/songs_controller.rb:22:in `create'
+Completed 500 Internal Server Error in 529118ms (ActiveRecord: 1.0ms | Allocations: 551788)
+
+
+  
+Errno::EIO (Input/output error @ io_writev - <STDOUT>):
+  
+app/controllers/songs_controller.rb:22:in `create'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/users/1/playlists/1/songs/new" for ::1 at 2021-05-17 09:00:53 -0700
+Started GET "/users/1/playlists/1/songs/new" for ::1 at 2021-05-17 09:00:53 -0700
+Processing by SongsController#new as HTML
+  Parameters: {"user_id"=>"1", "playlist_id"=>"1"}
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 970)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 28ms (Views: 11.5ms | ActiveRecord: 0.6ms | Allocations: 13140)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SongsController#new as HTML
+  Parameters: {"user_id"=>"1", "playlist_id"=>"1"}
+Processing by SongsController#new as HTML
+  Rendering songs/new.html.erb within layouts/application
+  Parameters: {"user_id"=>"1", "playlist_id"=>"1"}
+  Rendered songs/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 970)
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 929)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 12.3ms | ActiveRecord: 0.0ms | Allocations: 10445)
+
+
+Completed 200 OK in 39ms (Views: 15.6ms | ActiveRecord: 0.6ms | Allocations: 20101)
+
+
+Started GET "/users/1/playlists/1/songs/new" for ::1 at 2021-05-17 09:01:04 -0700
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SongsController#new as HTML
+  Parameters: {"user_id"=>"1", "playlist_id"=>"1"}
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (Duration: 115.6ms | Allocations: 207449)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 167ms (Views: 142.5ms | ActiveRecord: 1.2ms | Allocations: 227257)
+
+
+Started POST "/songs" for ::1 at 2021-05-17 09:01:11 -0700
+Processing by SongsController#create as HTML
+  Parameters: {"authenticity_token"=>"H4svUGVO2ih0OiKAUuwGbK1CjDr2yg42AjZnzZckgUV2X9jSbyi4R1Kj7VTta7dGexgkRnQKYoOitAIvyl0MxQ==", "song"=>{"name"=>"Midnight City", "artist_name"=>"M83", "rating"=>"10"}, "commit"=>"Create Song"}
+No template found for SongsController#create, rendering head :no_content
+Completed 204 No Content in 33927016ms (ActiveRecord: 0.0ms | Allocations: 146511)
+
+

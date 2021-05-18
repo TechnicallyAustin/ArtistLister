@@ -21,16 +21,6 @@ ActiveRecord::Schema.define(version: 2021_05_12_184740) do
     t.index ["song_id"], name: "index_artists_on_song_id"
   end
 
-  create_table "playlist_songs", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "playlist_id"
-    t.text "song_name"
-    t.text "song_artist_name"
-    t.integer "song_rating"
-    t.index ["playlist_id"], name: "index_playlist_songs_on_playlist_id"
-    t.index ["user_id"], name: "index_playlist_songs_on_user_id"
-  end
-
   create_table "playlists", force: :cascade do |t|
     t.string "title"
     t.string "description"
@@ -48,12 +38,10 @@ ActiveRecord::Schema.define(version: 2021_05_12_184740) do
     t.integer "rating"
     t.integer "playlist_id"
     t.integer "artist_id"
-    t.integer "playlist_song_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["artist_id"], name: "index_songs_on_artist_id"
     t.index ["playlist_id"], name: "index_songs_on_playlist_id"
-    t.index ["playlist_song_id"], name: "index_songs_on_playlist_song_id"
   end
 
   create_table "user_playlists", force: :cascade do |t|

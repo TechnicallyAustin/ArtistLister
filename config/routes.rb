@@ -3,8 +3,11 @@ Rails.application.routes.draw do
   
   #User Playlist Routes
   resources :users do 
-    resources :playlists, :artists, :songs 
-  end
+    resources :playlists do
+       resources :artists, :songs 
+      end
+    end
+
   
   # Playlist Songs routes
   resources :playlists do
