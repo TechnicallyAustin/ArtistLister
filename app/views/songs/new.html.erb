@@ -5,11 +5,19 @@
 <%= t.label :name %>
 <%= t.text_field :name %>
 
-<%= t.label :artist_name%>
-<%= t.text_field :artist_name%>
+
+<%= t.hidden_field :artist_id %>
 
 <%=t.label :rating%>
 <%=t.number_field :rating%>
+
+<%=form_for @artist do |k| %>
+
+<%= k.label :name%>
+<%= k.text_field :name%>
+
+<%k.submit%>
+<%end%>
 
 
 

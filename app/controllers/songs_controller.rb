@@ -7,12 +7,13 @@ class SongsController < ApplicationController
 
     def show
         song_selector
+        @playlist = Playlist.find_by(id: params[:id])
     end
 
     def new
         @song = Song.new(playlist_id: params[:playlist_id])
-        
         @playlist_song = Song.new
+        @artist = Artist.find_or_create_by(name: params[:artist][:name])
     end
 
     def create
@@ -41,7 +42,7 @@ class SongsController < ApplicationController
     private
 
     def song_params
-        params.require(:song).permit(:name, :artist_name, :rating)
+        params.require(:song).permit(:name, :artist_name, :rating, :artist_id)
     end
 
     def song_selector

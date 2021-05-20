@@ -7,7 +7,7 @@ class PlaylistsController < ApplicationController
 
     def show
         @user = User.find(session[:user_id])
-        playlist_selector
+        @playlist = Playlist.find_by(id: params[:id])
 
     end
 
@@ -41,7 +41,7 @@ class PlaylistsController < ApplicationController
     private
     
     def playlist_params
-        params.require(:playlist).permit(:title, :description)
+        params.require(:playlist).permit(:title, :description, :user_id)
     end
 
     def playlist_selector

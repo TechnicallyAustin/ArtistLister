@@ -46958,3 +46958,409 @@ No template found for SongsController#create, rendering head :no_content
 Completed 204 No Content in 33927016ms (ActiveRecord: 0.0ms | Allocations: 146511)
 
 
+Started GET "/users/1/playlists/" for ::1 at 2021-05-20 09:01:05 -0700
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PlaylistsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:4:in `index'
+  Rendering playlists/index.html.erb within layouts/playlist
+  [1m[36mPlaylist Load (0.7ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists"[0m
+  ↳ app/views/playlists/index.html.erb:4
+  Rendered playlists/index.html.erb within layouts/playlist (Duration: 5252.2ms | Allocations: 32919)
+Completed 200 OK in 5429ms (Views: 5255.6ms | ActiveRecord: 2.9ms | Allocations: 95871)
+
+
+Started GET "/users/1/playlists/1" for ::1 at 2021-05-20 09:01:16 -0700
+Processing by PlaylistsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:9:in `show'
+  Rendering playlists/show.html.erb within layouts/playlist
+  Rendered playlists/show.html.erb within layouts/playlist (Duration: 3.8ms | Allocations: 1452)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.2ms | Allocations: 2629)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"new", :controller=>"songs", :playlist_id=>nil, :user_id=>"1"}, missing required keys: [:playlist_id]):
+    1: <h1><%=@playlist.title%></h1>
+    2: <h2><%=@playlist.description%></h2>
+    3: 
+    4: <%= link_to "Add Songs", new_user_playlist_song_path(@user.id, @playlist.id) %>
+  
+app/views/playlists/show.html.erb:4
+Started GET "/users/1/playlists/1" for ::1 at 2021-05-20 09:03:25 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PlaylistsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:9:in `show'
+  Rendering playlists/show.html.erb within layouts/playlist
+  Rendered playlists/show.html.erb within layouts/playlist (Duration: 0.7ms | Allocations: 954)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 1.1ms | Allocations: 20003)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"new", :controller=>"songs", :playlist_id=>nil, :user_id=>"1"}, missing required keys: [:playlist_id]):
+    1: <h1><%=@playlist.title%></h1>
+    2: <h2><%=@playlist.description%></h2>
+    3: 
+    4: <%= link_to "Add Songs", new_user_playlist_song_path(@user.id, @playlist.id) %>
+  
+app/views/playlists/show.html.erb:4
+Started GET "/users/1/playlists/" for ::1 at 2021-05-20 09:03:28 -0700
+Processing by PlaylistsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:4:in `index'
+  Rendering playlists/index.html.erb within layouts/playlist
+Started GET "/users/1/playlists/1" for ::1 at 2021-05-20 09:03:50 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PlaylistsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:9:in `show'
+  Rendering playlists/show.html.erb within layouts/playlist
+  [1m[36mPlaylist Load (0.3ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists"[0m
+  ↳ app/views/playlists/show.html.erb:3
+  [1m[36mPlaylist Load (0.3ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ (pry):9
+  [1m[36mPlaylist Load (0.1ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ (pry):10
+  Rendered playlists/show.html.erb within layouts/playlist (Duration: 182213.9ms | Allocations: 71877)
+Completed 500 Internal Server Error in 182218ms (ActiveRecord: 0.9ms | Allocations: 73340)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"new", :controller=>"songs", :playlist_id=>nil, :user_id=>"1"}, missing required keys: [:playlist_id]):
+    1: <h1><%=@playlist.title%></h1>
+    2: <h2><%=@playlist.description%></h2>
+    3: <%=binding.pry%>
+    4: <%= link_to "Add Songs", new_user_playlist_song_path(@user.id, @playlist.id) %>
+  
+app/views/playlists/show.html.erb:4
+Started GET "/users/1/playlists/1" for ::1 at 2021-05-20 09:06:55 -0700
+  Rendered playlists/index.html.erb within layouts/playlist (Duration: 231843.1ms | Allocations: 506497)
+Completed 500 Internal Server Error in 231845ms (ActiveRecord: 0.1ms | Allocations: 508013)
+
+
+  
+ActionView::Template::Error (Input/output error @ io_writev - <STDOUT>):
+    1: Playlist index
+    2: <%binding.pry%>
+    3: <h1> Display all playlists here, with links to edit, and view individual playlists, deleting is done from the edit menu.  </h1>
+    4: <%=Playlist.all.select{|x|x.user_id == @user.id}%>
+    5: <ul>
+  
+app/views/playlists/index.html.erb:2
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/users/1/playlists/" for ::1 at 2021-05-20 09:07:20 -0700
+Started GET "/users/1/playlists/1" for ::1 at 2021-05-20 09:07:20 -0700
+Started GET "/users/1/playlists/1" for ::1 at 2021-05-20 09:07:20 -0700
+Processing by PlaylistsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:9:in `show'
+  Rendering playlists/show.html.erb within layouts/playlist
+  Rendered playlists/show.html.erb within layouts/playlist (Duration: 7.3ms | Allocations: 12080)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 1.0ms | Allocations: 32691)
+
+
+  
+ActionView::Template::Error (Input/output error @ io_write - <STDOUT>):
+    1: <h1><%=@playlist.title%></h1>
+    2: <h2><%=@playlist.description%></h2>
+    3: <%=binding.pry%>
+    4: <%= link_to "Add Songs", new_user_playlist_song_path(@user.id, @playlist.id) %>
+  
+app/views/playlists/show.html.erb:3
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PlaylistsController#show as HTML
+Processing by PlaylistsController#index as HTML
+  Parameters: {"user_id"=>"1", "id"=>"1"}
+  Parameters: {"user_id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Processing by PlaylistsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"1"}
+  ↳ app/controllers/playlists_controller.rb:4:in `index'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering playlists/index.html.erb within layouts/playlist
+  ↳ app/controllers/playlists_controller.rb:9:in `show'
+  Rendering playlists/show.html.erb within layouts/playlist
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:9:in `show'
+  Rendered playlists/show.html.erb within layouts/playlist (Duration: 8.8ms | Allocations: 14495)
+  Rendering playlists/show.html.erb within layouts/playlist
+  Rendered playlists/index.html.erb within layouts/playlist (Duration: 23.8ms | Allocations: 36197)
+Completed 500 Internal Server Error in 49ms (ActiveRecord: 0.6ms | Allocations: 54357)
+
+
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.6ms | Allocations: 39643)
+
+
+  
+ActionView::Template::Error (Input/output error @ io_write - <STDOUT>):
+    1: Playlist index
+    2: <%binding.pry%>
+    3: <h1> Display all playlists here, with links to edit, and view individual playlists, deleting is done from the edit menu.  </h1>
+    4: <%=Playlist.all.select{|x|x.user_id == @user.id}%>
+    5: <ul>
+  
+app/views/playlists/index.html.erb:2
+  
+ActionView::Template::Error (Input/output error @ io_write - <STDOUT>):
+    1: <h1><%=@playlist.title%></h1>
+    2: <h2><%=@playlist.description%></h2>
+    3: <%=binding.pry%>
+    4: <%= link_to "Add Songs", new_user_playlist_song_path(@user.id, @playlist.id) %>
+  
+app/views/playlists/show.html.erb:3
+  Rendered playlists/show.html.erb within layouts/playlist (Duration: 483.5ms | Allocations: 852991)
+Completed 500 Internal Server Error in 513ms (ActiveRecord: 0.1ms | Allocations: 892123)
+
+
+  
+ActionView::Template::Error (Input/output error @ io_write - <STDOUT>):
+    1: <h1><%=@playlist.title%></h1>
+    2: <h2><%=@playlist.description%></h2>
+    3: <%=binding.pry%>
+    4: <%= link_to "Add Songs", new_user_playlist_song_path(@user.id, @playlist.id) %>
+  
+app/views/playlists/show.html.erb:3
+Started GET "/users/1/playlists/1" for ::1 at 2021-05-20 09:07:37 -0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PlaylistsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:9:in `show'
+  Rendering playlists/show.html.erb within layouts/playlist
+  Rendered playlists/show.html.erb within layouts/playlist (Duration: 139571.6ms | Allocations: 43950)
+Completed 500 Internal Server Error in 139741ms (ActiveRecord: 1.2ms | Allocations: 112631)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"new", :controller=>"songs", :playlist_id=>nil, :user_id=>"1"}, missing required keys: [:playlist_id]):
+    1: <h1><%=@playlist.title%></h1>
+    2: <h2><%=@playlist.description%></h2>
+    3: <%=binding.pry%>
+    4: <%= link_to "Add Songs", new_user_playlist_song_path(@user.id, @playlist.id) %>
+  
+app/views/playlists/show.html.erb:4
+Started GET "/users/1/playlists/1" for ::1 at 2021-05-20 09:09:59 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PlaylistsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:9:in `show'
+  [1m[36mPlaylist Load (0.1ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:10:in `show'
+  Rendering playlists/show.html.erb within layouts/playlist
+Started GET "/users/1/playlists/1" for ::1 at 2021-05-20 09:10:48 -0700
+  Rendered playlists/show.html.erb within layouts/playlist (Duration: 55498.3ms | Allocations: 25845)
+Completed 200 OK in 55526ms (Views: 55499.6ms | ActiveRecord: 1.4ms | Allocations: 45749)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PlaylistsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:9:in `show'
+  [1m[36mPlaylist Load (0.2ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:10:in `show'
+  Rendering playlists/show.html.erb within layouts/playlist
+  Rendered playlists/show.html.erb within layouts/playlist (Duration: 0.5ms | Allocations: 1043)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 1.9ms | Allocations: 21068)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1><%=@playlist.title%></h1>
+<h2><%=@playlist.description%></h2>
+<%=#binding.pry%>
+<%= link_to "Add Songs", new_user_playlist_song_path(@user.id, @playlist.id) %>
+
+):
+1:    <h1><%=@playlist.title%></h1>
+2:    <h2><%=@playlist.description%></h2>
+3:    <%=#binding.pry%>
+4:    <%= link_to "Add Songs", new_user_playlist_song_path(@user.id, @playlist.id) %>
+  
+app/views/playlists/show.html.erb:7: unterminated string meets end of file
+app/views/playlists/show.html.erb:7: syntax error, unexpected end-of-input, expecting ')'
+app/views/playlists/show.html.erb:7: unterminated string meets end of file
+app/views/playlists/show.html.erb:7: syntax error, unexpected end-of-input, expecting ')'
+app/views/playlists/show.html.erb:7: unterminated string meets end of file
+app/views/playlists/show.html.erb:7: syntax error, unexpected end-of-input, expecting ')'
+app/views/playlists/show.html.erb:7: unterminated string meets end of file
+app/views/playlists/show.html.erb:7: syntax error, unexpected end-of-input, expecting ')'
+app/views/playlists/show.html.erb:7: unterminated string meets end of file
+app/views/playlists/show.html.erb:7: syntax error, unexpected end-of-input, expecting ')'
+app/views/playlists/show.html.erb:7: unterminated string meets end of file
+app/views/playlists/show.html.erb:7: syntax error, unexpected end-of-input, expecting ')'
+Started GET "/users/1/playlists/1" for ::1 at 2021-05-20 09:10:57 -0700
+Processing by PlaylistsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:9:in `show'
+  [1m[36mPlaylist Load (0.1ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:10:in `show'
+  Rendering playlists/show.html.erb within layouts/playlist
+  Rendered playlists/show.html.erb within layouts/playlist (Duration: 0.6ms | Allocations: 1077)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.3ms | Allocations: 2580)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1><%=@playlist.title%></h1>
+<h2><%=@playlist.description%></h2>
+<%=#binding.pry%>
+<%= link_to "Add Songs", new_user_playlist_song_path(@user.id, @playlist.id) %>
+
+):
+1:    <h1><%=@playlist.title%></h1>
+2:    <h2><%=@playlist.description%></h2>
+3:    <%=#binding.pry%>
+4:    <%= link_to "Add Songs", new_user_playlist_song_path(@user.id, @playlist.id) %>
+  
+app/views/playlists/show.html.erb:7: unterminated string meets end of file
+app/views/playlists/show.html.erb:7: syntax error, unexpected end-of-input, expecting ')'
+app/views/playlists/show.html.erb:7: unterminated string meets end of file
+app/views/playlists/show.html.erb:7: syntax error, unexpected end-of-input, expecting ')'
+app/views/playlists/show.html.erb:7: unterminated string meets end of file
+app/views/playlists/show.html.erb:7: syntax error, unexpected end-of-input, expecting ')'
+app/views/playlists/show.html.erb:7: unterminated string meets end of file
+app/views/playlists/show.html.erb:7: syntax error, unexpected end-of-input, expecting ')'
+app/views/playlists/show.html.erb:7: unterminated string meets end of file
+app/views/playlists/show.html.erb:7: syntax error, unexpected end-of-input, expecting ')'
+app/views/playlists/show.html.erb:7: unterminated string meets end of file
+app/views/playlists/show.html.erb:7: syntax error, unexpected end-of-input, expecting ')'
+Started GET "/users/1/playlists/1" for ::1 at 2021-05-20 09:11:04 -0700
+Processing by PlaylistsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:9:in `show'
+  [1m[36mPlaylist Load (0.1ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:10:in `show'
+  Rendering playlists/show.html.erb within layouts/playlist
+  Rendered playlists/show.html.erb within layouts/playlist (Duration: 0.7ms | Allocations: 171)
+Completed 200 OK in 5ms (Views: 1.8ms | ActiveRecord: 0.3ms | Allocations: 1796)
+
+
+Started GET "/users/1/playlists/1/songs/new" for ::1 at 2021-05-20 09:11:09 -0700
+Processing by SongsController#new as HTML
+  Parameters: {"user_id"=>"1", "playlist_id"=>"1"}
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (Duration: 432.5ms | Allocations: 370527)
+Completed 500 Internal Server Error in 449ms (ActiveRecord: 0.5ms | Allocations: 378799)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x00007fcb42197d68>:0x00007fcb42196378>):
+     8: <%= t.label :artist_name%>
+     9: <%= t.text_field :artist_name%>
+    10: 
+    11: <%= f.hidden_field :artist_id %>
+    12: 
+    13: <%=t.label :rating%>
+    14: <%=t.number_field :rating%>
+  
+app/views/songs/new.html.erb:11
+app/views/songs/new.html.erb:2
+Started GET "/users/1/playlists/1/songs/new" for ::1 at 2021-05-20 09:11:36 -0700
+Processing by SongsController#new as HTML
+  Parameters: {"user_id"=>"1", "playlist_id"=>"1"}
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (Duration: 11.2ms | Allocations: 3870)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 37ms (Views: 35.8ms | ActiveRecord: 0.0ms | Allocations: 13786)
+
+
+Started POST "/songs" for ::1 at 2021-05-20 09:11:44 -0700
+Processing by SongsController#create as HTML
+  Parameters: {"authenticity_token"=>"jKvBiAvdp2puGmKfx/3Rjjko2VMilk6YWdEi/GYJU4blfzYKAbvFBUiDrUt4emCk73JxL6BWIi35U0ceO3DeBg==", "song"=>{"name"=>"Night Job", "artist_name"=>"Bas", "artist_id"=>"", "rating"=>"10"}, "commit"=>"Create Song"}
+Started GET "/users/1/playlists/1/songs/new" for ::1 at 2021-05-20 09:12:13 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SongsController#new as HTML
+  Parameters: {"user_id"=>"1", "playlist_id"=>"1"}
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1207)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 10.4ms | ActiveRecord: 0.0ms | Allocations: 6593)
+
+
+Started GET "/users/1/playlists/1/songs/new" for ::1 at 2021-05-20 09:18:39 -0700
+Completed 500 Internal Server Error in 426716ms (ActiveRecord: 0.0ms | Allocations: 203344)
+
+
+  
+Errno::EIO (Input/output error @ io_writev - <STDOUT>):
+  
+app/controllers/songs_controller.rb:23:in `create'
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/users/1/playlists/1" for ::1 at 2021-05-20 09:18:51 -0700
+Processing by SongsController#new as HTML
+  Parameters: {"user_id"=>"1", "playlist_id"=>"1"}
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1683)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.5ms | Allocations: 10466)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    11: <%=t.label :rating%>
+    12: <%=t.number_field :rating%>
+    13: 
+    14: <%=form_for @artist do |k| %>
+    15: 
+    16: <%= k.label :name%>
+    17: <%= k.text_field :name%>
+  
+app/views/songs/new.html.erb:14
+app/views/songs/new.html.erb:2
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PlaylistsController#show as HTML
+  Parameters: {"user_id"=>"1", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:9:in `show'
+  [1m[36mPlaylist Load (0.1ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/playlists_controller.rb:10:in `show'
+  Rendering playlists/show.html.erb within layouts/playlist
+  Rendered playlists/show.html.erb within layouts/playlist (Duration: 0.4ms | Allocations: 185)
+Completed 200 OK in 20ms (Views: 1.6ms | ActiveRecord: 0.9ms | Allocations: 22587)
+
+
+Started GET "/users/1/playlists/1/songs/new" for ::1 at 2021-05-20 09:19:16 -0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SongsController#new as HTML
+  Parameters: {"user_id"=>"1", "playlist_id"=>"1"}
+  Rendering songs/new.html.erb within layouts/application
+  Rendered songs/new.html.erb within layouts/application (Duration: 123.9ms | Allocations: 208273)
+Completed 500 Internal Server Error in 154ms (ActiveRecord: 0.6ms | Allocations: 218236)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    11: <%=t.label :rating%>
+    12: <%=t.number_field :rating%>
+    13: 
+    14: <%=form_for @artist do |k| %>
+    15: 
+    16: <%= k.label :name%>
+    17: <%= k.text_field :name%>
+  
+app/views/songs/new.html.erb:14
+app/views/songs/new.html.erb:2
+Started GET "/users/1/playlists/1/songs/new" for ::1 at 2021-05-20 09:24:29 -0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SongsController#new as HTML
+  Parameters: {"user_id"=>"1", "playlist_id"=>"1"}
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.5ms | Allocations: 9080)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/songs_controller.rb:16:in `new'
